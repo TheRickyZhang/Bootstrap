@@ -1,0 +1,26 @@
+   # <c-a> select all
+map <c-b> scrollFullPageUp
+   # <c-c> copy
+map <c-d> scrollPageDown
+   # <c-e> scroll down
+   # <c-f> find
+   # <c-g> unused   ****
+   # <c-h> history
+# map <c-i> visitNextTab
+   # <c-j> downloads
+   # <c-k> address bar ****
+   # <c-l> address bar ****
+   # <c-m> unused      ****
+   # <c-n> !new tab!
+map <c-o> visitPreviousTab
+   # <c-p> print
+   # <c-q> unused   ****
+   # <c-r> refresh  ****
+   # <c-s> save  ****
+   # <c-t> ! new tab !
+map <c-u> scrollPageUp
+   # <c-v> paste
+   # <c-w> !close tab!
+   # <c-x> unused   ****
+   # <c-y> scrollUp
+   # <c-z> Undo
