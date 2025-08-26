@@ -1,0 +1,17 @@
+ca-certificates
+curl
+git
+build-essential
+unzip
+rsync
+jq
+ripgrep
+fd-find
+fzf
+pkg-config
+libssl-dev
+cmake
+python3-pip
+python3-venv
+xz-utils
+zsh
