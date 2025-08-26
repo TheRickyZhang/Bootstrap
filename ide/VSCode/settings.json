@@ -1,0 +1,29 @@
+{
+  "files.autoSave": "afterDelay",
+  "files.autoSaveDelay": 500,
+  "git.autofetch": true,
+  "security.allowedUNCHosts": ["wsl.localhost"],
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "always"
+  },
+  "github.copilot.enable": {
+    "*": false,
+    "plaintext": false,
+    "markdown": false,
+    "scminput": false
+  },
+  "workbench.iconTheme": "material-icon-theme",
+  "editor.formatOnSave": true,
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "githubPullRequests.pullBranch": "never",
+  "lldb.library": "C:\\Users\\ricky\\AppData\\Local\\Programs\\Swift\\Toolchains\\6.1.0+Asserts\\usr\\bin\\liblldb.dll",
+  "lldb.launch.expressions": "native",
+  "[jsonc]": {
+    "editor.defaultFormatter": "vscode.json-language-features"
+  }
+}

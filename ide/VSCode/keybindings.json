@@ -1,0 +1,12 @@
+[
+  {
+    "key": "alt+f",
+    "command": "workbench.action.quickOpenNavigateNextInFilePicker",
+    "when": "inQuickOpen"
+  },
+  {
+    "key": "alt+f",
+    "command": "workbench.action.quickOpen",
+    "when": "!inQuickOpen"
+  }
+]

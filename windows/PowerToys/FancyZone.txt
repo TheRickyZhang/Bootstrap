@@ -1,0 +1,4 @@
+- Default: 3-column split
+Override Windows Snap
+Use Win + Left, Right to Snap
+Use Alt + PageUp, PageDown to Cycle
