@@ -95,4 +95,18 @@ done <"$MAP"
 # optional: nvim plugin sync (no-op if not using Lazy/packer)
 nvim --headless "+silent! Lazy! sync" +qa 2>/dev/null || true
 
+echo "preparing neomutt"
+set -euo pipefail
+
+sudo apt update
+sudo apt install -y \
+  neomutt isync msmtp msmtp-mta w3m urlscan \
+  python3 python3-venv python3-msal \
+  sasl-xoauth2 ca-certificates \
+  pinentry-curses git curl
+
+# helpful defaults
+mkdir -p ~/.config/mutt ~/.config/msmtp ~/.local/bin ~/Mail
+update-ca-certificates || true
+
 echo "import complete."
