@@ -1,0 +1,15 @@
+defaults
+auth           on
+tls            on
+tls_trust_file /etc/ssl/certs/ca-certificates.crt
+logfile        ~/.msmtp.log
+
+account outlook
+host smtp.office365.com
+port 587
+from you@outlook.com
+user you@outlook.com
+passwordeval "vygrant token get outlook"
+tls_starttls   on
+
+account default : outlook
