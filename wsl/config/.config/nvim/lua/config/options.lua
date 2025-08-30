@@ -6,9 +6,13 @@ vim.g.autoformat = true
 
 -- We recognize both unix/windows line endings, but ALWAYS convert to unix on write for script consistency
 vim.o.fileformats = "unix,dos"
+-- Always save with LF, stripping any CR characters
 vim.api.nvim_create_autocmd("BufWritePre", {
   pattern = "*",
-  command = "setlocal ff=unix",
+  callback = function()
+    vim.bo.fileformat = "unix"
+    vim.cmd([[%s/\r$//e]])
+  end,
 })
 
 vim.g.snacks_animate = false
