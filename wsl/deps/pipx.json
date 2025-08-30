@@ -1,0 +1,6 @@
+{
+ "venvs": {
+    "black": { "version": "23.9.1" },
+    "flake8": { "version": "6.1.0" }
+  }
+}

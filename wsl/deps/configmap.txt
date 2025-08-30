@@ -1,0 +1,9 @@
+~/.config/git/config:.config/git/config
+~/.bashrc:.bashrc
+
+~/.config/nvim:.config/nvim
+
+# ~/.config/bob:.config/bob
+# ~/.cargo/config.toml:.cargo/config.toml
+# ~/.config/typst:.config/typst
+# ~/.local/share/typst/packages/local:.local/share/typst/packages/local
