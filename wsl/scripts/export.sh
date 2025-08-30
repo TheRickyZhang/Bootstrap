@@ -5,7 +5,7 @@ REPO="$(
   pwd
 )"
 CFG="$REPO/wsl/config"
-MAP="$REPO/wsl/deps/config.map"
+MAP="$REPO/wsl/deps/configmap.txt"
 
 [ -f "$MAP" ] || {
   echo "missing $MAP"
@@ -42,6 +42,6 @@ while IFS= read -r line; do
 done <"$MAP"
 
 cd "$REPO"
+git push -u origin HEAD:main
 git add -A
 git commit -m "${1:-snapshot}" || true
-git push -u origin HEAD:main
