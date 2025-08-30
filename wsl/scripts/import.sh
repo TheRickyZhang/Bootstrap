@@ -98,14 +98,22 @@ fi
 # pipx apps (For CLIs and isolated dependency management)
 if [ -s "$DEPS/pipx.json" ]; then
   debug "managing pipx dependencies"
-  # -m -> run library module as script, -U -> upgrade
-  python3 -m pip install --user -U pipx
+
+  if ! command -v pipx >/dev/null; then
+    sudo apt-get update
+    sudo apt-get install -y pipx python3-venv
+  fi
+
+  grep -qxF 'export PATH="$HOME/.local/bin:$PATH"' ~/.bashrc ||
+    echo 'export PATH="$HOME/.local/bin:$PATH"' >>~/.bashrc
+  . ~/.bashrc
+
   pipx ensurepath || true
-  # '.venvs | keys[]' means look at the keys under the .venvs root attribute
-  # -I{} -> infer arguments, it is required here over default behavior since we have 2 in different places
-  # we don't use -a (arguments) here, but instead pipe with converted stdout from jq
+
+  # Install apps listed as venv keys in your pipx.json
   jq -r '.venvs | keys[]' "$DEPS/pipx.json" | xargs -r -I{} pipx install {}
-  debug "managing pipx dependencies"
+
+  debug "done managing pipx dependencies"
 fi
 
 # copy repo configs -> real locations (backup if exists)
@@ -152,7 +160,5 @@ nvim --headless "+silent! Lazy! sync" +qa 2>/dev/null || true
 debug "preparing neomutt"
 
 mkdir -p ~/.config/mutt ~/.config/msmtp ~/.local/bin ~/Mail
-# helpful defaults
-update-ca-certificates || true
 
 debug "import complete."
