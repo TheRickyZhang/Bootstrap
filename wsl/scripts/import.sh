@@ -19,13 +19,15 @@ debug() { echo -e "\033[31m$*\033[0m"; }
 # Defaults: copy everything under $CONFIG/.config -> ~/.config
 import_all() {
   # rsync is a better way to bulk copy
-  rsync -a "$CONFIG/.config/" "$HOME/.config/"
+  rsync -a --itemize-changes "$CONFIG/" "$HOME/.config/"
 
   # apply overrides from map file. Strip whitespace from components
   while IFS=: read -r local remote; do
     local=$(echo "$local" | xargs)
     remote=$(echo "$remote" | xargs)
-    [[ -z $remote ]] && continue # No colon (empty / comment) -> remote is empty
+    # Skip if comment or no colon
+    [[ $local == \#* ]] && continue
+    [[ -z $remote ]] && continue
     cp -r "$CONFIG/$remote" "$HOME/$local"
   done <"$MAP"
 }
@@ -65,7 +67,9 @@ if [[ $response != y ]]; then
 fi
 
 debug "reading config from map"
-import_all() if # Pin Neovim version via bob (optional: keep nvim-version.txt like "0.10.2")
+import_all
+
+if # Pin Neovim version via bob (optional: keep nvim-version.txt like "0.10.2")
   [ -s "$DEPS/nvim-versions.txt" ]
 then
   # command is pretty sparse, -v = view; just simulate the output of a ru.n
