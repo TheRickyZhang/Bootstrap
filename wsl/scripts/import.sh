@@ -1,14 +1,34 @@
 #!/usr/bin/env bash
 set -euo pipefail
-REPO="$(
+ROOT="$(
   cd "$(dirname "$0")/../.."
   pwd
 )"
-CFG="$REPO/wsl/config"
-DEPS="$REPO/wsl/deps"
+CONFIG="$ROOT/wsl/config"
+DEPS="$ROOT/wsl/deps"
+
 MAP="$DEPS/configmap.txt"
 
 debug() { echo -e "\033[31m$*\033[0m"; }
+
+[ -f "$MAP" ] || {
+  debug "missing $MAP"
+  exit 1
+}
+
+# Defaults: copy everything under $CONFIG/.config -> ~/.config
+import_all() {
+  # rsync is a better way to bulk copy
+  rsync -a "$CONFIG/.config/" "$HOME/.config/"
+
+  # apply overrides from map file. Strip whitespace from components
+  while IFS=: read -r local remote; do
+    local=$(echo "$local" | xargs)
+    remote=$(echo "$remote" | xargs)
+    [[ -z $remote ]] && continue # No colon (empty / comment) -> remote is empty
+    cp -r "$CONFIG/$remote" "$HOME/$local"
+  done <"$MAP"
+}
 
 # All possible files in DEPS:
 # Native Plugins:    apt
@@ -33,9 +53,21 @@ if [ -s "$DEPS/apt.txt" ]; then
   xargs -r -a "$DEPS/apt.txt" sudo apt-get install -y --no-install-recommends
 fi
 
-debug "done installing"
-# Pin Neovim version via bob (optional: keep nvim-version.txt like "0.10.2")
-if [ -s "$DEPS/nvim-versions.txt" ]; then
+debug "syncing configs"
+
+# TODO: Originally this created backups if they existed but this is just a lot simpler
+# How to await user input, -p means prompt
+read -p "About to sync configs. This will overwrite anything you have in ~/.config \
+  and additional elements in configmap.txt. Please confirm (y/n) to continue:" response
+if [[ $response != y ]]; then
+  echo "Aborted."
+  exit 1
+fi
+
+debug "reading config from map"
+import_all() if # Pin Neovim version via bob (optional: keep nvim-version.txt like "0.10.2")
+  [ -s "$DEPS/nvim-versions.txt" ]
+then
   # command is pretty sparse, -v = view; just simulate the output of a ru.n
   # but command is also tricky. If we do -v ls, an external executable, it prints the file path
   debug "managing neovim versions via bob"
@@ -116,49 +148,6 @@ if [ -s "$DEPS/pipx.json" ]; then
   debug "done managing pipx dependencies"
 fi
 
-# copy repo configs -> real locations (backup if exists)
-[ -f "$MAP" ] || {
-  debug "missing $MAP"
-  exit 1
-}
+nvim --headless "+silent! Lazy! sync" +qa 2>/dev/null || true # optional: nvim plugin sync (no-op if not using Lazy/packer)
 
-# Note that this function is written in context to input piped from the file BELOW
-# $1, $2, etc are special variables for the arguments of the script (ie ./script $1 $2), but in this case the function is called with the line variables
-debug "reading config from map"
-
-ts="$(date +%Y%m%d%H%M%S)"
-deploy_one() {
-  src="$CFG/$1"
-  dst="${2/#\~/$HOME}"
-  # This makes the parent, so it is not redundant
-  mkdir -p "$(dirname "$dst")"
-
-  # Move any existing files to a backup
-  if [ -e "$dst" ]; then
-    mv "$dst" "${dst}.bak.$ts" 2>/dev/null || true
-    # rsync -a (archive mode, preserve everything) is the same as cp, just for directories
-  fi
-  if [ -d "$src" ]; then
-    rsync -a "$src"/ "$dst"/
-  else
-    cp -f "$src" "$dst"
-  fi
-}
-# We don't need it here, but IFS (internal field separator) and -r basically read raw lines directly without trimming or escaping
-while IFS= read -r line; do
-  case "$line" in "" | "#"*) continue ;; esac
-  # var#pattern -> remove match of pattern from front/end
-  real="${line%%:*}" # A double % ensures we take from the first : (since it will produce longest string), though doesn't matter if only one : present
-  rel="${line#*:}"
-  deploy_one "$rel" "$real"
-done <"$MAP"
-
-# optional: nvim plugin sync (no-op if not using Lazy/packer)
-nvim --headless "+silent! Lazy! sync" +qa 2>/dev/null || true
-
-# NeoMutt
-debug "preparing neomutt"
-
-mkdir -p ~/.config/mutt ~/.config/msmtp ~/.local/bin ~/Mail
-
-debug "import complete."
+debug "success!"
