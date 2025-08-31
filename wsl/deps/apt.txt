@@ -5,6 +5,7 @@ curl
 fd-find
 fzf
 git
+golang-go
 jq
 libssl-dev
 neomutt
