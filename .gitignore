@@ -1,2 +1,8 @@
 wsl/config/gh/
 wsl/config/go/
+wsl/config/.gnupg/
+wsl/config/.ssh/
+wsl/config/.outlook_access_token
+wsl/config/.password-store/
+
+# Secrets like oauth token and mbsync password are handled by vygrant, generated in local/bin, so should be good
