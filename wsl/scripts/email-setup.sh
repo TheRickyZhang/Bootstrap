@@ -4,6 +4,7 @@ set -euo pipefail
 debug() { printf '\033[31m%s\033[0m\n' "$*"; }
 
 mkdir -p "$HOME/.local/bin" "$HOME/.config/vybr" "$HOME/.local/src"
+install -d -m 700 "$HOME/.local/share/mail/Inbox"/{cur,new,tmp}
 
 # ensure ~/.local/bin on PATH
 case ":$PATH:" in *":$HOME/.local/bin:"*) ;;
