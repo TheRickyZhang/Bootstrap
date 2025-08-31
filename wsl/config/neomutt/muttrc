@@ -1,0 +1,24 @@
+# Location of your mail
+set folder    = "~/.local/share/mail"
+set spoolfile = "+inbox"
+
+# Most recent first
+set sort = 'reverse-date'
+
+# Where sent/drafts go (already synced by mbsync)
+set record    = "+Sent"
+set postponed = "+Drafts"
+set mbox      = "+Archive"
+
+# Identity
+set realname  = "Ricky Zhang"
+set from      = "rickyzhang196@outlook.com"
+set use_from  = yes
+
+# Use msmtp for sending
+set sendmail  = "/usr/bin/msmtp"
+
+auto_view text/html
+alternative_order text/plain text/enriched text/html
+
+macro attach v "<pipe-message> w3m -dump -T text/html | less\n"
