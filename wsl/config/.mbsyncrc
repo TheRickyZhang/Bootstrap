@@ -1,0 +1,20 @@
+IMAPStore outlook-remote
+Host outlook.office365.com
+Port 993
+User rickyzhang196@outlook.com
+AuthMechs XOAUTH2
+PassCmd "vygrant token get outlook"
+SSLType IMAPS
+CertificateFile /etc/ssl/certs/ca-certificates.crt
+
+MaildirStore outlook-local
+Path ~/.local/share/mail/
+Inbox ~/.local/share/mail/inbox
+SubFolders Verbatim
+
+Channel outlook
+Far :outlook-remote:
+Near :outlook-local:
+Patterns *
+Create Both
+SyncState *
