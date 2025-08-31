@@ -27,9 +27,8 @@ go build -ldflags "-s -w" -o "$HOME/.local/bin/vygrant" || {
   exit 1
 }
 
-debug "vygrant check"
-vygrant --version || true
-vygrant status || true # daemon may not be running yet; this is just informational
+debug "vygrant installed. Do 'vygrant server' in the background (separate terminal), \
+then 'vygrant token get outlook' and 'vygrant status' to verify correctness"
 
 # TODO: refresh/login for your account when ready
 
