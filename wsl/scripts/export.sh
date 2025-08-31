@@ -14,6 +14,9 @@ MAP="$REPO/wsl/deps/configmap.txt"
 }
 mkdir -p "$CFG"
 
+# bulk export ~/.config -> $CFG/.config
+rsync -a --delete --itemize-changes "$HOME/.config/" "$CFG/"
+
 copy_one() {
   src="$HOME/$1"
   dst="$CFG/$2"
@@ -34,7 +37,6 @@ copy_one() {
     fi
   fi
 }
-
 while IFS=: read -r src dst; do
   [[ -z $src || $src == \#* ]] && continue
   copy_one "$src" "$dst"

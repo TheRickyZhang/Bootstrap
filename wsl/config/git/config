@@ -12,6 +12,14 @@
 	defaultBranch = main
 [pull]
     rebase = true
+[user]
+    name = Ricky Zhang
+    email = ricky@example.com
+[push]
+    default = current
+[fetch]
+    prune = true
+
 [diff]
     colorMoved = zebra
 
