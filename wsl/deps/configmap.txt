@@ -1,9 +1,14 @@
-~/.config/git/config:.config/git/config
-~/.bashrc:.bashrc
+# This file should only contain RELATIVE paths to ~. There should not be any ~ characters directly
+# This is only for OVERRIDES. By default everything in .config is synced
+# convention is local <colon> remote, where actual file paths are ~/$local, <repo>/wsl/config/<remote>
 
-~/.config/nvim:.config/nvim
+.bashrc : .bashrc
+.profile : .profile
 
-# ~/.config/bob:.config/bob
-# ~/.cargo/config.toml:.cargo/config.toml
-# ~/.config/typst:.config/typst
-# ~/.local/share/typst/packages/local:.local/share/typst/packages/local
+.muttrc : .muttrc
+.msmtprc : .msmtprc
+.mbsyncrc : .mbsyncrc
+.offlineimaprc : .offlineimaprc
+.ssh : .ssh
+.gnupg : .gnupg
+
