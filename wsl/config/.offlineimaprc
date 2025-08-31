@@ -1,0 +1,23 @@
+[general]
+accounts = outlook
+ui = basic
+
+[Account outlook]
+localrepository = outlook-local
+remoterepository = outlook-remote
+
+[Repository outlook-local]
+type = Maildir
+localfolders = ~/Maildir
+
+[Repository outlook-remote]
+type = IMAP
+remotehost = outlook.office365.com
+remoteport = 993
+ssl = yes
+sslcacertfile = /etc/ssl/certs/ca-certificates.crt
+remoteuser = rickyzhang196@outlook.com
+auth_mechanisms = XOAUTH2
+oauth2_client_id = 9e5f94bc-e8a4-4e73-b8be-63364c29d753
+oauth2_client_secret = ""
+oauth2_access_token_eval = "~/.local/bin/outlook-token"
