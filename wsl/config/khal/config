@@ -1,0 +1,22 @@
+[calendars]
+# Primary Google calendar (writeable)
+[[gcal-primary]]
+path = ~/.calendars/rickyzhang196@gmail.com/
+color = light green
+readonly = False
+
+# US holidays (read-only; from the @virtual collection)
+[[gcal-us-holidays]]
+path = ~/.calendars/cln2stbjc4hmgrrcd5i62ua0ctp6utbg5pr2sor1dhimsp31e8n6errfctm6abj3dtmg@virtual/
+color = light gray
+readonly = True
+
+[default]
+default_calendar = gcal-primary
+
+[locale]
+dateformat = %m/%d
+timeformat = %H:%M
+datetimeformat = %m/%d %H:%M
+longdateformat = %Y-%m-%d %a
+longdatetimeformat = %Y-%m-%d %a %H:%M

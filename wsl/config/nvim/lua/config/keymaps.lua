@@ -21,11 +21,6 @@ if ok then
   end
 end
 
--- Ctrl-Space → show blink.cmp completion
-map("i", "<C-Space>", function()
-  require("blink.cmp").show()
-end, { silent = true })
-
 -- Alt-j/k → move lines up/down
 map("n", "<A-j>", ":m .+1<CR>==", { silent = true })
 map("n", "<A-k>", ":m .-2<CR>==", { silent = true })
@@ -45,34 +40,93 @@ for lhs, rhs in pairs(motions) do
   end
 end
 
--- <leader>p → Typst preview
+-- Insert mode commands
+map("n", "<leader>gs", vim.lsp.buf.signature_help, {
+  silent = true,
+  desc = "Signature help",
+})
+
+map("i", "<C-g>", function()
+  vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes("<C-k>", true, false, true), "n", false)
+end, { desc = "Insert digraph" })
+
+map("i", "<C-i>", function()
+  local keys = vim.api.nvim_replace_termcodes("<Esc><leader>iA", true, false, true)
+  vim.api.nvim_feedkeys(keys, "m", false) -- "m" = allow remap
+end)
+
+map("i", "<A-k>", function()
+  require("blink.cmp").show()
+end, { silent = true })
+
+-- Letter status for leader (* = prefix for other things already in lazy, # = self defined, + = adding to existing prefix)
+-- Ctrl - tmux
+-- a  - copilot
+-- b* - buffer
+-- c* - various
+-- d* - debugging
+-- e  - explorer
+-- f* - snacks find
+-- g+ - git
+-- h  - harpoon
+-- i# - math with typst
+-- j  -
+-- k  -
+-- l  - lazy
+-- m# - math in typst via $
+-- n  - notifications
+-- o  - show all in blink
+-- p# - typst preview (overwrites view yank history)
+-- q  - nvim persistence (TODO learn how to use this)
+-- r  - primagen refactor (TODO learn how to use this)
+-- s* - search + various
+-- t+ - (overwrites neotest, TODO not installed yet)
+-- u  - toggle ui elements
+-- v# - select matching
+-- w  - lazy's wintow management
+-- x  - help trouble (prepared when do make command, TODO see trouble.nvim)
+-- y# - quick spell fix (z=1)
+-- z# - Blink insertion suggestions
+
+-- Insert mode mappings that are not available: c, d, g(digraphs), h, i, j, k, m, n, p, r, s (remapped to signature), t,  w
+--
+
+-- Add math mode for typst with surrounding $
+map("n", "<leader>i", "gsaiW$", {
+  remap = true,
+})
+
+map("n", "<leader>k", function()
+  vim.cmd("startinsert")
+  require("blink.cmp").show()
+end, { silent = true, desc = "Trigger completion from normal mode" })
+
 map("n", "<leader>p", "<Cmd>TypstPreview<CR>", { silent = true })
 
 -- compile current file -> same dir PDF (positional output, no -o)
 map(
   "n",
-  "<leader>te",
+  "<leader>th",
   "<Cmd>execute '!typst compile ' . shellescape(expand('%:p')) . ' ' . shellescape(expand('~/documents') . '/' . expand('%:t:r') . '.pdf')<CR>",
   { silent = true, desc = "Typst → ~/documents" }
+)
+map(
+  "n",
+  "<leader>tc",
+  "<Cmd>execute '!typst compile ' . shellescape(expand('%:p')) . ' ' . shellescape(expand('%:p:h') . '/' . expand('%:t:r') . '.pdf')<CR>",
+  { silent = true, desc = "Typst → same dir" }
 )
 
 -- map("n", "<leader>y", "Y$%", { silent = true })
 map("n", "<leader>v", "V$%", { silent = true })
 
-map("n", "<leader>ih", vim.lsp.buf.signature_help, { silent = true, desc = "Signature help" })
--- (Optional) <leader>g... → your Git commands
--- map("n","<leader>gs","<cmd>LazyGit<CR>",{silent=true})
--- map("n","<leader>gc","<cmd>Git commit<CR>",{silent=true})
+map("n", "<leader>y", "1z=")
 
 -- <leader>d → delete into black hole
-map({ "n", "v" }, "<leader>d", '"_d', { silent = true })
+-- map({ "n", "v" }, "<leader>d", '"_d', { silent = true })
 
--- visual-mode p → paste without overwriting register
+-- Visual mode commands
+
 map("v", "p", '"_dP', { silent = true })
-
--- <leader>o → blank line below & above
-map("n", "<leader>o", "o<Esc>O<Esc>", { silent = true })
-
--- *, # in visual → search for selection
 map("v", "*", 'y/\\V<C-R>"<CR>', { silent = true })
 map("v", "#", 'y?\\V<C-R>"<CR>', { silent = true })

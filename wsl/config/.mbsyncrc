@@ -1,20 +1,55 @@
-IMAPStore outlook-remote
-Host outlook.office365.com
+############ Gmail IMAP ############
+IMAPAccount gmail
+Host imap.gmail.com
 Port 993
-User rickyzhang196@outlook.com
-AuthMechs XOAUTH2
-PassCmd "vygrant token get outlook"
+User rickyzhang196@gmail.com
 SSLType IMAPS
-CertificateFile /etc/ssl/certs/ca-certificates.crt
+AuthMechs LOGIN
+# EITHER inline (quick) OR a secret command (recommended)
+Pass "aqcbdpgtbyrhmwcx"
+# PassCmd "secret-tool lookup mail gmail-ricky"
+PipelineDepth 20
 
-MaildirStore outlook-local
-Path ~/.local/share/mail/
-Inbox ~/.local/share/mail/inbox
+IMAPStore gmail-remote
+Account gmail
+
+MaildirStore gmail-local
+Path ~/.local/share/mail/gmail/
+Inbox ~/.local/share/mail/gmail/INBOX
 SubFolders Verbatim
 
-Channel outlook
-Far :outlook-remote:
-Near :outlook-local:
-Patterns *
+# ---- Channels (remote ↔ local) ----
+Channel gmail-inbox
+Far  :gmail-remote:INBOX
+Near :gmail-local:INBOX
 Create Both
+Expunge Both
 SyncState *
+
+Channel gmail-sent
+Far  :gmail-remote:"[Gmail]/Sent Mail"
+Near :gmail-local:Sent
+Create Both
+Expunge Both
+SyncState *
+
+Channel gmail-drafts
+Far  :gmail-remote:"[Gmail]/Drafts"
+Near :gmail-local:Drafts
+Create Both
+Expunge Both
+SyncState *
+
+Channel gmail-trash
+Far  :gmail-remote:"[Gmail]/Trash"
+Near :gmail-local:Trash
+Create Both
+Expunge Both
+SyncState *
+
+
+Group gmail
+Channel gmail-inbox
+Channel gmail-sent
+Channel gmail-drafts
+Channel gmail-trash
