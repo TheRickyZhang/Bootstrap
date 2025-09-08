@@ -1,0 +1,8 @@
+[Unit]
+Description=Sync calendars when local vdirs change
+
+[Path]
+PathModified=%h/.calendars
+
+[Install]
+WantedBy=default.target

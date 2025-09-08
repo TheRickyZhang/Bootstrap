@@ -4,19 +4,19 @@ return {
     opts = {
       completion = {
         trigger = {
-          -- Show sensibly, only on 2+ chars typed, ., -> with 200ms delay
           show_on_trigger_character = true,
           show_on_keyword = false,
-          keyword_length = 2,
-          throttle = 200,
         },
-        menu = {
-          auto_show = false,
-        },
-        -- LSP comes first, buffer only after 3 chars
-        sources = {
-          { name = "nvim_lsp", group_index = 1 },
-          { name = "buffer", group_index = 2, keyword_length = 3 },
+        menu = { auto_show = false },
+      },
+      sources = {
+        -- order is by provider score; this enables LSP then buffer
+        default = { "lsp", "buffer" },
+        providers = {
+          lsp = { min_keyword_length = 2 }, -- “2+ chars” for LSP
+          buffer = { min_keyword_length = 3 }, -- buffer only after 3 chars
+          -- tweak priority if desired: score_offset = +/-N
+          -- fallbacks = {...} also available
         },
       },
     },

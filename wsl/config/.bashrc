@@ -114,6 +114,8 @@ if ! shopt -oq posix; then
     . /etc/bash_completion
   fi
 fi
+
+# TODO: organize this entire file better
 export PATH="$HOME/.local/bin:$PATH"
 export BROWSER=wslview
 export PATH=$PATH:/snap/bin
@@ -122,3 +124,5 @@ eval "$(direnv hook bash)"
 export PATH="$HOME/.local/share/bob/nvim-bin:$PATH"
 
 export GPG_TTY=$(tty)
+
+export EDITOR=nvim

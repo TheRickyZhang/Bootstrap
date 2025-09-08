@@ -2,7 +2,15 @@
 -- Default options that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/options.lua
 -- Add any additional options here
 
+-- File mappings (if you need them)
+-- vim.filetype.add({
+--   extension = { typ = "typst" },
+-- })
+
 vim.g.autoformat = true
+
+-- So that we aren't getting constant notifications
+vim.lsp.handlers["textDocument/signatureHelp"] = function() end
 
 -- We recognize both unix/windows line endings, but ALWAYS convert to unix on write for script consistency
 vim.o.fileformats = "unix,dos"
