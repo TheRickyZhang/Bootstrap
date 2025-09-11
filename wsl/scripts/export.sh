@@ -1,6 +1,9 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
+# Use arg 1 or error (using 1- would be used to supply empty argument instead of erroring)
+MESSAGE="$1"
+
 REPO="$(
   cd "$(dirname "$0")/../.."
   pwd
@@ -42,4 +45,13 @@ while IFS=: read -r src dst; do
   copy_one "$src" "$dst"
 done <"$MAP"
 
-echo "Done! Make sure to push changes to repo so other devices can sync"
+cd "$REPO"
+git add -A :/
+git diff --cached --quiet && {
+  echo "no changes to commit"
+  exit 0
+}
+git commit -m "$MESSAGE"
+git push
+
+echo "Done pushing the updated wsl directory"
