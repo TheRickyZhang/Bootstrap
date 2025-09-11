@@ -53,6 +53,8 @@ if [ -s "$DEPS/apt.txt" ]; then
   # Normally you might see echo "a b c" | xargs command -> converted to command a b c,
   # but -a (arguments file) is a special way to do by reading from a file
   xargs -r -a "$DEPS/apt.txt" sudo apt-get install -y --no-install-recommends
+else
+  debug "apt.txt not found"
 fi
 
 debug "syncing configs"
@@ -69,37 +71,40 @@ fi
 debug "reading config from map"
 import_all
 
-if # Pin Neovim version via bob (optional: keep nvim-version.txt like "0.10.2")
-  [ -s "$DEPS/nvim-versions.txt" ]
-then
-  # command is pretty sparse, -v = view; just simulate the output of a ru.n
-  # but command is also tricky. If we do -v ls, an external executable, it prints the file path
-  debug "managing neovim versions via bob"
-  # We can generally measure whether some name is resolvable reliably
-  # But otherwise like for -v cd, it just echoes
-  if ! command -v bob >/dev/null; then
-    if command -v cargo >/dev/null; then
-      debug "installing bob via cargo"
-      cargo install bob-nvim || true
-    else
-      debug "installing bob from github"
-      curl -fsSL https://raw.githubusercontent.com/MordechaiHadad/bob/master/install.sh | bash
-    fi
+# Pin Neovim version via bob
+if [ -s "$DEPS/nvim-versions.txt" ]; then
+  [ -f "$HOME/.cargo/env" ] && . "$HOME/.cargo/env"
+
+  # ensure bob (via cargo; install rustup only if needed)
+  if ! command -v bob >/dev/null 2>&1; then
+    command -v cargo >/dev/null 2>&1 || {
+      curl -fsSL https://sh.rustup.rs | sh -s -- -y
+      . "$HOME/.cargo/env"
+    }
+    cargo install --locked bob-nvim || cargo install --git https://github.com/MordechaiHadad/bob.git --locked
   fi
 
-  while read ver; do
-    [ -n "$ver" ] || continue
-    # Equivalent to: if ! [ -n ver ]; then continue fi, but || continue is pretty idiomatic
-    bob install "$ver"
-  done \
-    <"$DEPS/nvim-versions.txt"
-  # Note for more conventional order we may prefix with cat "DEPS/nvim-versions.txt | " instead
-  # There is only a small difference where while loop runs in an inner scope
+  # system-wide PATH for bob + cargo; apply now
+  sudo tee /etc/profile.d/bob.sh >/dev/null <<'EOF'
+[ -f "$HOME/.cargo/env" ] && . "$HOME/.cargo/env"
+export PATH="$HOME/.local/share/bob/nvim-bin:$HOME/.cargo/bin:$HOME/.local/bin:$PATH"
+EOF
+  . /etc/profile.d/bob.sh
+  hash -r
 
-  # By default tail gets the last 10 lines, we only want one line
-  lastver=$(tail -n1 "$DEPS/nvim-versions.txt")
-  bob use "$lastver"
-  debug "done managing neovim versions"
+  # install versions listed (skip blanks/comments), then activate the last one
+  while IFS= read -r ver; do
+    ver="${ver%%#*}"
+    ver="$(printf "%s" "$ver" | xargs)"
+    [ -n "$ver" ] || continue
+    bob install "$ver" >/dev/null 2>&1 || bob install "$ver"
+  done <"$DEPS/nvim-versions.txt"
+
+  lastver="$(grep -v '^\s*$' "$DEPS/nvim-versions.txt" | tail -n1 | sed 's/#.*//;s/^[[:space:]]*//;s/[[:space:]]*$//')"
+  [ -n "$lastver" ] && bob use "$lastver"
+  debug "done with bob neovim"
+else
+  debug "nvim versoins / bob installation not found, this is pretty bad"
 fi
 
 # ------------------   Language Specific ------------------------
@@ -118,6 +123,8 @@ if [ -s "$DEPS/npm.txt" ]; then
   nvm alias default 'lts/*'
   xargs -r -a "$DEPS/npm.txt" -I{} npm i -g {}
   debug "done managing npm"
+else
+  debug "npm.txt not found"
 fi
 
 # Rust and Cargo
@@ -129,6 +136,8 @@ if [ -s "$DEPS/cargo.txt" ]; then
   fi
   xargs -r -a "$DEPS/cargo.txt" -I{} cargo install -f {}
   debug "done managing rust dependencies"
+else
+  debug "cargo.txt not found"
 fi
 
 # pipx apps (For CLIs and isolated dependency management)
@@ -150,8 +159,12 @@ if [ -s "$DEPS/pipx.json" ]; then
   jq -r '.venvs | keys[]' "$DEPS/pipx.json" | xargs -r -I{} pipx install {}
 
   debug "done managing pipx dependencies"
+else
+  debug "pipx.json not found"
 fi
 
 nvim --headless "+silent! Lazy! sync" +qa 2>/dev/null || true # optional: nvim plugin sync (no-op if not using Lazy/packer)
 
 debug "success!"
+
+debug "please restart terminal to apply new path. Alternatiely, do: . /etc/profile.d/bob.sh; hash -r; type -a nvim; nvim --version | head -n1 "

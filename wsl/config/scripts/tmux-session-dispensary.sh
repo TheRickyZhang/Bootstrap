@@ -3,19 +3,21 @@
 set -euo pipefail
 
 # Debug mode
-# set -x
+set -x
 
-# To Set
-DIRS=(
+# Single = only include these exactly, multi = include these and all subdirs one layer down
+SINGLE_DIRS=(
   "$HOME"
-  "$HOME/.config"
-  "$HOME/.config/nvim"
-  "$HOME/Bootstrap"
-  "$HOME/bin"
-  "$HOME/documents"
   "$HOME/downloads"
-  "$HOME/job"
   "$HOME/drive"
+  "$HOME/bin"
+  "$HOME/.config"
+  "$HOME/.config/nvim/lua"
+)
+MULTI_DIRS=(
+  "$HOME/bootstrap"
+  "$HOME/documents"
+  "$HOME/job"
   "$HOME/projects"
   "$HOME/notes"
 )
@@ -44,8 +46,16 @@ else
   fi
 
   # make sure to collect ABSOLUTE candidates
-  mapfile -t candidates < <(fd . "${DIRS[@]}" -t d -d 1 --absolute-path)
-
+  mapfile -t candidates < <(
+    {
+      # roots: SINGLE + MULTI (canonicalized)
+      for d in "${SINGLE_DIRS[@]/#\~/$HOME}" "${MULTI_DIRS[@]/#\~/$HOME}"; do
+        [[ -d $d ]] && (cd "$d" && pwd -P)
+      done
+      # one level down for MULTI (guard if empty to avoid searching cwd)
+      ((${#MULTI_DIRS[@]})) && fd . "${MULTI_DIRS[@]/#\~/$HOME}" -t d -d 1 --absolute-path
+    } 2>/dev/null | awk '!seen[$0]++'
+  )
   [[ ${#candidates[@]} -eq 0 ]] && exit 0
 
   # show them with shortened ~ for display only

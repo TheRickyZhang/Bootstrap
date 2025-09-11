@@ -10,6 +10,13 @@
 local autocmd = vim.api.nvim_create_autocmd
 -- Have line wrapping
 
+vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
+  pattern = "*.typ",
+  callback = function()
+    vim.opt_local.filetype = "typst"
+  end,
+})
+
 autocmd("FileType", {
   -- Note that filetype.lua is used to determine file mappings
   pattern = { "markdown", "text", "typst" },
