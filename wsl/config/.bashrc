@@ -126,3 +126,11 @@ export PATH="$HOME/.local/share/bob/nvim-bin:$PATH"
 export GPG_TTY=$(tty)
 
 export EDITOR=nvim
+export XDG_CONFIG_HOME="$HOME/.config"
+export XDG_DATA_HOME="$HOME/.local/share"
+export XDG_STATE_HOME="$HOME/.local/state"
+export XDG_CACHE_HOME="$HOME/.cache"
+
+export GOPATH="$HOME/.local/go"
+export GOBIN="$HOME/.local/bin"
+export PATH="$GOBIN:$PATH"
