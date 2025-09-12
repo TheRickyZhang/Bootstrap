@@ -7,15 +7,9 @@ map("n", "<C-u>", "<C-u>zz", { silent = true })
 map("n", "n", "nzzzv", { silent = true })
 map("n", "N", "Nzzzv", { silent = true })
 
-local ok, api = pcall(require, "Comment.api")
-if not ok then
-  return
-end
-
-map("n", "<C-_>", api.toggle.linewise.current, { silent = true })
-map("x", "<C-_>", function()
-  api.toggle.linewise(vim.fn.visualmode())
-end, { silent = true })
+-- More convenient mappings for single toggling (keep usage of gco, gcO)
+map("n", "g/", "gcc", { remap = true, silent = true, desc = "Toggle comment" })
+map("x", "g/", "gc", { remap = true, silent = true, desc = "Toggle comment (visual)" })
 
 -- Legend: * = in chord, + = added custom to a chord, # = custom
 ------------------------------ Normal mode commands  ------------------------------
@@ -119,10 +113,29 @@ end, { desc = "Insert digraph" })
 -- end, { silent = true })
 
 -- Visual mode commands
+-- Same as normal: a, b, c, d, e, f, g, h, i, j, k, l, m, n?, p, q, r, s, t, u, v, w, x, y
+-- o
+-- z (fold plugin, one option)
 
 map("v", "p", '"_dP', { silent = true })
 map("v", "*", 'y/\\V<C-R>"<CR>', { silent = true })
 map("v", "#", 'y?\\V<C-R>"<CR>', { silent = true })
+
+vim.keymap.set("x", "ga", function()
+  local v = vim.fn.getpos("v")[2]
+  local c = vim.fn.getpos(".")[2]
+  if v == 0 or c == 0 then
+    return
+  end
+  if v > c then
+    v, c = c, v
+  end
+  local ch = vim.fn.getcharstr()
+  if ch == "" then
+    return
+  end
+  vim.cmd(("%d,%dAlign %s"):format(v, c, ch))
+end, { silent = true, desc = "Align by next char" })
 
 -- Alt-j/k → move lines up/down
 map("n", "<A-j>", ":m .+1<CR>==", { silent = true })

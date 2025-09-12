@@ -2,7 +2,7 @@
 set -euo pipefail
 
 # Use arg 1 or error (using 1- would be used to supply empty argument instead of erroring)
-MESSAGE="$1"
+MESSAGE="${1:?missing message}"
 
 REPO="$(
   cd "$(dirname "$0")/../.."
