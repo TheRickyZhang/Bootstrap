@@ -11,6 +11,12 @@ map("n", "N", "Nzzzv", { silent = true })
 map("n", "g/", "gcc", { remap = true, silent = true, desc = "Toggle comment" })
 map("x", "g/", "gc", { remap = true, silent = true, desc = "Toggle comment (visual)" })
 
+-- Buffer management
+map("n", "<C-j>", "<cmd>bprevious<cr>", { desc = "Buffer ← (previous)" })
+map("n", "<C-k>", "<cmd>bnext<cr>", { desc = "Buffer → (next)" })
+map("n", "<C-x>", "<cmd>bdelete<cr>", { desc = "Buffer close" })
+map("n", "<C-i>", "<cmd>enew<cr>", { desc = "Buffer new" })
+
 -- Legend: * = in chord, + = added custom to a chord, # = custom
 ------------------------------ Normal mode commands  ------------------------------
 -- Letter status for leader (* = prefix for other things already in lazy, # = self defined, + = adding to existing prefix)
@@ -23,7 +29,7 @@ map("x", "g/", "gc", { remap = true, silent = true, desc = "Toggle comment (visu
 -- f* - snacks find
 -- g+ - git
 -- h  - harpoon
--- i  -
+-- i  - new buffer
 -- j  -
 -- k  -
 -- l  - lazy
@@ -71,7 +77,6 @@ map(
 map("n", "<leader>v", "V$%", { silent = true })
 
 map("n", "<leader>y", "1z=")
-
 -- <leader>d → delete into black hole
 -- map({ "n", "v" }, "<leader>d", '"_d', { silent = true })
 

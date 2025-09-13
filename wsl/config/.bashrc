@@ -134,3 +134,7 @@ export XDG_CACHE_HOME="$HOME/.cache"
 export GOPATH="$HOME/.local/go"
 export GOBIN="$HOME/.local/bin"
 export PATH="$GOBIN:$PATH"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
