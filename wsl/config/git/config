@@ -27,15 +27,15 @@
   path = ~/.config/.gitconfig
 
 [alias]
-    pushf = push --force-with-lease
-    ch = checkout
-    rb = rebase
-    ck = checkout
-    chp = cherry-pick
-    pom = pull origin main
-    ss = status
-    staash = stash --all
-    blaame = blame -w -C -C -C -L
+    pushf  = push --force-with-lease 
+    ch     = checkout
+    rb     = rebase
+    ck     = checkout
+    chp    = cherry-pick
+    pom    = pull origin main
+    ss     = status
+    stasha = stash --all        # Stashes untracked as well, could have large files
+    blame  = blame -w -C -C -C  #  Actual blame, ignore whitespace, follow code moves to depth 3
 
 [rerere]
     enabled = true

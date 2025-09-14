@@ -8,14 +8,24 @@ map("n", "n", "nzzzv", { silent = true })
 map("n", "N", "Nzzzv", { silent = true })
 
 -- More convenient mappings for single toggling (keep usage of gco, gcO)
-map("n", "g/", "gcc", { remap = true, silent = true, desc = "Toggle comment" })
-map("x", "g/", "gc", { remap = true, silent = true, desc = "Toggle comment (visual)" })
+map("n", "g/", "gcc", { remap = true, silent = true })
+map("x", "g/", "gc", { remap = true, silent = true })
 
 -- Buffer management
 map("n", "<C-j>", "<cmd>bprevious<cr>", { desc = "Buffer ← (previous)" })
 map("n", "<C-k>", "<cmd>bnext<cr>", { desc = "Buffer → (next)" })
 map("n", "<C-x>", "<cmd>bdelete<cr>", { desc = "Buffer close" })
 map("n", "<C-i>", "<cmd>enew<cr>", { desc = "Buffer new" })
+
+-- More convenient commands for blink autocompletion
+map("n", "<C-n>", function()
+  vim.cmd("startinsert")
+  require("blink.cmp").show()
+end, { silent = true })
+
+map("i", "<C-n>", function()
+  require("blink.cmp").show()
+end, { silent = true })
 
 -- Legend: * = in chord, + = added custom to a chord, # = custom
 ------------------------------ Normal mode commands  ------------------------------
@@ -52,11 +62,6 @@ map("n", "<leader>gs", vim.lsp.buf.signature_help, {
   silent = true,
   desc = "Signature help",
 })
-
-map("n", "<leader>k", function()
-  vim.cmd("startinsert")
-  require("blink.cmp").show()
-end, { silent = true, desc = "Trigger completion from normal mode" })
 
 map("n", "<leader>p", "<Cmd>TypstPreview<CR>", { silent = true })
 
@@ -95,7 +100,7 @@ map("n", "<leader>y", "1z=")
 -- k  - Signature help (Override digraph)
 -- l+ - literal digraph
 -- m  - Enter
--- n  - Backspace
+-- n+ - Blink LSP complete
 -- o  - One normal mode
 -- p? - Backwards keyword completion?
 -- q  - Insert literal ^X

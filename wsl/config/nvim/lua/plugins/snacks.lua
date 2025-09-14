@@ -11,5 +11,16 @@ return {
       end,
       desc = "Files",
     },
+    -- Rebind C-/ since it is used for commenting
+    -- { "<C-/>", false },
+    -- { "<C-_>", false },
+    -- {
+    --   "<C-`>",
+    --   function()
+    --     Snacks.terminal()
+    --   end,
+    --   mode = { "n", "t" },
+    --   desc = "Toggle Terminal",
+    -- },
   },
 }

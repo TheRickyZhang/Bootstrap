@@ -10,6 +10,7 @@ SINGLE_DIRS=(
   "$HOME"
   "$HOME/downloads"
   "$HOME/drive"
+  "$HOME/drive/job"
   "$HOME/bin"
   "$HOME/.config"
   "$HOME/.config/nvim/lua"
