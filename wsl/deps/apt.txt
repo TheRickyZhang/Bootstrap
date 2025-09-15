@@ -1,20 +1,37 @@
+# Core development toolchain
 build-essential
-ca-certificates
 cmake
+pkg-config
+libssl-dev
+
+# System utilities
+ca-certificates
 curl
+unzip
+xz-utils
+rsync
+wslu
+zsh
+
+# Terminal search & productivity
 fd-find
 fzf
-git
-golang-go
+ripgrep
 jq
-libssl-dev
+
+# Version control & mail
+git
 neomutt
-pkg-config
+
+# Python
 python3-pip
 python3-venv
-ripgrep
-rsync
-unzip
-wslu
-xz-utils
-zsh
+
+# Go
+golang-go
+
+# Java / Kotlin ecosystem
+openjdk-21-jdk
+kotlin
+gradle
+maven

@@ -20,6 +20,7 @@ MULTI_DIRS=(
   "$HOME/documents"
   "$HOME/job"
   "$HOME/projects"
+  "$HOME/opensource"
   "$HOME/notes"
 )
 
