@@ -1,10 +1,10 @@
-config/gh/
-config/go/
-config/.gnupg/
-config/.ssh/
-config/.outlook_access_token
-config/.password-store/
-config/github-copilot/apps.json
-config/vdirsyncer/config
+configCopy/gh/
+configCopy/go/
+configCopy/.gnupg/
+configCopy/.ssh/
+configCopy/.outlook_access_token
+configCopy/.password-store/
+configCopy/github-copilot/apps.json
+configCopy/vdirsyncer/config
 
 # Secrets like oauth token and mbsync password are handled by vygrant, generated in local/bin, so should be good

@@ -1,0 +1,34 @@
+[credential "https://github.com"]
+	helper = 
+	helper = !/usr/bin/gh auth git-credential
+[branch]
+	autoSetupMerge = always
+[user]
+	email = rickyzhang196@outlook.com
+	name = Ricky Zhang
+[push]
+	default = current
+[init]
+	defaultBranch = main
+[pull]
+    rebase = true
+[diff]
+    colorMoved = zebra
+
+[include]
+  path = ~/.config/.gitconfig
+
+[alias]
+    pushf  = push --force-with-lease 
+    ch     = checkout
+    rb     = rebase
+    ck     = checkout
+    chp    = cherry-pick
+    pom    = pull origin main
+    ss     = status
+    stasha = stash --all        # Stashes untracked as well, could have large files
+    blame  = blame -w -C -C -C  #  Actual blame, ignore whitespace, follow code moves to depth 3
+
+[rerere]
+    enabled = true
+

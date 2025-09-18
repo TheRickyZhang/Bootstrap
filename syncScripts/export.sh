@@ -8,21 +8,21 @@ REPO="$(
   cd "$(dirname "$0")/.."
   pwd
 )"
-CFG="$REPO/config"
+CONFIG_COPY="$REPO/configCopy"
 MAP="$REPO/deps/configmap.txt"
 
 [ -f "$MAP" ] || {
   echo "missing $MAP"
   exit 1
 }
-mkdir -p "$CFG"
+mkdir -p "$CONFIG_COPY"
 
-# bulk export ~/.config -> $CFG/.config
-rsync -a --delete --itemize-changes "$HOME/.config/" "$CFG/"
+# bulk export ~/.config -> $CONFIG_COPY/.config
+rsync -a --delete --itemize-changes "$HOME/.config/" "$CONFIG_COPY/"
 
 copy_one() {
   src="$HOME/$1"
-  dst="$CFG/$2"
+  dst="$CONFIG_COPY/$2"
   mkdir -p "$(dirname "$dst")"
 
   if command -v rsync >/dev/null; then

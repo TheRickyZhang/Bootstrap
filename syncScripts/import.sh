@@ -4,7 +4,7 @@ ROOT="$(
   cd "$(dirname "$0")/../.."
   pwd
 )"
-CONFIG="$ROOT/config"
+CONFIG_COPY="$ROOT/configCopy"
 DEPS="$ROOT/deps"
 
 MAP="$DEPS/configmap.txt"
@@ -16,19 +16,33 @@ debug() { echo -e "\033[31m$*\033[0m"; }
   exit 1
 }
 
-# Defaults: copy everything under $CONFIG/.config -> ~/.config
+install_tmux_latest() {
+  debug "building latest tmux from source"
+  sudo apt-get install -y git build-essential pkg-config autoconf automake bison \
+    libevent-dev libncursesw5-dev libutempter-dev
+  tmpdir="$(mktemp -d)"
+  trap 'rm -rf "$tmpdir"' EXIT
+  git clone --depth=1 https://github.com/tmux/tmux.git "$tmpdir/tmux"
+  cd "$tmpdir/tmux"
+  sh autogen.sh 2>/dev/null || true
+  ./configure
+  make -j"$(nproc)"
+  sudo make install
+  debug "tmux installed: $(tmux -V)"
+}
+
+# Defaults: copy everything under $CONFIG_COPY -> ~/.config
 import_all() {
   # rsync is a better way to bulk copy
-  rsync -a --itemize-changes "$CONFIG/" "$HOME/.config/"
+  rsync -a --itemize-changes "$CONFIG_COPY/" "$HOME/.config/"
 
   # apply overrides from map file. Strip whitespace from components
-  while IFS=: read -r local remote; do
-    local=$(echo "$local" | xargs)
-    remote=$(echo "$remote" | xargs)
-    # Skip if comment or no colon
-    [[ $local == \#* ]] && continue
-    [[ -z $remote ]] && continue
-    cp -r "$CONFIG/$remote" "$HOME/$local"
+  while IFS=: read -r dst src; do
+    dst="$(echo "$dst" | xargs)"
+    src="$(echo "$src" | xargs)"
+    [[ $dst == \#* ]] && continue
+    [[ -z $src ]] && continue
+    cp -r "$CONFIG_COPY/$src" "$HOME/$dst"
   done <"$MAP"
 }
 
@@ -47,12 +61,23 @@ debug "installing base tools"
 # install base tools
 sudo apt-get update
 
+if [ "${FORCE_BUILD_TMUX:-0}" = "1" ]; then
+  install_tmux_latest
+elif command -v tmux >/dev/null 2>&1; then
+  debug "tmux already present: $(tmux -V)"
+  debug "If you see a 'sixel image …' banner in tmux (DECRQSS misparse), you likely want a newer tmux."
+  debug "Quick probe: printf '\\eP\\$qm\\e\\\\'  (run inside a tmux pane). If it flashes a banner, rebuild."
+  debug "To rebuild now: FORCE_BUILD_TMUX=1 bash this_script.sh  (or run the install_tmux_latest step manually)."
+else
+  install_tmux_latest
+fi
+
 # Remember bash statements look at an error code
 if [ -s "$DEPS/apt.txt" ]; then
   # Use xargs for converting stdout to discrete arguments (Note that -r is an optional guard to RETURN if the file is empty)
   # Normally you might see echo "a b c" | xargs command -> converted to command a b c,
   # but -a (arguments file) is a special way to do by reading from a file
-  grep -vE '^\s*(#|//|--|$)' "$DEPS/apt.txt" \  | xargs -r sudo apt-get install -y --no-install-recommends
+  grep -vE '^\s*(#|//|--|$)' "$DEPS/apt.txt" | xargs -r sudo apt-get install -y --no-install-recommends
 else
   debug "apt.txt not found"
 fi
