@@ -1,0 +1,30 @@
+set mbox_type = Maildir
+set folder    = "~/.local/share/mail/gmail"
+set spoolfile = "+INBOX"
+
+# Folder mapping (match your mbsync Near names)
+set record    = "+Sent"
+set postponed = "+Drafts"
+set mbox      = "+Archive"
+set trash     = "+Trash"
+
+# Identity
+set realname  = "Ricky Zhang"
+set from      = "rickyzhang196@gmail.com"
+set use_from  = yes
+
+# Send via msmtp (your gmail account)
+set sendmail  = "/usr/bin/msmtp -a gmail"
+
+# Caches (optional but nice)
+set header_cache     = "~/.cache/neomutt/headers"
+set message_cachedir = "~/.cache/neomutt/bodies"
+
+# Display tweaks
+set sort = 'reverse-date'
+auto_view text/html
+alternative_order text/plain text/enriched text/html
+macro attach v "<pipe-message> w3m -dump -T text/html | less\n"
+
+# Don’t move read mail to mbox automatically
+set move = no

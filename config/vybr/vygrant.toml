@@ -1,0 +1,17 @@
+# https_listen = "8443"
+https_listen = ""
+http_listen  = "127.0.0.1:8443"
+# http_listen = ""
+
+[account.outlook]
+auth_uri     = "https://login.microsoftonline.com/common/oauth2/v2.0/authorize"
+token_uri    = "https://login.microsoftonline.com/common/oauth2/v2.0/token"
+client_id    = "9e5f94bc-e8a4-4e73-b8be-63364c29d753"   # Thunderbird public client ID
+# redirect_uri = "https://localhost:8443"
+redirect_uri = "http://localhost:8443"
+scopes       = [
+  "openid",
+  "offline_access",
+  "https://outlook.office.com/IMAP.AccessAsUser.All",
+  "https://outlook.office.com/SMTP.Send"
+]

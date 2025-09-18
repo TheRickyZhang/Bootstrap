@@ -1,0 +1,19 @@
+# GitHub CLI auth
+gh/hosts.yml
+gh/state.yml
+nvim.bak
+
+
+# SSH keys / certs
+id_rsa
+id_rsa.pub
+*.pem
+*.key
+*.pfx
+
+# Cloud creds / envs
+*.env
+.env*
+.aws/
+.gcloud/
+.azure/
