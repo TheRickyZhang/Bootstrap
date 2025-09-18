@@ -3,6 +3,7 @@ build-essential
 cmake
 pkg-config
 libssl-dev
+# Installed tree sitter when can't find prebuilt binaries? Not sure if needed at this step
 
 # System utilities
 ca-certificates

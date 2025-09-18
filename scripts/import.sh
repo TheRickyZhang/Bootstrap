@@ -4,8 +4,8 @@ ROOT="$(
   cd "$(dirname "$0")/../.."
   pwd
 )"
-CONFIG="$ROOT/wsl/config"
-DEPS="$ROOT/wsl/deps"
+CONFIG="$ROOT/config"
+DEPS="$ROOT/deps"
 
 MAP="$DEPS/configmap.txt"
 
@@ -52,7 +52,7 @@ if [ -s "$DEPS/apt.txt" ]; then
   # Use xargs for converting stdout to discrete arguments (Note that -r is an optional guard to RETURN if the file is empty)
   # Normally you might see echo "a b c" | xargs command -> converted to command a b c,
   # but -a (arguments file) is a special way to do by reading from a file
-  grep -vE '^\s*(#|//|--)' "$DEPS/apt.txt" \  | xargs -r sudo apt-get install -y --no-install-recommends
+  grep -vE '^\s*(#|//|--|$)' "$DEPS/apt.txt" \  | xargs -r sudo apt-get install -y --no-install-recommends
 else
   debug "apt.txt not found"
 fi

@@ -1,1 +1,0 @@
-Use :&& to perform the previous command on current line, with same flags (ex repeat line substitution)

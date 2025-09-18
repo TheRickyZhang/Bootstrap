@@ -5,11 +5,11 @@ set -euo pipefail
 MESSAGE="${1:?missing message}"
 
 REPO="$(
-  cd "$(dirname "$0")/../.."
+  cd "$(dirname "$0")/.."
   pwd
 )"
-CFG="$REPO/wsl/config"
-MAP="$REPO/wsl/deps/configmap.txt"
+CFG="$REPO/config"
+MAP="$REPO/deps/configmap.txt"
 
 [ -f "$MAP" ] || {
   echo "missing $MAP"
@@ -54,4 +54,4 @@ git diff --cached --quiet && {
 git commit -m "$MESSAGE"
 git push
 
-echo "Done pushing the updated wsl directory"
+echo "Done pushing"
