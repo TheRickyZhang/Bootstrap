@@ -9,6 +9,12 @@
 
 vim.g.autoformat = true
 
+-- Get rid of annoying backup files
+vim.opt.swapfile = false
+vim.opt.undofile = true
+vim.opt.writebackup = true
+vim.opt.backup = false
+
 -- So that we aren't getting constant notifications
 vim.lsp.handlers["textDocument/signatureHelp"] = function() end
 
