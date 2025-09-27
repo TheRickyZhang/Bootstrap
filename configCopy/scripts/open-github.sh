@@ -1,31 +1,36 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
+# cd to the real cwd of the tmux pane (or current shell)
 p="$(tmux display -p '#{pane_current_path}' 2>/dev/null || pwd)"
-echo "DEBUG pane cwd: [$p]"
-cd "$p" || {
-  echo "cd failed: $p"
-  exit 1
+cd "$p" || { echo "cd failed: $p"; exit 1; }
+
+# pick a remote: origin if present, else first remote
+url="$(git remote get-url origin 2>/dev/null || git remote get-url "$(git remote 2>/dev/null | head -n1)" 2>/dev/null || true)"
+[ -n "${url:-}" ] || { echo "No git remote found."; exit 1; }
+
+# normalize SSH -> https for common hosts; drop trailing .git
+norm(){
+  local u="$1"
+  case "$u" in
+    git@*:*) u="${u#git@}"; u="${u/:/\/}"; u="https://$u" ;;
+    ssh://git@*/*) u="${u#ssh://git@}"; u="https://$u" ;;
+  esac
+  u="${u%.git}"
+  printf '%s\n' "$u"
 }
 
-url="$(git remote get-url origin 2>/dev/null || true)"
-echo "DEBUG origin url: [${url:-<empty>}]"
+open_url(){
+  local u="$1"
+  # If running on WSL and wslview exists, use it; otherwise prefer xdg-open.
+  if command -v wslview >/dev/null 2>&1; then wslview "$u" && return 0; fi
+  if command -v xdg-open >/dev/null 2>&1; then xdg-open "$u" >/dev/null 2>&1 & disown; return 0; fi
+  # last resort: print URL so user can copy
+  echo "$u"
+}
 
-if [[ -z "${url:-}" ]]; then
-  echo "No origin remote (are you in a git repo?)"
-  exit 1
-fi
-
-# If you only care about GitHub:
-if [[ "$url" == *github.com* ]]; then
-  # Normalize SSH → https so browsers open it nicely
-  if [[ "$url" == git@* ]]; then
-    url="${url#git@}"
-    url="${url/:/\/}"
-    url="https://$url"
-  fi
-  echo "DEBUG opening: $url"
-  wslview "$url"
-else
-  echo "This repository is not hosted on GitHub (url: $url)"
-fi
+u="$(norm "$url")"
+case "$u" in
+  https://github.com/*|https://gitlab.com/*|https://bitbucket.org/*) open_url "$u" ;;
+  *) echo "Repo host not recognized for browser open: $u"; exit 1 ;;
+esac

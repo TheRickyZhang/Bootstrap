@@ -7,4 +7,19 @@ configCopy/.password-store/
 configCopy/github-copilot/apps.json
 configCopy/vdirsyncer/config
 
-# Secrets like oauth token and mbsync password are handled by vygrant, generated in local/bin, so should be good
+configCopy/1Password/**
+configCopy/Signal/**
+configCopy/chromium/**
+configCopy/google-chrome/**
+configCopy/google-chrome-*/**
+configCopy/BraveSoftware/**
+configCopy/microsoft-edge-dev/**
+configCopy/vivaldi*/**
+configCopy/obsidian/**
+configCopy/spotify/**
+configCopy/dconf/**
+configCopy/ibus/bus/**
+configCopy/fcitx/dbus/**
+configCopy/pulse/cookie
+configCopy/pulse/cookie.lock
+configCopy/whatpulse.org/**   # ignore if you don't want tokens in repo

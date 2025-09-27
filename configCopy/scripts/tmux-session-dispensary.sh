@@ -14,6 +14,8 @@ SINGLE_DIRS=(
   "$HOME/drive/job"
   "$HOME/bin"
   "$HOME/.config"
+  "$HOME/.config/hypr"
+  "$HOME/.config/tmux"
   "$HOME/.config/nvim/lua"
 )
 MULTI_DIRS=(

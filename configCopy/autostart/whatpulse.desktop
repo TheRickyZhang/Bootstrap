@@ -1,0 +1,11 @@
+[Desktop Entry]
+Name=WhatPulse
+GenericName=Statistics collector
+Comment=All you need to know everything about your computing habits
+Exec=/usr/lib/whatpulse/whatpulse -delaystartup
+Terminal=false
+Type=Application
+Icon=whatpulse
+Categories=Network;Statistics;
+StartupNotify=false
+X-GNOME-Autostart-enabled=true

@@ -1,0 +1,11 @@
+Claims since BlueZ 5.65, adapters power on by default https://wiki.archlinux.org/title/Bluetooth
+
+To change audio:
+Use built-in speakers:
+  set configuration to Analog
+  set output tevices to speaker
+Use headphones:
+  set configuration to USB ? USB output : HDA Intel PCH -> Analog Stereo Duplex
+  Set output devices to headphones
+
+

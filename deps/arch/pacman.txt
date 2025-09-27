@@ -1,0 +1,65 @@
+# Core dev toolchain
+base-devel
+cmake
+pkgconf
+openssl
+
+# System utilities
+ca-certificates
+curl
+unzip
+xz
+rsync
+zsh
+
+# Terminal search & productivity
+fd
+fzf
+ripgrep
+jq
+
+# Version control & mail
+git
+neomutt
+
+# Languages
+python
+python-pip
+
+go
+
+jdk21-openjdk
+kotlin
+gradle
+maven
+
+
+# minimal bluetooth + audio
+bluez
+bluez-utils
+blueman
+rfkill
+pipewire
+pipewire-pulse
+pipewire-alsa
+wireplumber
+alsa-utils
+pavucontrol
+rtkit
+
+# optional
+pipewire-jack
+sof-firmware
+usbutils
+pciutils
+upower
+udisks2
+gvfs
+gvfs-mtp
+android-udev
+gstreamer
+gst-plugins-base
+gst-plugins-good
+gst-plugins-bad
+gst-plugins-ugly
+gst-libav
