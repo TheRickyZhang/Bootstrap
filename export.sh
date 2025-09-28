@@ -5,7 +5,7 @@ set -euo pipefail
 # MESSAGE="${1:?missing message}"
 
 REPO="$(
-  cd "$(dirname "$0")/.."
+  cd "$(dirname "$0")"
   pwd
 )"
 CONFIG_COPY="$REPO/configCopy"

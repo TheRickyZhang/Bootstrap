@@ -1,34 +1,31 @@
 # Bootstrap
 
-Master personal installation and configuration for any environment
+A fast setup for my development environment across Linux / Windows. Currently supporting Omarchy 3.0 and WSL Ubuntu 24.04.
 
+# General Use
 
-# TODO: Update 
+All bootstrapped dependencies are in /dep, which are installed after more fundamental dependencies in the scripts. configCopy is the intermediary for copying.
 
-This repository contains my various configurations for...things! See usage below.
+## Importing
 
-## 1a. `RickyHotkey.ahk`
+Ensure you start with the correct distro. First, run the import.sh script, which should install additional dependencies and import all remote config files to ~/.config (Overwrites everything currently there).
 
-General remappings for regular keyboards. Install [AutoHotkeyV2](https://www.autohotkey.com/v2/) for running the .ahk file. Remaps keys within the OS, and can be extended to application-specific.
+Afterwards there are a few optional separate scripts in syncScripts and manual procedures in manual.txt that might be helpful.
 
-## 2b. `advantage360.txt`
+## Exporting
 
-Contains custom remappings for profile 1 of my Advantage 360 keyboard layout. Should NOT be combined with the autohotkey script.
+The export.sh script will export everything in ~/.config/, as well as specified files in ~, into corresponding entries in configCopy. Since you may not want to push large/private entries, there are many excluded ones in .gitignore for this.
 
-## 3. `windows-setup.ps1`
+# Various
 
-All-encompassing script for windows configuration
+## Keybinds
 
-### `powershell.ps1`
+For keyboard, software, and browser.
 
-Activates default usage of Powershell 7 (the objectively better powershell) and command aliases.
+## IDE
 
-### `git.ps1`
+Settings for non-Neovim IDEs.
 
-Activates helpful git configurations and aliases
+## Windows
 
-### `improveWindows.ps1`
-
-Improves Windows OS for the technically literate, such as removing annoying Edge searches. Also see `improveWindows.txt` for manual steps.
-
-
+Utilities for improving the Windows dev experience, which I created before making the switch to objectively superior linux.
