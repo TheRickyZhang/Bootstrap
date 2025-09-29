@@ -15,18 +15,25 @@ vim.opt.undofile = true
 vim.opt.writebackup = true
 vim.opt.backup = false
 
+-- Allow for per-project bindings declaration
+vim.o.exrc = true -- .nvim.lua, .nvimrc
+vim.o.secure = true -- Sandbox danger of these commands
+
 -- So that we aren't getting constant notifications
 vim.lsp.handlers["textDocument/signatureHelp"] = function() end
+
+-- Have non-empty?
+-- vim.o.statuscolumn = [[%!v:lua.require'snacks.statuscolumn'.get()]]
 
 -- We recognize both unix/windows line endings, but ALWAYS convert to unix on write for script consistency
 vim.o.fileformats = "unix,dos"
 -- Always save with LF, stripping any CR characters
-vim.api.nvim_create_autocmd("BufWritePre", {
-  pattern = "*",
-  callback = function()
-    vim.bo.fileformat = "unix"
-    vim.cmd([[%s/\r$//e]])
-  end,
-})
+-- vim.api.nvim_create_autocmd("BufWritePre", {
+--   pattern = "*",
+--   callback = function()
+--     vim.bo.fileformat = "unix"
+--     vim.cmd([[%s/\r$//e]])
+--   end,
+-- })
 
-vim.g.snacks_animate = false
+-- vim.g.snacks_animate = false

@@ -2,7 +2,14 @@ return {
   "folke/snacks.nvim",
   priority = 1000,
   lazy = false,
-  opts = { picker = { enabled = true } }, -- your snacks opts
+  opts = {
+    picker = { enabled = true },
+    statuscolumn = { enabled = false }, -- Snacks draws the column
+    -- statuscolumn = { enabled = true }, -- Snacks draws the column
+    -- icons = { -- set fold glyphs Snacks uses
+    --   fold = { open = "▾", close = "▸", sep = "│" },
+    -- },
+  }, -- your snacks opts
   keys = {
     {
       "<leader>ft",
@@ -11,16 +18,5 @@ return {
       end,
       desc = "Files",
     },
-    -- Rebind C-/ since it is used for commenting
-    -- { "<C-/>", false },
-    -- { "<C-_>", false },
-    -- {
-    --   "<C-`>",
-    --   function()
-    --     Snacks.terminal()
-    --   end,
-    --   mode = { "n", "t" },
-    --   desc = "Toggle Terminal",
-    -- },
   },
 }

@@ -17,6 +17,9 @@ map("n", "<C-k>", "<cmd>bnext<cr>", { desc = "Buffer → (next)" })
 map("n", "<C-x>", "<cmd>bdelete<cr>", { desc = "Buffer close" })
 map("n", "<C-i>", "<cmd>enew<cr>", { desc = "Buffer new" })
 
+-- Window management
+map({ "n", "t" }, "<C-s>", [[<C-\><C-n><Cmd>wincmd w<CR>]], { desc = "Next window", silent = true })
+
 -- More convenient commands for blink autocompletion
 map("n", "<C-n>", function()
   vim.cmd("startinsert")
@@ -27,8 +30,10 @@ map("i", "<C-n>", function()
   require("blink.cmp").show()
 end, { silent = true })
 
+-- You can find all default neovim bindings with :help index
+
 -- Legend: * = in chord, + = added custom to a chord, # = custom
------------------------------- Normal mode commands  ------------------------------
+------------------------------ Normal mode leader commands  ------------------------------
 -- Letter status for leader (* = prefix for other things already in lazy, # = self defined, + = adding to existing prefix)
 -- Ctrl - tmux
 -- a  - copilot
