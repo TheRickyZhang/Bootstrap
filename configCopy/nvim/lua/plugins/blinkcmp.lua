@@ -6,22 +6,19 @@ return {
       completion = {
         trigger = {
           show_on_trigger_character = true,
-          -- show_on_keyword = false,
+          show_on_keyword = false,
         },
         menu = { auto_show = false },
       },
       sources = {
         default = { "lsp", "buffer" },
-        providers = {
-          lsp = { min_keyword_length = 2 },
-          buffer = { min_keyword_length = 3 },
-        },
       },
       keymap = {
+        ["<C-y>"] = { "show" },
         -- Important so that enter key does NOT trigger completion, by default it is Ctrl-y
-        preset = "default",
-        ["<CR>"] = { "fallback" },
-        ["<C-y>"] = {},
+        -- preset = "default",
+        -- ["<CR>"] = { "fallback" },
+        -- ["<C-Space>"] = {}, -- unmap if it conflicts with tmux leader
       },
     },
   },

@@ -15,17 +15,21 @@ SINGLE_DIRS=(
   "$HOME/.config/tmux"
   "$HOME/CompetitiveProgramming"
   "$HOME/bin"
-  "$HOME/bootstrap"
-  "$HOME/downloads"
-  "$HOME/drive"
-  "$HOME/drive/job"
+  "$HOME/Bootstrap"
+  "$HOME/Downloads"
+  "$HOME/Drive"
+  "$HOME/Drive/job"
+  "$HOME/Drive/job/resume"
+  "$HOME/Drive/job/questions"
+  "$HOME/Drive/job/coverLetters"
   "$HOME/email"
 )
+
 MULTI_DIRS=(
-  "$HOME/documents"
-  "$HOME/projects"
-  "$HOME/opensource"
-  "$HOME/notes"
+  "$HOME/Documents"
+  "$HOME/Projects"
+  "$HOME/Opensource"
+  "$HOME/Notes"
 )
 
 # ensure tmux server

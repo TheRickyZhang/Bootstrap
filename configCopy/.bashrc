@@ -1,8 +1,6 @@
 # interactive guard
 case $- in *i*) ;; *) return ;; esac
 
-source /usr/share/nvm/init-nvm.sh
-
 # paths (user-first)
 export PATH="$HOME/.local/bin:$PATH"
 

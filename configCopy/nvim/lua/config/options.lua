@@ -16,8 +16,7 @@ vim.opt.writebackup = true
 vim.opt.backup = false
 
 -- Allow for per-project bindings declaration
-vim.o.exrc = true -- .nvim.lua, .nvimrc
-vim.o.secure = true -- Sandbox danger of these commands
+-- vim.o.exrc = true -- .nvim.lua, .nvimrc
 
 -- So that we aren't getting constant notifications
 vim.lsp.handlers["textDocument/signatureHelp"] = function() end

@@ -48,7 +48,7 @@ end, { silent = true })
 -- j  -
 -- k  -
 -- l  - lazy
--- m# -
+-- m# - math typst syntax
 -- n  - notifications             (May be overriden for math $$ in typst)
 -- o  - show all in blink
 -- p# - typst preview             (overwrites view yank history)
@@ -85,6 +85,20 @@ map(
 )
 
 map("n", "<leader>v", "V$%", { silent = true })
+
+-- For easier file yanking
+map("n", "<leader>yp", function()
+  vim.fn.setreg("+", vim.fn.expand("%:p"))
+end, { desc = "yank abs path" })
+map("n", "<leader>yr", function()
+  vim.fn.setreg("+", vim.fn.expand("%"))
+end, { desc = "yank relative path" })
+map("n", "<leader>yf", function()
+  vim.fn.setreg("+", vim.fn.expand("%:t"))
+end, { desc = "yank filename" })
+map("n", "<leader>yd", function()
+  vim.fn.setreg("+", vim.fn.expand("%:h"))
+end, { desc = "yank dir" })
 
 map("n", "<leader>z", "1z=")
 -- <leader>d → delete into black hole
