@@ -37,3 +37,9 @@ For connecting to secured networks, like eduroam. Per the Omarchy installation m
 Omarchy defaults to the systemd stack: systemd-networkd for networking, iwd for Wi-Fi, and systemd-resolved for DNS.
 
 So installing NetworkManager (+ other steps in ufgetonline.sh) is required for the UF-provided Join-Now script to work.
+
+## Issues I encountered
+
+To get Surface Studio 2 Drivers working, you must downgrade to a previous surface-linux version.
+See:
+<https://github.com/linux-surface/linux-surface/issues/1272>
