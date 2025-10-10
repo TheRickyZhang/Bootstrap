@@ -8,6 +8,7 @@
 -- })
 
 vim.g.autoformat = true
+vim.opt.wrap = true
 
 -- Get rid of annoying backup files
 vim.opt.swapfile = false
@@ -16,7 +17,7 @@ vim.opt.writebackup = true
 vim.opt.backup = false
 
 -- Allow for per-project bindings declaration
--- vim.o.exrc = true -- .nvim.lua, .nvimrc
+vim.o.exrc = true -- .nvim.lua, .nvimrc
 
 -- So that we aren't getting constant notifications
 vim.lsp.handlers["textDocument/signatureHelp"] = function() end

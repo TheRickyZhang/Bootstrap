@@ -14,7 +14,7 @@ return {
         default = { "lsp", "buffer" },
       },
       keymap = {
-        ["<C-y>"] = { "show" },
+        ["<C-y>"] = { "accept" },
         -- Important so that enter key does NOT trigger completion, by default it is Ctrl-y
         -- preset = "default",
         -- ["<CR>"] = { "fallback" },

@@ -3,13 +3,32 @@ return {
   priority = 1000,
   lazy = false,
   opts = {
-    picker = { enabled = true },
+    -- This is already disabled in keymap.lua
+    picker = {
+      sources = {
+        explorer = {
+          win = {
+            list = {
+              keys = {
+                ["<C-s>"] = function()
+                  vim.cmd("wincmd l")
+                end,
+              },
+            },
+            input = {
+              keys = {
+                ["<C-s>"] = function()
+                  vim.cmd("stopinsert")
+                  vim.cmd("wincmd l")
+                end,
+              },
+            },
+          },
+        },
+      },
+    },
     statuscolumn = { enabled = false }, -- Snacks draws the column
-    -- statuscolumn = { enabled = true }, -- Snacks draws the column
-    -- icons = { -- set fold glyphs Snacks uses
-    --   fold = { open = "▾", close = "▸", sep = "│" },
-    -- },
-  }, -- your snacks opts
+  },
   keys = {
     {
       "<leader>ft",
