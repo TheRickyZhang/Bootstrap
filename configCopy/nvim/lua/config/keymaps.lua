@@ -15,7 +15,6 @@ map("x", "g/", "gc", { remap = true, silent = true })
 map("n", "<C-j>", "<cmd>bprevious<cr>", { desc = "Buffer ← (previous)" })
 map("n", "<C-k>", "<cmd>bnext<cr>", { desc = "Buffer → (next)" })
 map("n", "<C-x>", "<cmd>bdelete<cr>", { desc = "Buffer close" })
-map("n", "<C-i>", "<cmd>enew<cr>", { desc = "Buffer new" })
 
 -- Window management
 map({ "n", "t" }, "<C-s>", [[<C-\><C-n><Cmd>wincmd w<CR>]], { desc = "Next window", silent = true })
