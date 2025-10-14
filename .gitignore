@@ -10,6 +10,8 @@ configCopy/vdirsyncer/config
 configCopy/1Password/**
 configCopy/Signal/**
 configCopy/chromium/**
+configCopy/Slack/**
+configCopy/Pinta/**
 configCopy/google-chrome/**
 configCopy/google-chrome-*/**
 configCopy/BraveSoftware/**

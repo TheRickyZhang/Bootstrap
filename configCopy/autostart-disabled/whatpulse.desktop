@@ -9,3 +9,5 @@ Icon=whatpulse
 Categories=Network;Statistics;
 StartupNotify=false
 X-GNOME-Autostart-enabled=true
+
+Hidden=true
