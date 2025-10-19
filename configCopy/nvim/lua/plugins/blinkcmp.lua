@@ -6,9 +6,14 @@ return {
       completion = {
         trigger = {
           show_on_trigger_character = true,
-          show_on_keyword = false,
+          -- show_on_keyword = false,
+          show_on_keyword = true,
         },
-        menu = { auto_show = false },
+        menu = {
+          auto_show = function()
+            return vim.g.blink_auto
+          end,
+        },
       },
       sources = {
         default = { "lsp", "buffer" },
@@ -16,8 +21,8 @@ return {
       keymap = {
         ["<C-y>"] = { "accept" },
         -- Important so that enter key does NOT trigger completion, by default it is Ctrl-y
+        ["<CR>"] = { "fallback" },
         -- preset = "default",
-        -- ["<CR>"] = { "fallback" },
         -- ["<C-Space>"] = {}, -- unmap if it conflicts with tmux leader
       },
     },
