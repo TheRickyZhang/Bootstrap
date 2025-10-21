@@ -19,6 +19,7 @@ configCopy/BraveSoftware/**
 configCopy/microsoft-edge-dev/**
 configCopy/vivaldi*/**
 configCopy/obsidian/**
+configCopy/obs-studio/**
 configCopy/spotify/**
 configCopy/dconf/**
 configCopy/ibus/bus/**
