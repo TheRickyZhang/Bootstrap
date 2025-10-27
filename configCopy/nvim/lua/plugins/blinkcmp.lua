@@ -22,8 +22,7 @@ return {
         ["<C-y>"] = { "accept" },
         -- Important so that enter key does NOT trigger completion, by default it is Ctrl-y
         ["<CR>"] = { "fallback" },
-        -- preset = "default",
-        -- ["<C-Space>"] = {}, -- unmap if it conflicts with tmux leader
+        ["<C-e>"] = { "fallback" },
       },
     },
   },
