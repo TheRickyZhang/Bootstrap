@@ -15,10 +15,18 @@ rsync -a --delete --itemize-changes \
   "$HOME/.config/" "$CONFIG_COPY/"
 
 copy_one() {
-  src="$HOME/$1"
+  raw="$1"
   dst="$CONFIG_COPY/$2"
-  mkdir -p "$(dirname "$dst")"
 
+  case "$raw" in
+    "~")   src="$HOME" ;;
+    ~/*)   src="$HOME/${raw#~/}" ;;
+    /*)    src="$raw" ;;            # absolute system path like /etc/...
+    *)     src="$HOME/$raw" ;;      # default: relative to $HOME
+  esac
+
+  [ -e "$src" ] || { echo "missing $src"; return 1; }
+  mkdir -p "$(dirname "$dst")"
   if command -v rsync >/dev/null; then
     if [ -d "$src" ]; then
       rsync -a --delete --filter=":- $EXCLUDE" "$src/" "$dst/"

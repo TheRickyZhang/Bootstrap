@@ -5,6 +5,9 @@
 # These are safe to directly copy. 
 .bashrc:.bashrc
 .profile:.profile
+/etc/keyd/surface.conf:etc/keyd/surface.conf
+/etc/systemd/system.conf.d/omarchy.conf:etc/systemd/system.conf.d/omarchy.conf
+/etc/systemd/sleep.conf.d/omarchy.conf:etc/systemd/sleep.conf.d/omarchy.conf
 
 # These are also safe, they just have my defaults, like my email address. If you use own azure instead of microsoft/thunderbird defaults then there might be some private information needed
 .msmtprc:.msmtprc
