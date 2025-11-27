@@ -1,0 +1,70 @@
+<application>
+  <component name="ActionsLocalSummary">
+    <e n="AutoIndentLines">
+      <i c="8" l="1764274309442" />
+    </e>
+    <e n="CommentByLineComment">
+      <i c="10" l="1764273940704" />
+    </e>
+    <e n="EditorBackSpace">
+      <i c="111" l="1764274292020" />
+    </e>
+    <e n="EditorDown">
+      <i c="20" l="1764273611987" />
+    </e>
+    <e n="EditorEnter">
+      <i c="7" l="1764274292924" />
+    </e>
+    <e n="EditorEscape">
+      <i c="20" l="1764274340901" />
+    </e>
+    <e n="EditorLeft">
+      <i c="2" l="1764272855495" />
+    </e>
+    <e n="EditorPaste">
+      <i c="7" l="1764271066744" />
+    </e>
+    <e n="EditorRight">
+      <i c="1" l="1764237947323" />
+    </e>
+    <e n="EditorUp">
+      <i c="25" l="1764273604724" />
+    </e>
+    <e n="ImportSettings">
+      <i c="2" l="1764272867678" />
+    </e>
+    <e n="SaveAll">
+      <i c="1" l="1764274196886" />
+    </e>
+    <e n="ShowSettings">
+      <i c="5" l="1764274105597" />
+    </e>
+    <e n="Table-selectNextRow">
+      <i c="5" l="1764274117197" />
+    </e>
+    <e n="Table-selectPreviousRow">
+      <i c="1" l="1764274047020" />
+    </e>
+    <e n="TrialStateWidget">
+      <i c="1" l="1764272843737" />
+    </e>
+    <e n="WelcomeScreen.CreateNewProject">
+      <i c="1" l="1764237927782" />
+    </e>
+    <e n="com.intellij.openapi.actionSystem.AnActionWrapper">
+      <i c="95" l="1764274334525" />
+    </e>
+    <e n="com.intellij.openapi.fileEditor.impl.tabActions.CloseTab">
+      <i c="3" l="1764273301328" />
+    </e>
+    <e n="com.intellij.openapi.wm.impl.customFrameDecorations.header.toolbar.MainMenuButton$ShowMenuAction">
+      <i c="4" l="1764274039656" />
+    </e>
+    <e n="com.intellij.toolWindow.ToolWindowHeader$HideAction">
+      <i c="1" l="1764272843049" />
+    </e>
+    <e n="com.maddyhome.idea.vim.group.NotificationService$notifyAboutShortcutConflict$2">
+      <i c="2" l="1764274020890" />
+    </e>
+  </component>
+</application>

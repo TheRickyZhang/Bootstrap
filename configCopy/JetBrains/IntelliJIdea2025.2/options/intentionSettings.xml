@@ -1,0 +1,5 @@
+<application>
+  <component name="IntentionManagerSettings">
+    <ignoreAction name="C and C++/Definitions/Add field as a parameter to the constructor" />
+  </component>
+</application>

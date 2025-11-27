@@ -1,0 +1,92 @@
+<keymap version="1" name="Windows Proper Redo" parent="$default">
+  <action id="$Redo">
+    <keyboard-shortcut first-keystroke="shift ctrl z" />
+    <keyboard-shortcut first-keystroke="shift alt back_space" />
+    <keyboard-shortcut first-keystroke="ctrl y" />
+  </action>
+  <action id="ActivateTerminalToolWindow">
+    <keyboard-shortcut first-keystroke="alt f12" />
+    <keyboard-shortcut first-keystroke="ctrl back_quote" />
+  </action>
+  <action id="Arrangement.Rule.Edit" />
+  <action id="BookmarksView.Rename" />
+  <action id="CMake.ReloadCMakeProject">
+    <keyboard-shortcut first-keystroke="alt r" />
+  </action>
+  <action id="ChangesView.Rename">
+    <keyboard-shortcut first-keystroke="shift f6" />
+  </action>
+  <action id="Console.TableResult.EditValue">
+    <keyboard-shortcut first-keystroke="enter" />
+    <keyboard-shortcut first-keystroke="alt enter" />
+  </action>
+  <action id="Console.TableResult.GotoReferencedResult">
+    <mouse-shortcut keystroke="button1 doubleClick" />
+    <keyboard-shortcut first-keystroke="enter" />
+    <keyboard-shortcut first-keystroke="alt enter" />
+  </action>
+  <action id="Console.TableResult.Reload" />
+  <action id="CopyElement" />
+  <action id="Debug">
+    <keyboard-shortcut first-keystroke="shift f9" />
+    <keyboard-shortcut first-keystroke="f5" />
+  </action>
+  <action id="EditorDeleteLine" />
+  <action id="EditorRightWithSelection" />
+  <action id="Git.Rename.Local.Branch">
+    <keyboard-shortcut first-keystroke="shift f6" />
+  </action>
+  <action id="Git.Reword.Commit">
+    <keyboard-shortcut first-keystroke="shift f6" />
+  </action>
+  <action id="GitLab.Merge.Request.List.Refresh" />
+  <action id="GitLab.Merge.Request.Refresh" />
+  <action id="Github.PullRequest.Details.Reload" />
+  <action id="GotoNextError" />
+  <action id="Graph.RouteEdges" />
+  <action id="List-selectNextColumnExtendSelection" />
+  <action id="OpenInlineChatAction">
+    <keyboard-shortcut first-keystroke="shift ctrl g" />
+  </action>
+  <action id="QuickChangeScheme" />
+  <action id="Refresh" />
+  <action id="RenameFile">
+    <keyboard-shortcut first-keystroke="f2" />
+  </action>
+  <action id="Rerun" />
+  <action id="Run">
+    <keyboard-shortcut first-keystroke="shift f10" />
+    <keyboard-shortcut first-keystroke="ctrl f5" />
+  </action>
+  <action id="ShelvedChanges.Rename">
+    <keyboard-shortcut first-keystroke="shift f6" />
+  </action>
+  <action id="StepOver">
+    <keyboard-shortcut first-keystroke="shift right" />
+  </action>
+  <action id="Svn.RefreshWorkingCopies" />
+  <action id="Switcher">
+    <keyboard-shortcut first-keystroke="ctrl tab" />
+    <keyboard-shortcut first-keystroke="shift ctrl tab" />
+    <keyboard-shortcut first-keystroke="alt f" />
+  </action>
+  <action id="Table-selectNextColumnExtendSelection" />
+  <action id="Table-startEditing" />
+  <action id="ToggleLineBreakpoint">
+    <keyboard-shortcut first-keystroke="f8" />
+  </action>
+  <action id="Tree-startEditing" />
+  <action id="Vcs.Log.Refresh" />
+  <action id="Vcs.RefreshFileHistory" />
+  <action id="VimActions">
+    <keyboard-shortcut first-keystroke="alt a" />
+  </action>
+  <action id="VimPluginToggle">
+    <keyboard-shortcut first-keystroke="alt v" />
+  </action>
+  <action id="VimShortcutKeyAction">
+    <keyboard-shortcut first-keystroke="alt s" />
+  </action>
+  <action id="XDebugger.SetValue" />
+  <action id="copilot.disposeInlays" />
+</keymap>

@@ -1,0 +1,51 @@
+" ================== basics ==================
+let mapleader = " "
+
+" Centering scroll & search
+nnoremap <C-d> <C-d>zz
+nnoremap <C-u> <C-u>zz
+nnoremap n nzzzv
+nnoremap N Nzzzv
+
+" ================== commenting ==================
+" g/ → toggle line comment (normal + visual)
+nmap g/ <Action>(CommentByLineComment)
+xmap g/ <Action>(CommentByLineComment)
+
+nnoremap <leader>v V$%
+nnoremap <leader>z 1z=
+
+inoremap <C-l> <C-k>
+
+xnoremap p "_dP
+
+xnoremap * y/\V<C-R>"<CR>
+xnoremap # y?\V<C-R>"<CR>
+
+" ================== move lines (Alt-j / Alt-k) ==================
+nnoremap <A-j> :m .+1<CR>==
+nnoremap <A-k> :m .-2<CR>==
+xnoremap <A-j> :m '>+1<CR>gv=gv
+xnoremap <A-k> :m '<-2<CR>gv=gv
+
+" ================== camelCase / Uppercase motions (Alt-w/b/e/ge) ==================
+" Next uppercase
+nnoremap <A-w> /\u<CR>
+onoremap <A-w> /\u<CR>
+xnoremap <A-w> /\u<CR>
+
+" Previous uppercase
+nnoremap <A-b> ?\u<CR>
+onoremap <A-b> ?\u<CR>
+xnoremap <A-b> ?\u<CR>
+
+" End of camel-part (next uppercase, then left)
+nnoremap <A-e> /\u<CR>h
+onoremap <A-e> /\u<CR>h
+xnoremap <A-e> /\u<CR>h
+
+" “ge”: previous camel-part end (Alt-g then e)
+nnoremap <A-g>e ?\u<CR>l
+onoremap <A-g>e ?\u<CR>l
+xnoremap <A-g>e ?\u<CR>l
+

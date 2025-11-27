@@ -1,0 +1,224 @@
+<keymap version="1" name="Windows copy" parent="$default">
+  <action id="ActivateGradleToolWindow">
+    <keyboard-shortcut first-keystroke="ctrl g" />
+  </action>
+  <action id="ActivateTerminalToolWindow">
+    <keyboard-shortcut first-keystroke="ctrl back_quote" />
+  </action>
+  <action id="Arrangement.Alias.Rule.Match.Condition.Move.Down" />
+  <action id="Arrangement.Rule.Edit" />
+  <action id="Arrangement.Rule.Group.Condition.Move.Down" />
+  <action id="Arrangement.Rule.Group.Condition.Move.Up" />
+  <action id="Arrangement.Rule.Match.Condition.Move.Down" />
+  <action id="Arrangement.Rule.Match.Condition.Move.Up" />
+  <action id="BookmarksView.Rename" />
+  <action id="CMake.ReloadCMakeProject">
+    <keyboard-shortcut first-keystroke="shift alt r" />
+  </action>
+  <action id="ChangesView.Rename">
+    <keyboard-shortcut first-keystroke="shift f6" />
+  </action>
+  <action id="ChangesView.ShelveSilently" />
+  <action id="ChangesView.ToggleCommitUi" />
+  <action id="CheckinProject" />
+  <action id="Code.Review.Editor.New.Comment" />
+  <action id="CodeInspection.OnEditor" />
+  <action id="Console.TableResult.CompareCells" />
+  <action id="Console.TableResult.DeleteRows" />
+  <action id="Console.TableResult.EditValue">
+    <keyboard-shortcut first-keystroke="enter" />
+    <keyboard-shortcut first-keystroke="alt enter" />
+  </action>
+  <action id="Console.TableResult.GotoReferencedResult">
+    <mouse-shortcut keystroke="button1 doubleClick" />
+    <keyboard-shortcut first-keystroke="enter" />
+    <keyboard-shortcut first-keystroke="alt enter" />
+  </action>
+  <action id="Console.TableResult.Reload" />
+  <action id="CopyElement" />
+  <action id="Diff.ShowSettingsPopup" />
+  <action id="DownloadBackendFileToClient" />
+  <action id="EditorDeleteLine">
+    <keyboard-shortcut first-keystroke="shift alt l" />
+    <keyboard-shortcut first-keystroke="ctrl k" />
+  </action>
+  <action id="EditorDeleteToLineEnd">
+    <keyboard-shortcut first-keystroke="shift alt k" />
+  </action>
+  <action id="EditorDeleteToLineStart">
+    <keyboard-shortcut first-keystroke="shift alt j" />
+  </action>
+  <action id="EditorDeleteToWordEnd">
+    <keyboard-shortcut first-keystroke="shift alt i" />
+  </action>
+  <action id="EditorDeleteToWordStart">
+    <keyboard-shortcut first-keystroke="shift alt u" />
+  </action>
+  <action id="EditorLineEndWithSelection">
+    <keyboard-shortcut first-keystroke="ctrl i" />
+  </action>
+  <action id="EditorLineStartWithSelection">
+    <keyboard-shortcut first-keystroke="ctrl u" />
+  </action>
+  <action id="EditorLookupDown" />
+  <action id="EditorLookupUp" />
+  <action id="EditorSelectLine">
+    <keyboard-shortcut first-keystroke="shift end" />
+  </action>
+  <action id="EditorSelectSingleLineAtCaret">
+    <keyboard-shortcut first-keystroke="ctrl l" />
+  </action>
+  <action id="FileChooser.GotoModule">
+    <keyboard-shortcut first-keystroke="ctrl 3" />
+    <keyboard-shortcut first-keystroke="shift ctrl d" />
+  </action>
+  <action id="FileChooser.NewFolder">
+    <keyboard-shortcut first-keystroke="ctrl n" />
+  </action>
+  <action id="FindNext">
+    <keyboard-shortcut first-keystroke="f3" />
+  </action>
+  <action id="FindPrevious">
+    <keyboard-shortcut first-keystroke="shift f3" />
+  </action>
+  <action id="Generate">
+    <keyboard-shortcut first-keystroke="alt insert" />
+    <keyboard-shortcut first-keystroke="alt g" />
+  </action>
+  <action id="Generate.Missing.Members.ES6" />
+  <action id="Generate.Missing.Members.TypeScript" />
+  <action id="Git.Commit.And.Push.Executor" />
+  <action id="Git.Commit.Stage" />
+  <action id="Git.Rename.Local.Branch">
+    <keyboard-shortcut first-keystroke="shift f6" />
+  </action>
+  <action id="Git.Reword.Commit">
+    <keyboard-shortcut first-keystroke="shift f6" />
+  </action>
+  <action id="GitLab.Merge.Request.List.Refresh" />
+  <action id="GitLab.Merge.Request.Refresh" />
+  <action id="Github.PullRequest.Details.Reload" />
+  <action id="GotoAction" />
+  <action id="GotoFile" />
+  <action id="GotoLine" />
+  <action id="GotoNextError" />
+  <action id="GotoRow" />
+  <action id="GotoSuperMethod" />
+  <action id="Graph.RouteEdges" />
+  <action id="Hg.Commit.And.Push.Executor" />
+  <action id="ImplementMethods" />
+  <action id="InsertLiveTemplate" />
+  <action id="JavaScript.ShowComponentUsages" />
+  <action id="MethodDown" />
+  <action id="MethodHierarchy" />
+  <action id="MethodHierarchy.BaseOnThisMethod" />
+  <action id="MethodUp" />
+  <action id="MoveLineDown">
+    <keyboard-shortcut first-keystroke="alt down" />
+  </action>
+  <action id="MoveLineUp">
+    <keyboard-shortcut first-keystroke="alt up" />
+  </action>
+  <action id="NewClass">
+    <keyboard-shortcut first-keystroke="shift ctrl n" />
+  </action>
+  <action id="NewElement">
+    <keyboard-shortcut first-keystroke="alt n" />
+  </action>
+  <action id="NewElementInMenuGroup">
+    <keyboard-shortcut first-keystroke="alt n" />
+  </action>
+  <action id="OpenInlineChatAction">
+    <keyboard-shortcut first-keystroke="shift ctrl g" />
+  </action>
+  <action id="OverrideMethods" />
+  <action id="PinActiveTab">
+    <keyboard-shortcut first-keystroke="alt p" />
+  </action>
+  <action id="PopupMenu-selectNext" />
+  <action id="PopupMenu-selectPrevious" />
+  <action id="QuickChangeScheme" />
+  <action id="RecentFiles" />
+  <action id="Refresh" />
+  <action id="RenameElement">
+    <keyboard-shortcut first-keystroke="f2" />
+  </action>
+  <action id="Replace">
+    <keyboard-shortcut first-keystroke="ctrl h" />
+  </action>
+  <action id="ReplaceInPath">
+    <keyboard-shortcut first-keystroke="shift ctrl h" />
+  </action>
+  <action id="Rerun" />
+  <action id="RerunTests" />
+  <action id="Resume">
+    <keyboard-shortcut first-keystroke="f5" />
+  </action>
+  <action id="RiderTypeHierarchy.BaseOnThisType" />
+  <action id="Run">
+    <keyboard-shortcut first-keystroke="ctrl f5" />
+  </action>
+  <action id="RunClass">
+    <keyboard-shortcut first-keystroke="shift ctrl r" />
+  </action>
+  <action id="ShelvedChanges.Rename">
+    <keyboard-shortcut first-keystroke="shift f6" />
+  </action>
+  <action id="ShowContent" />
+  <action id="ShowSearchHistory" />
+  <action id="Svn.RefreshWorkingCopies" />
+  <action id="Switcher">
+    <keyboard-shortcut first-keystroke="alt f" />
+  </action>
+  <action id="SwitcherBackward">
+    <keyboard-shortcut first-keystroke="alt d" />
+  </action>
+  <action id="SwitcherBackwardFallback" />
+  <action id="SwitcherForward">
+    <keyboard-shortcut first-keystroke="alt f" />
+  </action>
+  <action id="SwitcherForwardFallback" />
+  <action id="SwitcherIterateItems">
+    <keyboard-shortcut first-keystroke="alt c" />
+  </action>
+  <action id="SwitcherRecentEditedChangedToggleCheckBox" />
+  <action id="Table-startEditing" />
+  <action id="TableResult.UnselectPreviousOccurrence" />
+  <action id="Terminal.ClearBuffer" />
+  <action id="ToggleLineBreakpoint">
+    <keyboard-shortcut first-keystroke="f9" />
+  </action>
+  <action id="Tool_External Tools_Compile Current .cpp">
+    <keyboard-shortcut first-keystroke="shift ctrl a" />
+  </action>
+  <action id="Tool_External Tools_Run">
+    <keyboard-shortcut first-keystroke="shift ctrl a" />
+  </action>
+  <action id="Tool_External Tools_Run Current">
+    <keyboard-shortcut first-keystroke="shift ctrl a" />
+  </action>
+  <action id="Tool_External Tools_Run Current .cpp">
+    <keyboard-shortcut first-keystroke="shift ctrl x" />
+  </action>
+  <action id="Tool_External Tools_Run File">
+    <keyboard-shortcut first-keystroke="shift ctrl a" />
+  </action>
+  <action id="Tree-startEditing" />
+  <action id="TypeHierarchy" />
+  <action id="TypeHierarchyBase.BaseOnThisType" />
+  <action id="Uml.ShowDiff" />
+  <action id="UnselectPreviousOccurrence" />
+  <action id="UsageFiltering.Imports" />
+  <action id="UsageView.ShowRecentFindUsages" />
+  <action id="Vcs.Log.FocusTextFilter" />
+  <action id="Vcs.Log.Refresh" />
+  <action id="Vcs.Push" />
+  <action id="Vcs.RefreshFileHistory" />
+  <action id="WD.UploadCurrentRemoteFileAction" />
+  <action id="XDebugger.SetValue" />
+  <action id="context.load" />
+  <action id="copilot.disposeInlays" />
+  <action id="org.intellij.plugins.markdown.ui.actions.styling.InsertImageAction" />
+  <action id="org.intellij.plugins.markdown.ui.actions.styling.ToggleItalicAction" />
+  <action id="tasks.close" />
+</keymap>

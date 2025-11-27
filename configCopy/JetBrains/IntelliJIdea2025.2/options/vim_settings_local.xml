@@ -1,0 +1,95 @@
+<application>
+  <component name="VimHistorySettings">
+    <history>
+      <history-search>
+        <entry encoding="base64">XDxwcmludGxuXD4=</entry>
+        <entry encoding="base64">XHU=</entry>
+      </history-search>
+      <history-cmd>
+        <entry encoding="base64">c291cmNlIH4vLmlkZWF2aW1yYw==</entry>
+        <entry encoding="base64">dw==</entry>
+        <entry encoding="base64">QWN0aW9uIENvZGVjb21wbGV0aW9u</entry>
+      </history-cmd>
+    </history>
+  </component>
+  <component name="VimJumpsSettings">
+    <project id="untitled-22d12ead">
+      <jump line="9" column="0" filename="$USER_HOME$/IdeaProjects/untitled/src/Main.java" protocol="file" />
+      <jump line="4" column="11" filename="$USER_HOME$/IdeaProjects/untitled/src/Main.java" protocol="file" />
+      <jump line="7" column="11" filename="$USER_HOME$/IdeaProjects/untitled/src/Main.java" protocol="file" />
+      <jump line="6" column="4" filename="$USER_HOME$/IdeaProjects/untitled/src/Main.java" protocol="file" />
+      <jump line="8" column="9" filename="$USER_HOME$/IdeaProjects/untitled/src/Main.java" protocol="file" />
+      <jump line="2" column="30" filename="$USER_HOME$/IdeaProjects/untitled/src/Main.java" protocol="file" />
+      <jump line="0" column="0" filename="$USER_HOME$/IdeaProjects/untitled/src/Main.java" protocol="file" />
+    </project>
+  </component>
+  <component name="VimMarksSettings">
+    <globalmarks />
+    <localmarks>
+      <file name="$USER_HOME$/IdeaProjects/untitled/src/Main.java" timestamp="1764275013110">
+        <mark key="[" line="0" column="0" />
+        <mark key="]" line="0" column="0" />
+        <mark key="." line="0" column="0" />
+        <mark key="^" line="2" column="8" />
+      </file>
+    </localmarks>
+  </component>
+  <component name="VimRegisterSettings">
+    <registers>
+      <register name="&quot;" type="LINE_WISE">
+        <text encoding="base64">Cg==</text>
+      </register>
+      <register name="-" type="CHARACTER_WISE">
+        <text encoding="base64">bg==</text>
+      </register>
+      <register name="." type="CHARACTER_WISE">
+        <text encoding="base64" />
+      </register>
+      <register name="/" type="CHARACTER_WISE">
+        <text encoding="base64">XHU=</text>
+      </register>
+      <register name="1" type="LINE_WISE">
+        <text encoding="base64">Cg==</text>
+      </register>
+      <register name="2" type="LINE_WISE">
+        <text encoding="base64">ICAgICAgICBJTy5wcmludGxuKCJpID0gIiArIGkpOwo=</text>
+      </register>
+      <register name="3" type="LINE_WISE">
+        <text encoding="base64">Cg==</text>
+      </register>
+      <register name="4" type="LINE_WISE">
+        <text encoding="base64">Cg==</text>
+      </register>
+      <register name="5" type="LINE_WISE">
+        <text encoding="base64">Cg==</text>
+      </register>
+      <register name="6" type="LINE_WISE">
+        <text encoding="base64">ICAgIGZvcig8QWN0aW9uPihDb2RlQ29tcGxldGlvbikpCg==</text>
+      </register>
+      <register name="7" type="LINE_WISE">
+        <text encoding="base64">ICAgIAo=</text>
+      </register>
+      <register name="8" type="LINE_WISE">
+        <text encoding="base64">Ly8gY2xpY2sgdGhlIDxpY29uIHNyYz0iQWxsSWNvbnMuQWN0aW9ucy5FeGVjdXRlIi8+IGljb24gaW4gdGhlIGd1dHRlci4K</text>
+      </register>
+      <register name="9" type="LINE_WISE">
+        <text encoding="base64">ICAgICAgICAvL1RJUCBQcmVzcyA8c2hvcnRjdXQgYWN0aW9uSWQ9IkRlYnVnIi8+IHRvIHN0YXJ0IGRlYnVnZ2luZyB5b3VyIGNvZGUuIFdlIGhhdmUgc2V0IG9uZSA8aWNvbiBzcmM9IkFsbEljb25zLkRlYnVnZ2VyLkRiX3NldF9icmVha3BvaW50Ii8+IGJyZWFrcG9pbnQKICAgICAgICAvLyBmb3IgeW91LCBidXQgeW91IGNhbiBhbHdheXMgYWRkIG1vcmUgYnkgcHJlc3NpbmcgPHNob3J0Y3V0IGFjdGlvbklkPSJUb2dnbGVMaW5lQnJlYWtwb2ludCIvPi4K</text>
+      </register>
+      <register name=":" type="CHARACTER_WISE">
+        <text encoding="base64">QWN0aW9uIENvZGVjb21wbGV0aW9u</text>
+      </register>
+    </registers>
+  </component>
+  <component name="VimSearchSettings">
+    <search>
+      <last-search encoding="base64">XHU=</last-search>
+      <last-offset encoding="base64" />
+      <last-pattern encoding="base64">XHU=</last-pattern>
+      <last-dir encoding="base64">MQ==</last-dir>
+      <show-last encoding="base64">ZmFsc2U=</show-last>
+    </search>
+  </component>
+  <component name="VimVariables">
+    <vim-variables />
+  </component>
+</application>

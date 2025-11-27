@@ -1,0 +1,80 @@
+<application>
+  <component name="FileEditorProviderManager">{}</component>
+  <component name="LangManager">
+    <option name="languageName" value="JAVA" />
+  </component>
+  <component name="NotRoamableUiSettings">
+    <option name="fontSize" value="15.0" />
+    <option name="presentationModeIdeScale" value="1.75" />
+  </component>
+  <component name="PropertyService"><![CDATA[{
+  "keyToString": {
+    "AIHubNotificationManager.lastUsedLicenseType": "FREE",
+    "InstalledPluginsSearchHistory": "extensions",
+    "LAST_CALCULATED_COLOR_INDEX_KEY": "7",
+    "MarketplacePluginsSearchHistory": "ideavim\nidea",
+    "NewProjectWizard.generateOnboardingTips": "true",
+    "RunOnceActivity.TerminalFontSettingsService.fixStoredNonMonospacedFonts": "true",
+    "RunOnceActivity.TerminalOptionsProvider.migration.2025.1.1": "true",
+    "RunOnceActivity.VFSInitializationConditionsToFusReporter": "true",
+    "RunOnceActivity.git.modal.commit.toggle": "true",
+    "RunOnceActivity.llm.onboarding.window.launcher.v7": "true",
+    "RunOnceActivity.reset.auto.reparse.settings.to.default": "true",
+    "SettingsSearchHistory": "extensions",
+    "com.intellij.ide.projectWizard.generators.JavaNewProjectWizard$Step.selectedStep": "IntelliJ",
+    "evlsprt3.252": "7",
+    "experimental.ui.on.first.startup": "true",
+    "experimental.ui.used.version": "252.28238.7",
+    "fileTypeChangedCounter": "3",
+    "fontSizeToResetConsole": "13.0",
+    "fontSizeToResetEditor": "13.0",
+    "got.it.tooltip.Plugins Auto-Update": "1",
+    "got.it.tooltip.settings.sync.in.settings": "1",
+    "gotit.previous.run": "IU-252.28238.7",
+    "input.method.disabler.muted": "true",
+    "installed.kotlin.plugin.version": "252.28238.7-IJ",
+    "jdk.selected.JAVA_MODULE": "25",
+    "last_opened_file_path": "/home/ricky/Bootstrap/ide/Jetbrains/IntelliJsettings.zip",
+    "llm.installer.auto.activation.executed": "true",
+    "llm.installer.last.toolwindow.state": "AI_ASSISTANT",
+    "migrated.non.roamable.values.from.general.settings": "true",
+    "onboarding.generation.number": "1",
+    "previousColorScheme": "_@user_Dark",
+    "project.wizard.group": "NPW.simple-project.Java",
+    "registry.to.advanced.settings.migration.build": "IU-252.28238.7",
+    "terminal.gen.one.option.visible": "false",
+    "trial.state.last.state": "ACTIVE",
+    "ts.lib.d.ts.version": "5.7.3"
+  },
+  "keyToStringList": {
+    "AIHubNotificationManager.lastAllNotifications": [],
+    "AIHubNotificationManager.notifications": [
+      "FREE_ENABLED"
+    ],
+    "AIHubNotificationManager.seenNotifications": [],
+    "file.chooser.recent.files": [
+      "/home/ricky/Bootstrap/ide/Jetbrains/IntelliJsettings.zip"
+    ],
+    "fileTypeDetectors": [
+      "com.intellij.ide.scratch.ScratchFileServiceImpl$Detector",
+      "com.intellij.profiler.ultimate.hprof.impl.HprofFileTypeDetector",
+      "com.intellij.docker.dockerFile.DockerFileTypeDetector",
+      "com.intellij.javascript.debugger.sourcemap.SourceMapFileType$MyFileTypeDetector",
+      "com.intellij.database.vfs.DbStorageFileType$Detector",
+      "com.jetbrains.nodejs.util.NodeFileTypeDetector$JavaScriptFileTypeDetector",
+      "com.jetbrains.nodejs.util.NodeFileTypeDetector$TypeScriptFileTypeDetector",
+      "org.jetbrains.plugins.textmate.TextMateFileType$TextMateFileDetector"
+    ]
+  }
+}]]></component>
+  <component name="ShownTips"><![CDATA[{
+  "shownTips": {
+    "CtrlW": 1764273285475,
+    "CommentCode": 1764273288140
+  },
+  "proposedTips": {
+    "CtrlW": 1764273285439
+  },
+  "tipsOrderSeed": 1764273285427
+}]]></component>
+</application>

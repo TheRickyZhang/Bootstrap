@@ -5,6 +5,7 @@
 # These are safe to directly copy. 
 .bashrc:.bashrc
 .profile:.profile
+.ideavimrc:.ideavimrc
 /etc/keyd/surface.conf:etc/keyd/surface.conf
 /etc/systemd/system.conf.d/omarchy.conf:etc/systemd/system.conf.d/omarchy.conf
 /etc/systemd/sleep.conf.d/omarchy.conf:etc/systemd/sleep.conf.d/omarchy.conf

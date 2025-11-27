@@ -32,3 +32,4 @@ x-scheme-handler/mailto=google-chrome.desktop
 [Default Applications]
 x-scheme-handler/zoommtg=zoom-scheme.desktop
 x-scheme-handler/zoomus=zoom-scheme.desktop
+x-scheme-handler/jetbrains=jetbrains-toolbox.desktop

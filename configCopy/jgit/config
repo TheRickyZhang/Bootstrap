@@ -1,0 +1,3 @@
+[filesystem "Eclipse Adoptium|17.0.11|/dev/mapper/root"]
+	timestampResolution = 3962 nanoseconds
+	minRacyThreshold = 0 nanoseconds

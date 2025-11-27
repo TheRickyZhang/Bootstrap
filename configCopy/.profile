@@ -20,3 +20,8 @@ fi
 if [ -d "$HOME/bin" ]; then
   PATH="$HOME/bin:$PATH"
 fi
+
+
+# Added by Toolbox App
+export PATH="$PATH:/home/ricky/.local/share/JetBrains/Toolbox/scripts"
+

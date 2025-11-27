@@ -7,7 +7,8 @@
 --   extension = { typ = "typst" },
 -- })
 
-vim.g.autoformat = true
+-- I prefer to manually invoke
+vim.g.autoformat = false
 vim.opt.wrap = true
 
 -- Get rid of annoying backup files

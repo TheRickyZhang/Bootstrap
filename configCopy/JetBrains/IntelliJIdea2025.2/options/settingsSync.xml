@@ -1,0 +1,18 @@
+<application>
+  <component name="SettingsSyncSettings">
+    <option name="disabledSubcategories">
+      <map>
+        <entry key="PLUGINS">
+          <value>
+            <list>
+              <option value="Batch Scripts Support" />
+              <option value="IdeaVIM" />
+              <option value="org.plugin.dot.id" />
+            </list>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="migrationFromOldStorageChecked" value="true" />
+  </component>
+</application>
