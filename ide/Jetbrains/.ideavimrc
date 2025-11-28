@@ -1,88 +1,55 @@
+" ================== basics ==================
 let mapleader = " "
 
 " Share a clipboard
-set clipboard=unnamedPlus
+set clipboard=unnamedplus
 
-" Delete without overwriting the default register
-nmap <leader>d "_d
-vmap <leader>d "_d
+" Centering scroll & search
+nnoremap <C-d> <C-d>zz
+nnoremap <C-u> <C-u>zz
+nnoremap n nzzzv
+nnoremap N Nzzzv
 
-" Smart paste
-xmap <leader>p "_dP
+" ================== commenting ==================
+" g/ → toggle line comment (normal + visual)
+nmap g/ <Action>(CommentByLineComment)
+xmap g/ <Action>(CommentByLineComment)
 
-" Keep cursor centered
-nmap <C-d> <C-d>zz
-nmap <C-u> <C-u>zz
-nmap n nzzv
-nmap N Nzzv
+nnoremap <leader>v V$%
+nnoremap <leader>z 1z=
 
-" Quick project-wide search & replace of word under cursor (enter word)
-nmap <leader>s :%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>
+inoremap <C-l> <C-k>
 
-" Convenient built-in functionalities
-set surround       " Use s in ysiw, cs, (visual)S for operating on surrounding characters
-set incsearch
-set ignorecase     " case-insensitive by default
-set smartcase      " but case-sensitive if you type a capital letter
+xnoremap p "_dP
 
-" Toggle highlighting
-nnoremap <leader>h :set hlsearch!<CR>
+xnoremap * y/\V<C-R>"<CR>
+xnoremap # y?\V<C-R>"<CR>
 
-" J -> use JetBrain's smarter line join
-set clipboard^=ideaputset ideajoin
+" ================== move lines (Alt-j / Alt-k) ==================
+nnoremap <A-j> :m .+1<CR>==
+nnoremap <A-k> :m .-2<CR>==
+xnoremap <A-j> :m '>+1<CR>gv=gv
+xnoremap <A-k> :m '<-2<CR>gv=gv
 
-nnoremap ds d/[A-Z]<CR>
+" ================== camelCase / Uppercase motions (Alt-w/b/e/ge) ==================
+" Next uppercase
+nnoremap <A-w> /\u<CR>
+onoremap <A-w> /\u<CR>
+xnoremap <A-w> /\u<CR>
 
-" map <leader> keys to arrows
-nnoremap <silent> <leader>e <Up>
-nnoremap <silent> <leader>n <Down>
-nnoremap <silent> <leader>m <Left>
-nnoremap <silent> <leader>i <Right>
+" Previous uppercase
+nnoremap <A-b> ?\u<CR>
+onoremap <A-b> ?\u<CR>
+xnoremap <A-b> ?\u<CR>
 
-" brace delimits
-nnoremap <silent> <leader>v V$%
-nnoremap <silent> <leader>y /\{<CR>y%
-nnoremap <silent> <leader>c /\{<CR>c%
-nnoremap <silent> d% /\{<CR>d%
+" End of camel-part (next uppercase, then left)
+nnoremap <A-e> /\u<CR>h
+onoremap <A-e> /\u<CR>h
+xnoremap <A-e> /\u<CR>h
 
-" introduce _{word} with w, b, f, ge to mean a word as defined in CamelCase
-nnoremap <silent> <leader>w /\u<CR>
-onoremap <silent> <leader>w /\u<CR>
-xnoremap <silent> <leader>w /\u<CR>
+" “ge”: previous camel-part end (Alt-g then e)
+nnoremap <A-g>e ?\u<CR>l
+onoremap <A-g>e ?\u<CR>l
+xnoremap <A-g>e ?\u<CR>l
 
-nnoremap <silent> <leader>b ?\u<CR>
-onoremap <silent> <leader>b ?\u<CR>
-xnoremap <silent> <leader>b ?\u<CR>
 
-nnoremap <silent> <leader>e /\u<CR>h
-onoremap <silent> <leader>e /\u<CR>h
-xnoremap <silent> <leader>e /\u<CR>h
-
-nnoremap <silent> <leader>ge ?\u<CR>l
-onoremap <silent> <leader>ge ?\u<CR>l
-xnoremap <silent> <leader>ge ?\u<CR>l
-
-" Build in comments into vim (Removed since no uncommenting feature yet)
-" nnoremap <silent> <C-/> I//<Space><Esc>
-" vnoremap <silent> <C-/> :s/^\/// /<CR>gv
-
-function! s:SelectToNextCharInput()
-let str = input('Select to next char: ')
-if empty(str) | return | endif
-let c = str[0]
-normal! mz
-execute "normal! /\V" . escape(c, '\/') . "\<CR>"
-normal! v`z
-endfunction
-nnoremap <silent> <leader>v :call <SID>SelectToNextCharInput()<CR>
-
-" Have * search for current visual selection literally
-xnoremap * :<C-u>call VSetSearch()<CR>/<C-R>=@/<CR><CR>
-xnoremap # :<C-u>call VSetSearch()<CR>?<C-R>=@/<CR><CR>
-
-function! VSetSearch()
-let temp = @s
-normal! gv"sy
-let @/ = '\V' . substitute( escape(@s, '\/'), '\n', '\\n', 'g' )
-let @s = temp
-endfunction
