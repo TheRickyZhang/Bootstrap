@@ -20,14 +20,14 @@ map("n", "<C-x>", "<cmd>bdelete<cr>", { desc = "Buffer close" })
 map({ "n", "t" }, "<C-s>", [[<C-\><C-n><Cmd>wincmd w<CR>]], { desc = "Next window", silent = true })
 
 -- Invoke Blink completion manually
-map("n", "<C-n>", function()
-  vim.cmd("startinsert")
-  require("blink.cmp").show()
-end, { silent = true })
-
-map("i", "<C-n>", function()
-  require("blink.cmp").show()
-end, { silent = true })
+-- map("n", "<C-n>", function()
+--   vim.cmd("startinsert")
+--   require("blink.cmp").show()
+-- end, { silent = true })
+--
+-- map("i", "<C-n>", function()
+--   require("blink.cmp").show()
+-- end, { silent = true })
 
 -- You can find all default neovim bindings with :help index
 

@@ -2,7 +2,12 @@
   <component name="Trusted.Paths">
     <option name="TRUSTED_PROJECT_PATHS">
       <map>
+        <entry key="$APPLICATION_CONFIG_DIR$/projects/e4429b244bde0c8e9bb8c1f48c33141b7dc2423f" value="true" />
+        <entry key="$USER_HOME$/.config/JetBrains/IntelliJIdea2025.2/projects/e8ab3e09bb636299bd6a21b536257cc7724c8db9" value="true" />
         <entry key="$USER_HOME$/IdeaProjects/untitled" value="true" />
+        <entry key="$USER_HOME$/Notes/quant/JavaMatchingEngineFull" value="true" />
+        <entry key="$USER_HOME$/Notes/quant/JavaMatchingEngineTest" value="true" />
+        <entry key="$USER_HOME$/Projects/cpp_playground/JavaMatchingEngine" value="true" />
         <entry key="C:\BattleBeyz-dev\src\MeshObjects" value="true" />
         <entry key="C:\Projects\Competitive Programming" value="true" />
         <entry key="C:\Projects\Test" value="true" />
@@ -27,6 +32,7 @@
         <option value="C:\Users\ricky\OneDrive - University of Florida\Projects" />
         <option value="C:\Users\ricky" />
         <option value="$USER_HOME$/IdeaProjects" />
+        <option value="$USER_HOME$/Notes/quant" />
       </list>
     </option>
   </component>

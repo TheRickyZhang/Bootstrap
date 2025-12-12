@@ -7,9 +7,7 @@
       <homePath value="$USER_HOME$/.jdks/temurin-23.0.2" />
       <roots>
         <annotationsPath>
-          <root type="composite">
-            <root url="jar://$APPLICATION_HOME_DIR$/plugins/java/lib/resources/jdkAnnotations.jar!/" type="simple" />
-          </root>
+          <root type="composite" />
         </annotationsPath>
         <classPath>
           <root type="composite">
@@ -171,9 +169,7 @@
       <homePath value="C:/Program Files/Java/jdk-21" />
       <roots>
         <annotationsPath>
-          <root type="composite">
-            <root url="jar://$APPLICATION_HOME_DIR$/plugins/java/lib/resources/jdkAnnotations.jar!/" type="simple" />
-          </root>
+          <root type="composite" />
         </annotationsPath>
         <classPath>
           <root type="composite">
@@ -335,9 +331,7 @@
       <homePath value="$USER_HOME$/.jdks/temurin-21.0.7" />
       <roots>
         <annotationsPath>
-          <root type="composite">
-            <root url="jar://$APPLICATION_HOME_DIR$/plugins/java/lib/resources/jdkAnnotations.jar!/" type="simple" />
-          </root>
+          <root type="composite" />
         </annotationsPath>
         <classPath>
           <root type="composite">
@@ -495,13 +489,11 @@
     <jdk version="2">
       <name value="25" />
       <type value="JavaSDK" />
-      <version value="java version &quot;25.0.1&quot;" />
+      <version value="Java 25.0.1" />
       <homePath value="/usr/lib/jvm/default" />
       <roots>
         <annotationsPath>
-          <root type="composite">
-            <root url="jar://$APPLICATION_HOME_DIR$/plugins/java/lib/resources/jdkAnnotations.jar!/" type="simple" />
-          </root>
+          <root type="composite" />
         </annotationsPath>
         <classPath>
           <root type="composite">
@@ -577,9 +569,7 @@
           </root>
         </classPath>
         <javadocPath>
-          <root type="composite">
-            <root url="https://docs.oracle.com/en/java/javase/25/docs/api/" type="simple" />
-          </root>
+          <root type="composite" />
         </javadocPath>
         <sourcePath>
           <root type="composite" />

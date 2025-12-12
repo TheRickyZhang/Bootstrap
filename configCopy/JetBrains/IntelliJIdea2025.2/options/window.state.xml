@@ -30,15 +30,18 @@
     <size key="GridCell.Tab.5.center.0.0.2560.1440" width="2472" height="418" />
     <size key="GridCell.Tab.5.right.0.0.2560.1440" width="2472" height="418" />
     <size key="GridCell.Tab.5.bottom.0.0.2560.1440" width="2472" height="418" />
+    <size key="GridCell.Tab.0.left.5048.2880.2880.1920@192dpi" width="1238" height="516" />
+    <size key="GridCell.Tab.0.center.5048.2880.2880.1920@192dpi" width="1238" height="516" />
+    <size key="GridCell.Tab.0.right.5048.2880.2880.1920@192dpi" width="1238" height="516" />
+    <size key="GridCell.Tab.0.bottom.5048.2880.2880.1920@192dpi" width="1238" height="516" />
   </component>
   <component name="WindowManager">
-    <frame x="-8" y="-8" width="2576" height="1408" />
+    <frame x="2544" y="1460" width="1416" height="910" extendedState="6" />
   </component>
   <component name="WindowStateApplicationService">
-    <state width="577" height="111" key="ShowUsagesActions.dimensionServiceKey" timestamp="1748368830664">
-      <screen x="0" y="0" width="2560" height="1392" />
+    <state width="571" height="231" key="ShowUsagesActions.dimensionServiceKey" timestamp="1764400576500">
+      <screen x="2524" y="1440" width="1440" height="960" />
     </state>
-    <state width="577" height="111" key="ShowUsagesActions.dimensionServiceKey/-2560.178.2560.1392/0.0.2560.1392" timestamp="1748368830664" />
-    <state width="764" height="499" key="ShowUsagesActions.dimensionServiceKey/0.0.2560.1392/-2560.178.2560.1392" timestamp="1748253361898" />
+    <state width="571" height="231" key="ShowUsagesActions.dimensionServiceKey/2524.1440.1440.960" timestamp="1764400576500" />
   </component>
 </application>

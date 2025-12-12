@@ -1,6 +1,9 @@
 " ================== basics ==================
 let mapleader = " "
 
+" Share a clipboard
+set clipboard=unnamedplus
+
 " Centering scroll & search
 nnoremap <C-d> <C-d>zz
 nnoremap <C-u> <C-u>zz

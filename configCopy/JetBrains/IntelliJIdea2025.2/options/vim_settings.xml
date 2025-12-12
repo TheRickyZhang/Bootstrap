@@ -94,7 +94,7 @@
       <shortcut-conflict owner="vim">
         <text encoding="base64">Y3RybCBwcmVzc2VkIFVQ</text>
       </shortcut-conflict>
-      <shortcut-conflict owner="vim">
+      <shortcut-conflict owner="ide">
         <text encoding="base64">Y3RybCBwcmVzc2VkIEY=</text>
       </shortcut-conflict>
       <shortcut-conflict owner="vim">
@@ -144,8 +144,8 @@
   <component name="VimSettings">
     <state version="7" enabled="true" />
     <notifications>
-      <idea-join enabled="false" />
-      <idea-put enabled="false" />
+      <idea-join enabled="true" />
+      <idea-put enabled="true" />
       <was-automatically-subscribed-to-eap enabled="false" />
       <first-ideavim-version value="2.27.2" />
     </notifications>

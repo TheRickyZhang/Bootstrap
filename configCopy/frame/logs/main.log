@@ -1,0 +1,402 @@
+[2025-12-05 17:20:26.516] [info]  ethereum:1's connection has been updated
+[2025-12-05 17:20:26.523] [info]  Secondary connection: OFF
+[2025-12-05 17:20:26.523] [debug] resetConnection { priority: 'secondary', status: 'off' }
+[2025-12-05 17:20:26.523] [debug] killProvider {}
+[2025-12-05 17:20:26.524] [debug] stopBlockMonitor { chainId: '1', priority: 'secondary' }
+[2025-12-05 17:20:26.524] [info]  Primary connection: ON
+[2025-12-05 17:20:26.524] [info]  Creating primary connection because it didn't exist or the target changed { primaryTarget: 'wss://evm.pylon.link/mainnet' }
+[2025-12-05 17:20:26.524] [debug] resetConnection {
+  priority: 'primary',
+  status: 'loading',
+  target: 'wss://evm.pylon.link/mainnet'
+}
+[2025-12-05 17:20:26.524] [debug] killProvider {}
+[2025-12-05 17:20:26.525] [debug] stopBlockMonitor { chainId: '1', priority: 'primary' }
+[2025-12-05 17:20:26.525] [debug] createProvider { chainId: '1', priority: 'primary' }
+[2025-12-05 17:20:26.525] [info]  Updating primary connection for chain 1 { status: 'loading', connected: false, type: '', network: '' }
+[2025-12-05 17:20:27.449] [verbose] starting inventory updates
+[2025-12-05 17:20:27.450] [verbose] starting asset updates
+[2025-12-05 17:20:27.450] [verbose] starting balances updates
+[2025-12-05 17:20:27.459] [info]  created balances worker, pid: 605891
+[2025-12-05 17:20:27.541] [info]  Chrome: v110.0.5481.179
+[2025-12-05 17:20:27.542] [info]  Electron: v23.1.3
+[2025-12-05 17:20:27.542] [info]  Node: v18.12.1
+[2025-12-05 17:20:27.562] [info]  Trezor Connect initialized
+[2025-12-05 17:20:27.870] [verbose] Creating tray window
+[2025-12-05 17:20:27.996] [verbose] Creating dash window
+[2025-12-05 17:20:27.999] [verbose] Creating onboard window
+[2025-12-05 17:20:28.008] [verbose] Unregistering accelerator "Alt+/" for shortcut: Alt+Slash
+[2025-12-05 17:20:28.008] [verbose] Registering accelerator "Alt+/" for shortcut: Alt+Slash
+[2025-12-05 17:20:28.008] [info]  Accelerator "Alt+/" registered for shortcut: Alt+Slash
+[2025-12-05 17:20:28.011] [info]  ethereum:1's connection has been updated
+[2025-12-05 17:20:28.012] [info]  Secondary connection: OFF
+[2025-12-05 17:20:28.012] [info]  Primary connection: ON
+[2025-12-05 17:20:28.014] [verbose] updating external data due to token update(s) { activeAccount: '' }
+[2025-12-05 17:20:28.014] [verbose] subscribing to rates updates for native currencies on chains: []
+[2025-12-05 17:20:28.015] [verbose] subscribing to rates updates for tokens: []
+[2025-12-05 17:20:28.457] [info]  Created onboard renderer process, pid: 605947
+[2025-12-05 17:20:28.511] [verbose] Starting block updates for chain 1
+[2025-12-05 17:20:28.512] [info]      Primary connection for network 1 connected
+[2025-12-05 17:20:28.553] [info]  Created dash renderer process, pid: 605939
+[2025-12-05 17:20:28.578] [info]  Created tray renderer process, pid: 605933
+[2025-12-05 17:20:28.603] [verbose] Starting updater { useAutoUpdater: false }
+[2025-12-05 17:20:28.634] [info]  Updating primary connection for chain 1 { status: 'connected', connected: false, type: '', network: '' }
+[2025-12-05 17:20:28.635] [info]  Updating primary connection for chain 1 { status: 'connected', connected: true, type: '', network: '1' }
+[2025-12-05 17:20:28.637] [info]  ethereum:1's connection has been updated
+[2025-12-05 17:20:28.637] [info]  Secondary connection: OFF
+[2025-12-05 17:20:28.637] [info]  Primary connection: ON
+[2025-12-05 17:20:29.142] [verbose] updating external data due to network update(s) { connectedChains: [ 1 ], newlyConnected: [ 1 ] }
+[2025-12-05 17:20:29.144] [verbose] subscribing to rates updates for native currencies on chains: [ 1 ]
+[2025-12-05 17:20:29.144] [verbose] subscribing to rates updates for tokens: []
+[2025-12-05 17:20:29.482] [info]  Resolved content for send.frame.eth, version: 0.2-e37d2f3
+[2025-12-05 17:20:29.482] [info]  Updating content for dapp 0xe8d705c28f65bc3fe10df8b22f9daa265b99d0e1893b2df49fd38120f0410bca from hash bafybeiag6x7b2xh3c23fochm565boiuygmomi3vqjxjad4wax5oldwh6bi
+[2025-12-05 17:20:33.244] [verbose] Stopping updater
+[2025-12-05 17:20:33.263] [warn]  balances worker disconnected
+[2025-12-05 17:20:33.264] [warn]  balances worker exited with code null, signal: SIGINT, pid: 605891
+[2025-12-05 17:20:33.264] [warn]  balances controller stopped, restarting in 5 seconds
+[2025-12-05 17:20:33.265] [verbose] stopping balances updates
+[2025-12-05 17:20:33.381] [info]  Application closing
+[2025-12-05 17:20:33.383] [verbose] stopping inventory updates
+[2025-12-05 17:20:33.383] [verbose] stopping asset updates
+[2025-12-05 17:20:33.384] [verbose] stopping balances updates
+[2025-12-05 17:35:06.990] [info]  ethereum:1's connection has been updated
+[2025-12-05 17:35:06.997] [info]  Secondary connection: OFF
+[2025-12-05 17:35:06.997] [debug] resetConnection { priority: 'secondary', status: 'off' }
+[2025-12-05 17:35:06.997] [debug] killProvider {}
+[2025-12-05 17:35:06.997] [debug] stopBlockMonitor { chainId: '1', priority: 'secondary' }
+[2025-12-05 17:35:06.998] [info]  Primary connection: ON
+[2025-12-05 17:35:06.998] [info]  Creating primary connection because it didn't exist or the target changed { primaryTarget: 'wss://evm.pylon.link/mainnet' }
+[2025-12-05 17:35:06.998] [debug] resetConnection {
+  priority: 'primary',
+  status: 'loading',
+  target: 'wss://evm.pylon.link/mainnet'
+}
+[2025-12-05 17:35:06.998] [debug] killProvider {}
+[2025-12-05 17:35:06.998] [debug] stopBlockMonitor { chainId: '1', priority: 'primary' }
+[2025-12-05 17:35:06.998] [debug] createProvider { chainId: '1', priority: 'primary' }
+[2025-12-05 17:35:06.999] [info]  Updating primary connection for chain 1 { status: 'loading', connected: false, type: '', network: '' }
+[2025-12-05 17:35:07.919] [verbose] starting inventory updates
+[2025-12-05 17:35:07.919] [verbose] starting asset updates
+[2025-12-05 17:35:07.919] [verbose] starting balances updates
+[2025-12-05 17:35:07.930] [info]  created balances worker, pid: 619082
+[2025-12-05 17:35:08.007] [info]  Chrome: v110.0.5481.179
+[2025-12-05 17:35:08.007] [info]  Electron: v23.1.3
+[2025-12-05 17:35:08.007] [info]  Node: v18.12.1
+[2025-12-05 17:35:08.030] [info]  Trezor Connect initialized
+[2025-12-05 17:35:08.338] [verbose] Creating tray window
+[2025-12-05 17:35:08.466] [verbose] Creating dash window
+[2025-12-05 17:35:08.470] [verbose] Creating onboard window
+[2025-12-05 17:35:08.483] [verbose] Unregistering accelerator "Alt+/" for shortcut: Alt+Slash
+[2025-12-05 17:35:08.483] [verbose] Registering accelerator "Alt+/" for shortcut: Alt+Slash
+[2025-12-05 17:35:08.484] [info]  Accelerator "Alt+/" registered for shortcut: Alt+Slash
+[2025-12-05 17:35:08.487] [info]  ethereum:1's connection has been updated
+[2025-12-05 17:35:08.487] [info]  Secondary connection: OFF
+[2025-12-05 17:35:08.488] [info]  Primary connection: ON
+[2025-12-05 17:35:08.490] [verbose] updating external data due to token update(s) { activeAccount: '' }
+[2025-12-05 17:35:08.490] [verbose] subscribing to rates updates for native currencies on chains: []
+[2025-12-05 17:35:08.490] [verbose] subscribing to rates updates for tokens: []
+[2025-12-05 17:35:08.916] [info]  Created onboard renderer process, pid: 619135
+[2025-12-05 17:35:09.013] [info]  Created tray renderer process, pid: 619123
+[2025-12-05 17:35:09.018] [info]  Created dash renderer process, pid: 619129
+[2025-12-05 17:35:09.034] [verbose] Starting updater { useAutoUpdater: false }
+[2025-12-05 17:35:11.027] [verbose] Starting block updates for chain 1
+[2025-12-05 17:35:11.028] [info]      Primary connection for network 1 connected
+[2025-12-05 17:35:11.099] [info]  Updating primary connection for chain 1 { status: 'connected', connected: false, type: '', network: '' }
+[2025-12-05 17:35:11.102] [info]  ethereum:1's connection has been updated
+[2025-12-05 17:35:11.102] [info]  Secondary connection: OFF
+[2025-12-05 17:35:11.103] [info]  Primary connection: ON
+[2025-12-05 17:35:11.892] [info]  Updating primary connection for chain 1 { status: 'connected', connected: true, type: '', network: '1' }
+[2025-12-05 17:35:11.895] [info]  ethereum:1's connection has been updated
+[2025-12-05 17:35:11.896] [info]  Secondary connection: OFF
+[2025-12-05 17:35:11.896] [info]  Primary connection: ON
+[2025-12-05 17:35:12.401] [verbose] updating external data due to network update(s) { connectedChains: [ 1 ], newlyConnected: [ 1 ] }
+[2025-12-05 17:35:12.403] [verbose] subscribing to rates updates for native currencies on chains: [ 1 ]
+[2025-12-05 17:35:12.403] [verbose] subscribing to rates updates for tokens: []
+[2025-12-05 17:35:17.393] [info]  Resolved content for send.frame.eth, version: 0.2-e37d2f3
+[2025-12-05 17:35:17.445] [info]  Dapp send.frame.eth already up to date: bafybeiag6x7b2xh3c23fochm565boiuygmomi3vqjxjad4wax5oldwh6bi
+[2025-12-05 17:35:17.767] [info]  balances worker ready, pid: 619082
+[2025-12-05 17:35:19.036] [verbose] Performing manual check for updates { prereleaseTrack: false }
+[2025-12-05 17:35:19.737] [verbose] Manual check found release {
+  currentVersion: '0.6.11',
+  latestVersion: '0.6.11',
+  isNewerVersion: false
+}
+[2025-12-05 17:35:19.737] [info]  Manual check found no updates
+[2025-12-05 17:37:01.214] [verbose] Stopping updater
+[2025-12-05 17:37:01.233] [warn]  balances worker disconnected
+[2025-12-05 17:37:01.234] [warn]  balances worker exited with code null, signal: SIGINT, pid: 619082
+[2025-12-05 17:37:01.235] [warn]  balances controller stopped, restarting in 5 seconds
+[2025-12-05 17:37:01.235] [verbose] stopping balances updates
+[2025-12-05 17:37:01.366] [info]  Application closing
+[2025-12-05 17:37:01.367] [verbose] stopping inventory updates
+[2025-12-05 17:37:01.367] [verbose] stopping asset updates
+[2025-12-05 17:37:01.368] [verbose] stopping balances updates
+[2025-12-05 17:42:29.289] [info]  ethereum:1's connection has been updated
+[2025-12-05 17:42:29.295] [info]  Secondary connection: OFF
+[2025-12-05 17:42:29.295] [debug] resetConnection { priority: 'secondary', status: 'off' }
+[2025-12-05 17:42:29.295] [debug] killProvider {}
+[2025-12-05 17:42:29.295] [debug] stopBlockMonitor { chainId: '1', priority: 'secondary' }
+[2025-12-05 17:42:29.296] [info]  Primary connection: ON
+[2025-12-05 17:42:29.296] [info]  Creating primary connection because it didn't exist or the target changed { primaryTarget: 'wss://evm.pylon.link/mainnet' }
+[2025-12-05 17:42:29.296] [debug] resetConnection {
+  priority: 'primary',
+  status: 'loading',
+  target: 'wss://evm.pylon.link/mainnet'
+}
+[2025-12-05 17:42:29.296] [debug] killProvider {}
+[2025-12-05 17:42:29.296] [debug] stopBlockMonitor { chainId: '1', priority: 'primary' }
+[2025-12-05 17:42:29.296] [debug] createProvider { chainId: '1', priority: 'primary' }
+[2025-12-05 17:42:29.297] [info]  Updating primary connection for chain 1 { status: 'loading', connected: false, type: '', network: '' }
+[2025-12-05 17:42:30.233] [verbose] starting inventory updates
+[2025-12-05 17:42:30.233] [verbose] starting asset updates
+[2025-12-05 17:42:30.233] [verbose] starting balances updates
+[2025-12-05 17:42:30.242] [info]  created balances worker, pid: 623477
+[2025-12-05 17:42:30.318] [info]  Chrome: v110.0.5481.179
+[2025-12-05 17:42:30.318] [info]  Electron: v23.1.3
+[2025-12-05 17:42:30.318] [info]  Node: v18.12.1
+[2025-12-05 17:42:30.339] [info]  Trezor Connect initialized
+[2025-12-05 17:42:30.656] [verbose] Creating tray window
+[2025-12-05 17:42:30.779] [verbose] Creating dash window
+[2025-12-05 17:42:30.783] [verbose] Creating onboard window
+[2025-12-05 17:42:30.793] [verbose] Unregistering accelerator "Alt+/" for shortcut: Alt+Slash
+[2025-12-05 17:42:30.793] [verbose] Registering accelerator "Alt+/" for shortcut: Alt+Slash
+[2025-12-05 17:42:30.794] [info]  Accelerator "Alt+/" registered for shortcut: Alt+Slash
+[2025-12-05 17:42:30.797] [info]  ethereum:1's connection has been updated
+[2025-12-05 17:42:30.797] [info]  Secondary connection: OFF
+[2025-12-05 17:42:30.797] [info]  Primary connection: ON
+[2025-12-05 17:42:30.800] [verbose] updating external data due to token update(s) { activeAccount: '' }
+[2025-12-05 17:42:30.800] [verbose] subscribing to rates updates for native currencies on chains: []
+[2025-12-05 17:42:30.800] [verbose] subscribing to rates updates for tokens: []
+[2025-12-05 17:42:31.212] [info]  Created onboard renderer process, pid: 623527
+[2025-12-05 17:42:31.303] [info]  Created dash renderer process, pid: 623521
+[2025-12-05 17:42:31.307] [verbose] Starting block updates for chain 1
+[2025-12-05 17:42:31.307] [info]      Primary connection for network 1 connected
+[2025-12-05 17:42:31.329] [info]  Created tray renderer process, pid: 623515
+[2025-12-05 17:42:31.372] [verbose] Starting updater { useAutoUpdater: false }
+[2025-12-05 17:42:31.400] [info]  Updating primary connection for chain 1 { status: 'connected', connected: false, type: '', network: '' }
+[2025-12-05 17:42:31.402] [info]  ethereum:1's connection has been updated
+[2025-12-05 17:42:31.403] [info]  Secondary connection: OFF
+[2025-12-05 17:42:31.403] [info]  Primary connection: ON
+[2025-12-05 17:42:31.406] [info]  Updating primary connection for chain 1 { status: 'connected', connected: true, type: '', network: '1' }
+[2025-12-05 17:42:31.408] [info]  ethereum:1's connection has been updated
+[2025-12-05 17:42:31.408] [info]  Secondary connection: OFF
+[2025-12-05 17:42:31.408] [info]  Primary connection: ON
+[2025-12-05 17:42:31.912] [verbose] updating external data due to network update(s) { connectedChains: [ 1 ], newlyConnected: [ 1 ] }
+[2025-12-05 17:42:31.913] [verbose] subscribing to rates updates for native currencies on chains: [ 1 ]
+[2025-12-05 17:42:31.913] [verbose] subscribing to rates updates for tokens: []
+[2025-12-05 17:42:32.184] [info]  Resolved content for send.frame.eth, version: 0.2-e37d2f3
+[2025-12-05 17:42:32.234] [info]  Dapp send.frame.eth already up to date: bafybeiag6x7b2xh3c23fochm565boiuygmomi3vqjxjad4wax5oldwh6bi
+[2025-12-05 17:42:36.866] [info]  balances worker ready, pid: 623477
+[2025-12-05 17:42:41.372] [verbose] Performing manual check for updates { prereleaseTrack: false }
+[2025-12-05 17:42:42.030] [verbose] Manual check found release {
+  currentVersion: '0.6.11',
+  latestVersion: '0.6.11',
+  isNewerVersion: false
+}
+[2025-12-05 17:42:42.030] [info]  Manual check found no updates
+[2025-12-05 17:42:58.113] [error] Uncaught Exception! TypeError: Cannot read properties of undefined (reading 'focus')
+    at BrowserWindow.closeHandler (/tmp/.mount_Frame-mml39K/resources/app.asar/compiled/main/windows/index.js:410:26)
+    at Object.onceWrapper (node:events:628:26)
+    at BrowserWindow.emit (node:events:513:28)
+    at BrowserWindow.emit (node:domain:489:12)
+    at emitter.emit (/tmp/.mount_Frame-mml39K/resources/app.asar/node_modules/@sentry/electron/main/integrations/electron-breadcrumbs.js:119:20)
+[2025-12-05 17:42:58.185] [error] Uncaught Exception! TypeError: Cannot read properties of undefined (reading 'focus')
+    at Object.<anonymous> (/tmp/.mount_Frame-mml39K/resources/app.asar/compiled/main/windows/index.js:576:26)
+    at observe (/tmp/.mount_Frame-mml39K/resources/app.asar/node_modules/react-restore/lib/index.js:88:26)
+    at process (/tmp/.mount_Frame-mml39K/resources/app.asar/node_modules/react-restore/lib/index.js:107:7)
+    at notify (/tmp/.mount_Frame-mml39K/resources/app.asar/node_modules/react-restore/lib/index.js:118:5)
+    at Timeout._onTimeout (/tmp/.mount_Frame-mml39K/resources/app.asar/node_modules/react-restore/lib/index.js:173:67)
+    at listOnTimeout (node:internal/timers:564:17)
+    at process.processTimers (node:internal/timers:507:7)
+    at messageBox (node:electron/js2c/browser_init:2:19644)
+    at Object.showMessageBoxSync (node:electron/js2c/browser_init:2:20651)
+    at showUnhandledExceptionDialog (/tmp/.mount_Frame-mml39K/resources/app.asar/compiled/main/windows/dialog/index.js:16:40)
+[2025-12-05 17:42:59.649] [verbose] Stopping updater
+[2025-12-05 17:42:59.695] [info]  Application closing
+[2025-12-05 17:42:59.696] [verbose] stopping inventory updates
+[2025-12-05 17:42:59.697] [verbose] stopping asset updates
+[2025-12-05 17:42:59.698] [verbose] stopping balances updates
+[2025-12-05 17:42:59.698] [info]  closing worker controller
+[2025-12-05 17:43:08.769] [info]  ethereum:1's connection has been updated
+[2025-12-05 17:43:08.775] [info]  Secondary connection: OFF
+[2025-12-05 17:43:08.775] [debug] resetConnection { priority: 'secondary', status: 'off' }
+[2025-12-05 17:43:08.775] [debug] killProvider {}
+[2025-12-05 17:43:08.775] [debug] stopBlockMonitor { chainId: '1', priority: 'secondary' }
+[2025-12-05 17:43:08.776] [info]  Primary connection: ON
+[2025-12-05 17:43:08.776] [info]  Creating primary connection because it didn't exist or the target changed { primaryTarget: 'wss://evm.pylon.link/mainnet' }
+[2025-12-05 17:43:08.776] [debug] resetConnection {
+  priority: 'primary',
+  status: 'loading',
+  target: 'wss://evm.pylon.link/mainnet'
+}
+[2025-12-05 17:43:08.776] [debug] killProvider {}
+[2025-12-05 17:43:08.776] [debug] stopBlockMonitor { chainId: '1', priority: 'primary' }
+[2025-12-05 17:43:08.776] [debug] createProvider { chainId: '1', priority: 'primary' }
+[2025-12-05 17:43:08.777] [info]  Updating primary connection for chain 1 { status: 'loading', connected: false, type: '', network: '' }
+[2025-12-05 17:43:09.787] [verbose] starting inventory updates
+[2025-12-05 17:43:09.787] [verbose] starting asset updates
+[2025-12-05 17:43:09.788] [verbose] starting balances updates
+[2025-12-05 17:43:09.798] [info]  created balances worker, pid: 624453
+[2025-12-05 17:43:09.879] [info]  Chrome: v110.0.5481.179
+[2025-12-05 17:43:09.879] [info]  Electron: v23.1.3
+[2025-12-05 17:43:09.879] [info]  Node: v18.12.1
+[2025-12-05 17:43:09.902] [info]  Trezor Connect initialized
+[2025-12-05 17:43:10.105] [verbose] updating external data due to token update(s) { activeAccount: '' }
+[2025-12-05 17:43:10.105] [verbose] subscribing to rates updates for native currencies on chains: []
+[2025-12-05 17:43:10.105] [verbose] subscribing to rates updates for tokens: []
+[2025-12-05 17:43:10.306] [verbose] Creating tray window
+[2025-12-05 17:43:10.445] [verbose] Creating dash window
+[2025-12-05 17:43:10.451] [verbose] Unregistering accelerator "Alt+/" for shortcut: Alt+Slash
+[2025-12-05 17:43:10.451] [verbose] Registering accelerator "Alt+/" for shortcut: Alt+Slash
+[2025-12-05 17:43:10.452] [info]  Accelerator "Alt+/" registered for shortcut: Alt+Slash
+[2025-12-05 17:43:10.456] [info]  ethereum:1's connection has been updated
+[2025-12-05 17:43:10.457] [info]  Secondary connection: OFF
+[2025-12-05 17:43:10.457] [info]  Primary connection: ON
+[2025-12-05 17:43:10.983] [info]  Created tray renderer process, pid: 624540
+[2025-12-05 17:43:10.985] [info]  Created dash renderer process, pid: 624546
+[2025-12-05 17:43:11.006] [verbose] Starting updater { useAutoUpdater: false }
+[2025-12-05 17:43:11.016] [verbose] Starting block updates for chain 1
+[2025-12-05 17:43:11.017] [info]      Primary connection for network 1 connected
+[2025-12-05 17:43:11.090] [info]  Updating primary connection for chain 1 { status: 'connected', connected: false, type: '', network: '' }
+[2025-12-05 17:43:11.094] [info]  ethereum:1's connection has been updated
+[2025-12-05 17:43:11.094] [info]  Secondary connection: OFF
+[2025-12-05 17:43:11.094] [info]  Primary connection: ON
+[2025-12-05 17:43:11.113] [info]  Updating primary connection for chain 1 { status: 'connected', connected: true, type: '', network: '1' }
+[2025-12-05 17:43:11.115] [info]  ethereum:1's connection has been updated
+[2025-12-05 17:43:11.116] [info]  Secondary connection: OFF
+[2025-12-05 17:43:11.116] [info]  Primary connection: ON
+[2025-12-05 17:43:11.618] [verbose] updating external data due to network update(s) { connectedChains: [ 1 ], newlyConnected: [ 1 ] }
+[2025-12-05 17:43:11.619] [verbose] subscribing to rates updates for native currencies on chains: [ 1 ]
+[2025-12-05 17:43:11.620] [verbose] subscribing to rates updates for tokens: []
+[2025-12-05 17:43:11.634] [info]  Resolved content for send.frame.eth, version: 0.2-e37d2f3
+[2025-12-05 17:43:11.676] [info]  Dapp send.frame.eth already up to date: bafybeiag6x7b2xh3c23fochm565boiuygmomi3vqjxjad4wax5oldwh6bi
+[2025-12-05 17:43:16.104] [info]  balances worker ready, pid: 624453
+[2025-12-05 17:43:21.010] [verbose] Performing manual check for updates { prereleaseTrack: false }
+[2025-12-05 17:43:21.757] [verbose] Manual check found release {
+  currentVersion: '0.6.11',
+  latestVersion: '0.6.11',
+  isNewerVersion: false
+}
+[2025-12-05 17:43:21.758] [info]  Manual check found no updates
+[2025-12-05 17:46:19.594] [error] Error: A window with id "dash" does not exist (windows.send)
+    at send (/tmp/.mount_Frame-fX4q59/resources/app.asar/compiled/main/windows/index.js:614:38)
+    at /tmp/.mount_Frame-fX4q59/resources/app.asar/compiled/main/windows/index.js:618:42
+    at Array.forEach (<anonymous>)
+    at broadcast (/tmp/.mount_Frame-fX4q59/resources/app.asar/compiled/main/windows/index.js:618:26)
+    at Object.278336ea-0516-4903-8430-a6826c1ce925 (/tmp/.mount_Frame-fX4q59/resources/app.asar/compiled/main/windows/index.js:622:5)
+    at /tmp/.mount_Frame-fX4q59/resources/app.asar/node_modules/react-restore/lib/index.js:117:71
+    at Array.forEach (<anonymous>)
+    at notify (/tmp/.mount_Frame-fX4q59/resources/app.asar/node_modules/react-restore/lib/index.js:117:36)
+    at Timeout._onTimeout (/tmp/.mount_Frame-fX4q59/resources/app.asar/node_modules/react-restore/lib/index.js:173:67)
+    at listOnTimeout (node:internal/timers:564:17)
+[2025-12-05 17:46:20.479] [verbose] Stopping updater
+[2025-12-05 17:46:20.573] [info]  Application closing
+[2025-12-05 17:46:20.575] [verbose] stopping inventory updates
+[2025-12-05 17:46:20.575] [verbose] stopping asset updates
+[2025-12-05 17:46:20.576] [verbose] stopping balances updates
+[2025-12-05 17:46:20.576] [info]  closing worker controller
+[2025-12-05 17:46:27.987] [info]  ethereum:1's connection has been updated
+[2025-12-05 17:46:27.993] [info]  Secondary connection: OFF
+[2025-12-05 17:46:27.993] [debug] resetConnection { priority: 'secondary', status: 'off' }
+[2025-12-05 17:46:27.993] [debug] killProvider {}
+[2025-12-05 17:46:27.994] [debug] stopBlockMonitor { chainId: '1', priority: 'secondary' }
+[2025-12-05 17:46:27.994] [info]  Primary connection: ON
+[2025-12-05 17:46:27.994] [info]  Creating primary connection because it didn't exist or the target changed { primaryTarget: 'wss://evm.pylon.link/mainnet' }
+[2025-12-05 17:46:27.994] [debug] resetConnection {
+  priority: 'primary',
+  status: 'loading',
+  target: 'wss://evm.pylon.link/mainnet'
+}
+[2025-12-05 17:46:27.994] [debug] killProvider {}
+[2025-12-05 17:46:27.994] [debug] stopBlockMonitor { chainId: '1', priority: 'primary' }
+[2025-12-05 17:46:27.995] [debug] createProvider { chainId: '1', priority: 'primary' }
+[2025-12-05 17:46:27.995] [info]  Updating primary connection for chain 1 { status: 'loading', connected: false, type: '', network: '' }
+[2025-12-05 17:46:28.941] [verbose] starting inventory updates
+[2025-12-05 17:46:28.941] [verbose] starting asset updates
+[2025-12-05 17:46:28.941] [verbose] starting balances updates
+[2025-12-05 17:46:28.952] [info]  created balances worker, pid: 626603
+[2025-12-05 17:46:29.044] [info]  Chrome: v110.0.5481.179
+[2025-12-05 17:46:29.044] [info]  Electron: v23.1.3
+[2025-12-05 17:46:29.044] [info]  Node: v18.12.1
+[2025-12-05 17:46:29.068] [info]  Trezor Connect initialized
+[2025-12-05 17:46:29.379] [verbose] Creating tray window
+[2025-12-05 17:46:29.498] [verbose] Creating dash window
+[2025-12-05 17:46:29.501] [verbose] Unregistering accelerator "Alt+/" for shortcut: Alt+Slash
+[2025-12-05 17:46:29.502] [verbose] Registering accelerator "Alt+/" for shortcut: Alt+Slash
+[2025-12-05 17:46:29.502] [info]  Accelerator "Alt+/" registered for shortcut: Alt+Slash
+[2025-12-05 17:46:29.505] [info]  ethereum:1's connection has been updated
+[2025-12-05 17:46:29.506] [info]  Secondary connection: OFF
+[2025-12-05 17:46:29.506] [info]  Primary connection: ON
+[2025-12-05 17:46:29.507] [verbose] updating external data due to token update(s) { activeAccount: '' }
+[2025-12-05 17:46:29.508] [verbose] subscribing to rates updates for native currencies on chains: []
+[2025-12-05 17:46:29.508] [verbose] subscribing to rates updates for tokens: []
+[2025-12-05 17:46:30.007] [info]  Created tray renderer process, pid: 626643
+[2025-12-05 17:46:30.019] [info]  Created dash renderer process, pid: 626649
+[2025-12-05 17:46:30.055] [verbose] Starting updater { useAutoUpdater: false }
+[2025-12-05 17:46:30.464] [verbose] Starting block updates for chain 1
+[2025-12-05 17:46:30.466] [info]      Primary connection for network 1 connected
+[2025-12-05 17:46:30.549] [info]  Updating primary connection for chain 1 { status: 'connected', connected: false, type: '', network: '' }
+[2025-12-05 17:46:30.554] [info]  ethereum:1's connection has been updated
+[2025-12-05 17:46:30.555] [info]  Secondary connection: OFF
+[2025-12-05 17:46:30.556] [info]  Primary connection: ON
+[2025-12-05 17:46:30.574] [info]  Updating primary connection for chain 1 { status: 'connected', connected: true, type: '', network: '1' }
+[2025-12-05 17:46:30.577] [info]  ethereum:1's connection has been updated
+[2025-12-05 17:46:30.578] [info]  Secondary connection: OFF
+[2025-12-05 17:46:30.578] [info]  Primary connection: ON
+[2025-12-05 17:46:31.081] [info]  Resolved content for send.frame.eth, version: 0.2-e37d2f3
+[2025-12-05 17:46:31.084] [verbose] updating external data due to network update(s) { connectedChains: [ 1 ], newlyConnected: [ 1 ] }
+[2025-12-05 17:46:31.085] [verbose] subscribing to rates updates for native currencies on chains: [ 1 ]
+[2025-12-05 17:46:31.085] [verbose] subscribing to rates updates for tokens: []
+[2025-12-05 17:46:31.167] [info]  Dapp send.frame.eth already up to date: bafybeiag6x7b2xh3c23fochm565boiuygmomi3vqjxjad4wax5oldwh6bi
+[2025-12-05 17:46:35.125] [info]  balances worker ready, pid: 626603
+[2025-12-05 17:46:40.056] [verbose] Performing manual check for updates { prereleaseTrack: false }
+[2025-12-05 17:46:40.660] [verbose] Manual check found release {
+  currentVersion: '0.6.11',
+  latestVersion: '0.6.11',
+  isNewerVersion: false
+}
+[2025-12-05 17:46:40.661] [info]  Manual check found no updates
+[2025-12-05 17:51:35.388] [info]  Signer updated
+[2025-12-05 17:51:35.486] [info]  Signer updated
+[2025-12-05 17:51:35.486] [info]  Signer unlocked
+[2025-12-05 17:52:02.211] [info]  Account 0x5a5d569eea3dca44ad08ed32bbc7764ebc31ba75 not found, creating account
+[2025-12-05 17:52:03.145] [info]  Account 0x50d02cfaeb2a7d64fc5990c618515ced55cd2783 not found, creating account
+[2025-12-05 17:52:06.439] [info]  Account 0x97ba8277c2e3eacf6aea6ff2e30473ff134b54a5 not found, creating account
+[2025-12-05 17:52:07.447] [info]  Hot signer verify address matched
+[2025-12-05 17:52:08.212] [verbose] updating external data due to address update(s) { activeAccount: '0x97ba8277c2e3eacf6aea6ff2e30473ff134b54a5' }
+[2025-12-05 17:52:08.213] [verbose] setting address for balances updates 0x97ba8277c2e3eacf6aea6ff2e30473ff134b54a5
+[2025-12-05 17:52:08.213] [verbose] Starting balances scan for 0x97ba8277c2e3eacf6aea6ff2e30473ff134b54a5
+[2025-12-05 17:52:08.213] [verbose] setting addresses for inventory updates [ '0x97ba8277c2e3eacf6aea6ff2e30473ff134b54a5' ]
+[2025-12-05 17:52:08.214] [verbose] subscribing to rates updates for native currencies on chains: [ 1 ]
+[2025-12-05 17:52:08.214] [verbose] subscribing to rates updates for tokens: []
+[2025-12-05 17:53:54.531] [info]  ethereum:11155111's connection has been updated
+[2025-12-05 17:53:54.531] [info]  Secondary connection: OFF
+[2025-12-05 17:53:54.531] [info]  Primary connection: ON
+[2025-12-05 17:53:54.532] [info]  Creating primary connection because it didn't exist or the target changed { primaryTarget: 'wss://evm.pylon.link/sepolia' }
+[2025-12-05 17:53:54.533] [info]  Updating primary connection for chain 11155111 { status: 'loading', connected: false, type: '', network: '' }
+[2025-12-05 17:53:54.559] [info]  ethereum:11155111's connection has been updated
+[2025-12-05 17:53:54.560] [info]  Secondary connection: OFF
+[2025-12-05 17:53:54.561] [info]  Primary connection: ON
+[2025-12-05 17:53:55.050] [verbose] Starting block updates for chain 11155111
+[2025-12-05 17:53:55.051] [info]      Primary connection for network 11155111 connected
+[2025-12-05 17:53:55.157] [info]  Updating primary connection for chain 11155111 { status: 'connected', connected: false, type: '', network: '' }
+[2025-12-05 17:53:55.170] [info]  ethereum:11155111's connection has been updated
+[2025-12-05 17:53:55.170] [info]  Secondary connection: OFF
+[2025-12-05 17:53:55.171] [info]  Primary connection: ON
+[2025-12-05 17:53:55.172] [info]  Updating primary connection for chain 11155111 { status: 'connected', connected: true, type: '', network: '11155111' }
+[2025-12-05 17:53:55.180] [info]  ethereum:11155111's connection has been updated
+[2025-12-05 17:53:55.180] [info]  Secondary connection: OFF
+[2025-12-05 17:53:55.180] [info]  Primary connection: ON
+[2025-12-05 17:53:55.680] [verbose] updating external data due to network update(s) { connectedChains: [ 1, 11155111 ], newlyConnected: [ 11155111 ] }
+[2025-12-05 17:53:55.683] [verbose] subscribing to rates updates for native currencies on chains: [ 1, 11155111 ]
+[2025-12-05 17:53:55.683] [verbose] subscribing to rates updates for tokens: []
+[2025-12-05 17:53:55.684] [verbose] adding balances updates {
+  address: '0x97ba8277c2e3eacf6aea6ff2e30473ff134b54a5',
+  chains: [ 11155111 ]
+}
+[2025-12-05 18:04:10.529] [verbose] Stopping updater
+[2025-12-05 18:04:10.638] [info]  Application closing
+[2025-12-05 18:04:10.638] [verbose] stopping inventory updates
+[2025-12-05 18:04:10.638] [verbose] stopping asset updates
+[2025-12-05 18:04:10.638] [verbose] stopping balances updates
+[2025-12-05 18:04:10.639] [info]  closing worker controller

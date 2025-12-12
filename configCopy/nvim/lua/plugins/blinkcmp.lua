@@ -10,9 +10,10 @@ return {
           show_on_keyword = true,
         },
         menu = {
-          auto_show = function()
-            return vim.g.blink_auto
-          end,
+          auto_show = true,
+          -- auto_show = function()
+          --   return vim.g.blink_auto
+          -- end,
         },
       },
       sources = {
