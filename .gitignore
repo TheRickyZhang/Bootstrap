@@ -12,6 +12,7 @@ configCopy/Signal/**
 configCopy/chromium/**
 configCopy/Slack/**
 configCopy/Pinta/**
+configCopy/Jetbrains/**
 configCopy/google-chrome/**
 configCopy/libreoffice/**
 configCopy/google-chrome-*/**
