@@ -1,7 +1,0 @@
-IdeaVIM
-com.intellij.ja
-com.intellij.ko
-com.intellij.plugins.eclipsekeymap
-com.intellij.plugins.netbeanskeymap
-com.intellij.plugins.visualstudiokeymap
-com.intellij.zh
