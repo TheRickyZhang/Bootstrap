@@ -1,0 +1,11 @@
+<keymap version="1" name="XWin copy" parent="Default for XWin">
+  <action id="Generate">
+    <keyboard-shortcut first-keystroke="alt insert" />
+    <keyboard-shortcut first-keystroke="shift ctrl g" />
+  </action>
+  <action id="NewElement">
+    <keyboard-shortcut first-keystroke="alt insert" />
+    <keyboard-shortcut first-keystroke="shift ctrl i" />
+  </action>
+  <action id="QuickImplementations" />
+</keymap>

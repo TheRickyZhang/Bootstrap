@@ -1,0 +1,101 @@
+<application>
+  <component name="FileEditorProviderManager">{}</component>
+  <component name="LangManager">
+    <option name="languageName" value="JAVA" />
+  </component>
+  <component name="NotRoamableUiSettings">
+    <option name="fontSize" value="15.0" />
+    <option name="ideScale" value="1.1" />
+    <option name="presentationModeIdeScale" value="1.75" />
+  </component>
+  <component name="PropertyService"><![CDATA[{
+  "keyToString": {
+    "AIHubNotificationManager.lastUsedLicenseType": "FREE",
+    "Endpoints.split": "0.65",
+    "IdeErrorsDialog.LAST_OK_ACTION": "REPORT_AND_CLEAR_ALL",
+    "InstalledPluginsSearchHistory": "extensions",
+    "KEYMAP": "New\nfile or directory\nnew file\ngenerate...\nconstructor",
+    "LAST_CALCULATED_COLOR_INDEX_KEY": "1",
+    "MarketplacePluginsSearchHistory": "ideavim\nidea",
+    "MemberChooser.copyJavadoc": "false",
+    "MemberChooser.showClasses": "true",
+    "NewProjectWizard.addSampleCodeState": "false",
+    "NewProjectWizard.generateOnboardingTips": "true",
+    "PluginConfigurable.selectionTab": "1",
+    "RunOnceActivity.TerminalFontSettingsService.fixStoredNonMonospacedFonts": "true",
+    "RunOnceActivity.TerminalOptionsProvider.migration.2025.1.1": "true",
+    "RunOnceActivity.VFSInitializationConditionsToFusReporter": "true",
+    "RunOnceActivity.git.modal.commit.toggle": "true",
+    "RunOnceActivity.llm.onboarding.window.launcher.v7": "true",
+    "RunOnceActivity.reset.auto.reparse.settings.to.default": "true",
+    "SettingsSearchHistory": "generate\nextensions",
+    "build.toolwindow.Build Output.selection.state": "com.intellij.build.BuildTreeConsoleView",
+    "com.intellij.ide.projectWizard.generators.JavaNewProjectWizard$Step.selectedStep": "IntelliJ",
+    "com.intellij.openapi.roots.ui.configuration.TabbedModuleEditor.selectedEditor": "Sources",
+    "decompiler.legal.notice.accepted": "true",
+    "defaultJdkConfigured": "true",
+    "enter_selection_count": "5",
+    "evlsprt3.252": "7",
+    "exception.accepted.notices": ":d4a3ab85",
+    "experimental.ui.on.first.startup": "true",
+    "experimental.ui.used.version": "252.28238.7",
+    "fileTypeChangedCounter": "7",
+    "fontSizeToResetConsole": "13.0",
+    "fontSizeToResetEditor": "13.0",
+    "got.it.tooltip.Plugins Auto-Update": "1",
+    "got.it.tooltip.settings.sync.in.settings": "1",
+    "gotit.previous.run": "IU-252.28238.7",
+    "ift.learning.panel.opened.in": "252.28238.7",
+    "input.method.disabler.muted": "true",
+    "installed.kotlin.plugin.version": "252.28238.7-IJ",
+    "jdk.selected.JAVA_MODULE": "25",
+    "last_opened_file_path": "/home/ricky/Bootstrap/ide/Jetbrains/IntelliJsettings.zip",
+    "llm.installer.auto.activation.executed": "true",
+    "llm.installer.last.toolwindow.state": "AI_ASSISTANT",
+    "local.user.name": "ricky",
+    "migrated.non.roamable.values.from.general.settings": "true",
+    "onboarding.generation.number": "1",
+    "previousColorScheme": "_@user_Dark",
+    "project.wizard.group": "NPW.simple-project.Java",
+    "registry.to.advanced.settings.migration.build": "IU-252.28238.7",
+    "rider.trace.scenarios": "",
+    "settings.code.style.selected.tab.JAVA": "Code Generation",
+    "settings.code.style.selected.tab.kotlin": "Code Generation",
+    "terminal.gen.one.option.visible": "false",
+    "thinClient.ws": "true",
+    "trial.state.last.state": "ACTIVE",
+    "ts.lib.d.ts.version": "5.7.3"
+  },
+  "keyToStringList": {
+    "AIHubNotificationManager.lastAllNotifications": [],
+    "AIHubNotificationManager.notifications": [
+      "FREE_ENABLED"
+    ],
+    "AIHubNotificationManager.seenNotifications": [],
+    "file.chooser.recent.files": [
+      "/home/ricky/Notes/quant/JavaMatchingEngineFull",
+      "/home/ricky/Bootstrap/ide/Jetbrains/IntelliJsettings.zip"
+    ],
+    "fileTypeDetectors": [
+      "com.intellij.ide.scratch.ScratchFileServiceImpl$Detector",
+      "com.intellij.profiler.ultimate.hprof.impl.HprofFileTypeDetector",
+      "com.intellij.docker.dockerFile.DockerFileTypeDetector",
+      "com.intellij.javascript.debugger.sourcemap.SourceMapFileType$MyFileTypeDetector",
+      "com.intellij.database.vfs.DbStorageFileType$Detector",
+      "com.jetbrains.nodejs.util.NodeFileTypeDetector$JavaScriptFileTypeDetector",
+      "com.jetbrains.nodejs.util.NodeFileTypeDetector$TypeScriptFileTypeDetector",
+      "org.jetbrains.plugins.textmate.TextMateFileType$TextMateFileDetector"
+    ]
+  }
+}]]></component>
+  <component name="ShownTips">{
+  &quot;shownTips&quot;: {
+    &quot;CtrlW&quot;: 1764273285475,
+    &quot;CommentCode&quot;: 1764273288140
+  },
+  &quot;proposedTips&quot;: {
+    &quot;CtrlW&quot;: 1764273285439
+  },
+  &quot;tipsOrderSeed&quot;: 1764273285427
+}</component>
+</application>

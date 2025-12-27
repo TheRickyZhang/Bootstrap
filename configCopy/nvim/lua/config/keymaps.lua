@@ -1,6 +1,12 @@
 -- ~/.config/nvim/lua/config/keymaps.lua
 local map = vim.keymap.set
 
+-- Temporary Vimficiency
+map("n", "<leader>tr", "<cmd>VimficiencyReload<cr>", { desc = "reload vimficiency" })
+map("n", "<leader>ts", "<cmd>VimficiencyStart<cr>", { desc = "start vimficiency" })
+map("n", "<leader>te", "<cmd>VimficiencyStop<cr>", { desc = "end vimficiency" })
+map("n", "<leader>ti", "<cmd>VimficiencyRun<cr>", { desc = "simulate vimficiency" })
+
 -- Centering scroll & search
 map("n", "<C-d>", "<C-d>zz", { silent = true })
 map("n", "<C-u>", "<C-u>zz", { silent = true })
@@ -14,7 +20,9 @@ map("x", "g/", "gc", { remap = true, silent = true })
 -- Buffer management
 map("n", "<C-j>", "<cmd>bprevious<cr>", { desc = "Buffer ← (previous)" })
 map("n", "<C-k>", "<cmd>bnext<cr>", { desc = "Buffer → (next)" })
-map("n", "<C-x>", "<cmd>bdelete<cr>", { desc = "Buffer close" })
+map("n", "<C-x>", function()
+  Snacks.bufdelete()
+end, { desc = "Buffer close" })
 
 -- Window management
 map({ "n", "t" }, "<C-s>", [[<C-\><C-n><Cmd>wincmd w<CR>]], { desc = "Next window", silent = true })
