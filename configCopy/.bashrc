@@ -1,3 +1,6 @@
+# If not running interactively, don't do anything (leave this at the top of this file)
+[[ $- != *i* ]] && return
+
 # interactive guard
 case $- in *i*) ;; *) return ;; esac
 
@@ -33,3 +36,4 @@ command -v direnv >/dev/null && eval "$(direnv hook bash)"
 
 # completion (if bash-completion is installed)
 [ -r /usr/share/bash-completion/bash_completion ] && . /usr/share/bash-completion/bash_completion
+eval "$(mise activate bash)"

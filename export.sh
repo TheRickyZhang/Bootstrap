@@ -31,12 +31,7 @@ is_ignored_dest(){ # $1 = path relative to configCopy
   local d="$1"
   d="${d#./}"
   d="${d#configCopy/}"
-  for pat in "${IGNORED_DEST[@]}"; do
-    case "$d" in
-      "$pat"|"$pat"/*) return 0 ;;
-    esac
-  done
-  return 1
+  git -C "$REPO" check-ignore -q -- "configCopy/$d"
 }
 
 RSYNC_EXCLUDES=()

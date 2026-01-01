@@ -85,3 +85,21 @@ vim.api.nvim_create_user_command("Align", function(o)
   end
   vim.api.nvim_buf_set_lines(0, s, e, false, ls)
 end, { nargs = 1, range = true })
+
+
+-- Automatically set makeprg, so :make | copen populates the quick fix list with failing files
+vim.api.nvim_create_autocmd({ "BufEnter", "BufWinEnter" }, {
+  callback = function(ev)
+    local ok, lazyvim = pcall(require, "lazyvim.util")
+    if not ok then return end
+
+    local root = lazyvim.root()
+    if not root or root == "" then return end
+
+    local build = root .. "/build"
+    if vim.fn.isdirectory(build) == 0 then return end
+
+    -- buffer-local makeprg (so different projects can differ)
+    vim.bo[ev.buf].makeprg = ("cmake --build %s --parallel 8"):format(vim.fn.shellescape(build))
+  end,
+})

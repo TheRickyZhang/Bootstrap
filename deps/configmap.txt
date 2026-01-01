@@ -6,6 +6,7 @@
 .bashrc:.bashrc
 .profile:.profile
 .ideavimrc:.ideavimrc
+.claude/commands:.claude/commands
 /etc/keyd/surface.conf:etc/keyd/surface.conf
 /etc/systemd/system.conf.d/omarchy.conf:etc/systemd/system.conf.d/omarchy.conf
 /etc/systemd/sleep.conf.d/omarchy.conf:etc/systemd/sleep.conf.d/omarchy.conf

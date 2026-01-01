@@ -1,8 +1,9 @@
 -- ~/.config/nvim/lua/config/keymaps.lua
 local map = vim.keymap.set
+local util = require("config.utils_keymaps")
 
 -- Temporary Vimficiency
-map("n", "<leader>tr", "<cmd>VimficiencyReload<cr>", { desc = "reload vimficiency" })
+map("n", "<leader>tv", "<cmd>VimficiencyReload<cr>", { desc = "reload vimficiency" })
 map("n", "<leader>ts", "<cmd>VimficiencyStart<cr>", { desc = "start vimficiency" })
 map("n", "<leader>te", "<cmd>VimficiencyStop<cr>", { desc = "end vimficiency" })
 map("n", "<leader>ti", "<cmd>VimficiencyRun<cr>", { desc = "simulate vimficiency" })
@@ -74,6 +75,8 @@ map("n", "<leader>gs", vim.lsp.buf.signature_help, {
   silent = true,
   desc = "Signature help",
 })
+vim.keymap.set("n", "<leader>gq", util.add_git_changes_to_quicklist, { desc = "Add changed files to quicklist" })
+
 
 map("n", "<leader>p", "<Cmd>TypstPreview<CR>", { silent = true })
 
@@ -90,6 +93,10 @@ map(
   "<Cmd>execute '!typst compile ' . shellescape(expand('%:p')) . ' ' . shellescape(expand('%:p:h') . '/' . expand('%:t:r') . '.pdf')<CR>",
   { silent = true, desc = "Typst → same dir" }
 )
+
+vim.keymap.set("n", "<leader>tr", util.run_gtest_here, { desc = "Run gtest under cursor" })
+
+
 
 map("n", "<leader>v", "V$%", { silent = true })
 
@@ -157,21 +164,7 @@ map("v", "p", '"_dP', { silent = true })
 map("v", "*", 'y/\\V<C-R>"<CR>', { silent = true })
 map("v", "#", 'y?\\V<C-R>"<CR>', { silent = true })
 
-vim.keymap.set("x", "ga", function()
-  local v = vim.fn.getpos("v")[2]
-  local c = vim.fn.getpos(".")[2]
-  if v == 0 or c == 0 then
-    return
-  end
-  if v > c then
-    v, c = c, v
-  end
-  local ch = vim.fn.getcharstr()
-  if ch == "" then
-    return
-  end
-  vim.cmd(("%d,%dAlign %s"):format(v, c, ch))
-end, { silent = true, desc = "Align by next char" })
+vim.keymap.set("x", "ga", util.align_by_next_char, { silent = true, desc = "Align by next char" })
 
 -- Alt-j/k → move lines up/down
 map("n", "<A-j>", ":m .+1<CR>==", { silent = true })
@@ -191,3 +184,4 @@ for lhs, rhs in pairs(motions) do
     map(mode, lhs, rhs, { silent = true, noremap = true })
   end
 end
+
