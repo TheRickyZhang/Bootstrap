@@ -3,10 +3,11 @@ local map = vim.keymap.set
 local util = require("config.utils_keymaps")
 
 -- Temporary Vimficiency
-map("n", "<leader>tv", "<cmd>VimficiencyReload<cr>", { desc = "reload vimficiency" })
-map("n", "<leader>ts", "<cmd>VimficiencyStart<cr>", { desc = "start vimficiency" })
-map("n", "<leader>te", "<cmd>VimficiencyStop<cr>", { desc = "end vimficiency" })
-map("n", "<leader>ti", "<cmd>VimficiencyRun<cr>", { desc = "simulate vimficiency" })
+map("n", "<leader>tr", "<cmd>Vimfy reload<cr>", { desc = "reload vimficiency" })
+map("n", "<leader>ts", ":Vimfy start ",    { desc = "start vimficiency",    silent = false })
+map("n", "<leader>te", ":Vimfy end ",     { desc = "end vimficiency",      silent = false })
+map("n", "<leader>ti", ":Vimfy simulate ", { desc = "simulate vimficiency", silent = false })
+map("n", "<leader>tk", "<cmd>Vimfy key toggle<cr>", { desc = "toggle key vimficiency"})
 
 -- Centering scroll & search
 map("n", "<C-d>", "<C-d>zz", { silent = true })
@@ -28,6 +29,8 @@ end, { desc = "Buffer close" })
 -- Window management
 map({ "n", "t" }, "<C-s>", [[<C-\><C-n><Cmd>wincmd w<CR>]], { desc = "Next window", silent = true })
 
+
+
 -- Invoke Blink completion manually
 -- map("n", "<C-n>", function()
 --   vim.cmd("startinsert")
@@ -44,7 +47,7 @@ map({ "n", "t" }, "<C-s>", [[<C-\><C-n><Cmd>wincmd w<CR>]], { desc = "Next windo
 ------------------------------ Normal mode leader commands  ------------------------------
 -- Letter status for leader (* = prefix for other things already in lazy, # = self defined, + = adding to existing prefix)
 -- Ctrl - tmux
--- a  - copilot
+-- a  - reload buffer from AI  (overrides copilot)
 -- b* - buffer
 -- c* - various
 -- d* - debugging
@@ -71,6 +74,8 @@ map({ "n", "t" }, "<C-s>", [[<C-\><C-n><Cmd>wincmd w<CR>]], { desc = "Next windo
 -- y# - math in typst via $
 -- z# - quick spell fix (z=1)
 
+map("n", "<leader>a", "<cmd>checktime<cr>", {desc = "reload AI code changes"})
+
 map("n", "<leader>gs", vim.lsp.buf.signature_help, {
   silent = true,
   desc = "Signature help",
@@ -94,7 +99,7 @@ map(
   { silent = true, desc = "Typst → same dir" }
 )
 
-vim.keymap.set("n", "<leader>tr", util.run_gtest_here, { desc = "Run gtest under cursor" })
+vim.keymap.set("n", "<leader>tt", util.run_gtest_here, { desc = "Run gtest under cursor" })
 
 
 

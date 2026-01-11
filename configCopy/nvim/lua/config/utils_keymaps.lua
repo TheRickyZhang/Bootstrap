@@ -32,7 +32,7 @@ function M.align_by_next_char()
 end
 
 function M.run_gtest_here()
-  local bin = "./build/tests/vimficiency_tests" -- adjust if needed
+  local bin = "./build/tests/vimficiency_tests"
   local name = vim.fn.expand("<cword>")
   local suite = find_gtest_suite()
   if not suite or name == "" then
@@ -40,7 +40,16 @@ function M.run_gtest_here()
     return
   end
   local filter = suite .. "." .. name
-  vim.cmd("botright split | resize 15 | terminal " .. bin .. " --gtest_filter=" .. vim.fn.shellescape(filter))
+  local build_cmd = "cmake --build build --target vimficiency_tests"
+  local run_cmd = bin .. " --gtest_filter=" .. vim.fn.shellescape(filter)
+
+  vim.cmd("only")
+  vim.cmd("botright split | resize 15 | terminal " .. build_cmd .. " && " .. run_cmd)
+
+  local buf = vim.api.nvim_get_current_buf()
+  vim.keymap.set({"n", "t"}, "q", function()
+    vim.cmd("bdelete!")
+  end, { buffer = buf, silent = true })
 end
 
 function M.add_git_changes_to_quicklist()
