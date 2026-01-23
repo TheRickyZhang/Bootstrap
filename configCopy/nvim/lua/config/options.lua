@@ -38,3 +38,5 @@ vim.o.fileformats = "unix,dos"
 -- })
 
 -- vim.g.snacks_animate = false
+
+vim.g.python3_host_prog = vim.fn.expand("~/.local/share/mise/shims/python3")

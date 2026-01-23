@@ -29,6 +29,11 @@ end, { desc = "Buffer close" })
 -- Window management
 map({ "n", "t" }, "<C-s>", [[<C-\><C-n><Cmd>wincmd w<CR>]], { desc = "Next window", silent = true })
 
+-- File management
+map("n", "<leader>cR", function()
+  Snacks.rename.rename_file()
+end, {desc = "Rename File(LSP)"})
+
 
 
 -- Invoke Blink completion manually
