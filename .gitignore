@@ -28,3 +28,4 @@ configCopy/fcitx/dbus/**
 configCopy/pulse/cookie
 configCopy/pulse/cookie.lock
 configCopy/whatpulse.org/**   # ignore if you don't want tokens in repo
+configCopy/Typora/**

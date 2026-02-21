@@ -23,6 +23,9 @@ export XDG_CACHE_HOME="$HOME/.cache"
 # GPG over TTY
 export GPG_TTY="$(tty)"
 
+export UV_SYSTEM_PYTHON=true
+export PIP_BREAK_SYSTEM_PACKAGES=1
+
 # optional: Go (Arch's default GOPATH is ~/go; override if you prefer)
 # export GOPATH="$HOME/.local/go"
 # export GOBIN="$HOME/.local/bin"
@@ -37,3 +40,4 @@ command -v direnv >/dev/null && eval "$(direnv hook bash)"
 # completion (if bash-completion is installed)
 [ -r /usr/share/bash-completion/bash_completion ] && . /usr/share/bash-completion/bash_completion
 eval "$(mise activate bash)"
+

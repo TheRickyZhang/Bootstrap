@@ -40,3 +40,16 @@ vim.o.fileformats = "unix,dos"
 -- vim.g.snacks_animate = false
 
 vim.g.python3_host_prog = vim.fn.expand("~/.local/share/mise/shims/python3")
+
+-- For silencing lsp warnings during diffview
+local orig_lsp_start = vim.lsp.start
+---@diagnostic disable-next-line: duplicate-set-field
+vim.lsp.start = function(config, opts)
+  opts = opts or {}
+  local bufnr = opts.bufnr or vim.api.nvim_get_current_buf()
+  local uri = vim.uri_from_bufnr(bufnr)
+  if not vim.startswith(uri, "file://") then
+    return nil
+  end
+  return orig_lsp_start(config, opts)
+end

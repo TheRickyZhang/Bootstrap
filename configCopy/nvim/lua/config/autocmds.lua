@@ -103,3 +103,13 @@ vim.api.nvim_create_autocmd({ "BufEnter", "BufWinEnter" }, {
     vim.bo[ev.buf].makeprg = ("cmake --build %s --parallel 8"):format(vim.fn.shellescape(build))
   end,
 })
+
+-- Specifically to help with C++ file moving, since clangd doesn't implement LSP's workspace/willRenameFiles
+vim.api.nvim_create_user_command('FixIncludes', function(opts)
+  local old, new = opts.fargs[1], opts.fargs[2]
+  vim.fn.system(string.format(
+    "rg -l '#include.*%s' | xargs -r sed -i 's|%s|%s|g'",
+    old:gsub('/', '\\/'), old, new
+  ))
+  print("Updated includes: " .. old .. " → " .. new)
+end, { nargs = '+' })

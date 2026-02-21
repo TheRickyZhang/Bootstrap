@@ -24,11 +24,13 @@ SINGLE_DIRS=(
   "$HOME/Drive/job/questions"
   "$HOME/Drive/job/coverLetters"
   "$HOME/email"
+  # TEMP
 )
 
 MULTI_DIRS=(
   "$HOME/Documents"
   "$HOME/Projects"
+  "$HOME/ClassProjects"
   "$HOME/Opensource"
   "$HOME/Notes"
 )

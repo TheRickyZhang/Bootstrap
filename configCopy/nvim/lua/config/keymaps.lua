@@ -28,13 +28,7 @@ end, { desc = "Buffer close" })
 
 -- Window management
 map({ "n", "t" }, "<C-s>", [[<C-\><C-n><Cmd>wincmd w<CR>]], { desc = "Next window", silent = true })
-
--- File management
-map("n", "<leader>cR", function()
-  Snacks.rename.rename_file()
-end, {desc = "Rename File(LSP)"})
-
-
+vim.keymap.set('t', '<C-b>', '<C-b>', { noremap = true })
 
 -- Invoke Blink completion manually
 -- map("n", "<C-n>", function()
@@ -54,14 +48,14 @@ end, {desc = "Rename File(LSP)"})
 -- Ctrl - tmux
 -- a  - reload buffer from AI  (overrides copilot)
 -- b* - buffer
--- c* - various
--- d* - debugging
+-- c* - various code actions / rename / treesitter context
+-- d* - debugging + diffview open/close
 -- e  - explorer
--- f* - snacks find
+-- f* - snacks find (+ fix includes)
 -- g+ - git
 -- h  - harpoon
 -- i  - new buffer
--- j  -
+-- j  - run java
 -- k  -
 -- l  - lazy
 -- m# - math typst syntax
@@ -80,6 +74,19 @@ end, {desc = "Rename File(LSP)"})
 -- z# - quick spell fix (z=1)
 
 map("n", "<leader>a", "<cmd>checktime<cr>", {desc = "reload AI code changes"})
+
+map("n","<leader>o", function()
+  vim.fn.jobstart({ "xdg-open", vim.fn.getcwd() }, { detach = true })
+end,{ desc = "Open system file manager (cwd)" })
+
+map("n", "<leader>dv", ":DiffviewOpen<cr>", { desc = "Open Diffview" })
+map("n", "<leader>dx", ":DiffviewClose<cr>", { desc = "Close Diffview" })
+map("n", "<leader>fi", ":FixIncludes", { desc = "Fix C++ Includes" })
+
+-- Language-specific running
+map("n", "<leader>j", function()
+  vim.cmd("split | terminal ./gradlew run -q")
+end, { desc = "Run Java" })
 
 map("n", "<leader>gs", vim.lsp.buf.signature_help, {
   silent = true,
