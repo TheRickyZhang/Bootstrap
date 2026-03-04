@@ -32,7 +32,7 @@ x-scheme-handler/mailto=google-chrome.desktop
 [Default Applications]
 x-scheme-handler/zoommtg=zoom-scheme.desktop
 x-scheme-handler/zoomus=zoom-scheme.desktop
-x-scheme-handler/jetbrains=jetbrains-toolbox.desktop
+x-scheme-handler/jetbrains=jetbrainsd.desktop
 text/plain=nvim.desktop
 text/english=nvim.desktop
 text/x-makefile=nvim.desktop
@@ -50,3 +50,4 @@ text/x-c=nvim.desktop
 text/x-c++=nvim.desktop
 application/xml=nvim.desktop
 text/xml=nvim.desktop
+inode/directory=org.gnome.Nautilus.desktop

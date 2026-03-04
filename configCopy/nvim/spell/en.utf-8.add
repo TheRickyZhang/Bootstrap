@@ -256,3 +256,5 @@ QuickCheck
 OCaml
 Composability
 cnt
+CompositionOptimizer
+CursorPos

@@ -1,6 +1,16 @@
 -- ~/.config/nvim/lua/plugins/lsp.lua
--- Use leader ih for toggling on inlay hints
 return {
-  "neovim/nvim-lspconfig",
-  opts = {},
+  {
+    "neovim/nvim-lspconfig",
+    opts = {
+      servers = {
+        clangd = {
+          cmd = {
+            "clangd",
+            "--rename-file-limit=100", -- Increase from default 50
+          },
+        },
+      },
+    },
+  },
 }

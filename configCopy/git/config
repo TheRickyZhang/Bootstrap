@@ -2,7 +2,7 @@
 	helper = 
 	helper = !/usr/bin/gh auth git-credential
 [branch]
-	autoSetupMerge = always
+	autoSetupMerge = true
 [user]
 	email = rickyzhang196@outlook.com
 	name = Ricky Zhang
@@ -33,3 +33,5 @@
 [rerere]
     enabled = true
 
+[remote]
+	pushDefault = origin

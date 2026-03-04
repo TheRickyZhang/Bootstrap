@@ -51,7 +51,7 @@ vim.keymap.set('t', '<C-b>', '<C-b>', { noremap = true })
 -- c* - various code actions / rename / treesitter context
 -- d* - debugging + diffview open/close
 -- e  - explorer
--- f* - snacks find (+ fix includes)
+-- f* - snacks find (+ fix C++ includes/imports)
 -- g+ - git
 -- h  - harpoon
 -- i  - new buffer
