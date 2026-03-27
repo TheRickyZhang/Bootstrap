@@ -1,4 +1,8 @@
 local M = {}
+local sh = vim.fn.shellescape
+
+M.root = vim.fn.stdpath("config")
+M.input = M.root .. "/lua/config/temp.txt"
 
 ------------ LOCAL BEGIN ------------
 local function find_gtest_suite()
@@ -59,6 +63,100 @@ function M.add_git_changes_to_quicklist()
   end, files)
   vim.fn.setqflist({}, "r", { title = "git changed files", items = items })
   vim.cmd("copen")
+end
+
+
+local function check_runnable(src)
+  if vim.bo.buftype ~= "" then
+    vim.notify("Focus a source file.", vim.log.levels.ERROR)
+    return false
+  end
+  vim.cmd("update")
+  if src == "" or vim.fn.filereadable(src) ~= 1 then
+    vim.notify("Current buffer is not a file.", vim.log.levels.ERROR)
+    return false
+  end
+  if not src:match("%.cpp$") then
+    vim.notify("Current file is not a .cpp file.", vim.log.levels.ERROR)
+    return false
+  end
+  return true
+end
+
+local function kill_terms()
+  for _, b in ipairs(vim.api.nvim_list_bufs()) do
+    if vim.bo[b].buftype == "terminal" then
+      local jid = vim.b[b].terminal_job_id
+      if jid and jid > 0 then
+        pcall(vim.fn.jobstop, jid)
+      end
+      pcall(vim.api.nvim_buf_delete, b, { force = true })
+    end
+  end
+end
+
+local function run_term(cmd)
+  kill_terms()
+  vim.cmd("silent! only")
+  vim.cmd("botright vsplit")
+  vim.cmd("execute 'terminal ' .. " .. vim.fn.string("bash -lc " .. sh(cmd)))
+  vim.cmd("startinsert")
+end
+
+local function build_run_cmd(src, opts)
+  opts = opts or {}
+  local exe = vim.fn.fnamemodify(src, ":r")
+  local input = opts.input or M.input
+  local timeout = opts.timeout or "30s"
+  local flags = opts.flags or "-std=gnu++23 -O2 -pipe"
+
+  local compile = string.format(
+    "g++ %s %s -o %s",
+    flags,
+    sh(src),
+    sh(exe)
+  )
+
+  if opts.mode == "replay" then
+    return string.format(
+      "mkdir -p %s && touch %s && cat %s && %s && timeout %s %s < %s; res=$?; rm -f %s; exit $res",
+      sh(vim.fn.fnamemodify(input, ":h")),
+      sh(input),
+      sh(input),
+      compile,
+      sh(timeout),
+      sh(exe),
+      sh(input),
+      sh(exe)
+    )
+  end
+
+  return string.format(
+    "mkdir -p %s && touch %s && %s && tee %s | timeout %s %s; res=$?; rm -f %s; exit $res",
+    sh(vim.fn.fnamemodify(input, ":h")),
+    sh(input),
+    compile,
+    sh(input),
+    sh(timeout),
+    sh(exe),
+    sh(exe)
+  )
+end
+
+function M.run_cpp()
+  local src = vim.fn.expand("%:p")
+  if not check_runnable(src) then
+    return
+  end
+  run_term(build_run_cmd(src, { mode = "record" }))
+end
+
+function M.run_cpp_input()
+  local src = vim.fn.expand("%:p")
+  if not check_runnable(src) then
+    return
+  end
+  run_term(build_run_cmd(src, { mode = "replay" }))
 end
 
 return M

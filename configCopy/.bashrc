@@ -39,5 +39,4 @@ command -v direnv >/dev/null && eval "$(direnv hook bash)"
 
 # completion (if bash-completion is installed)
 [ -r /usr/share/bash-completion/bash_completion ] && . /usr/share/bash-completion/bash_completion
-eval "$(mise activate bash)"
 

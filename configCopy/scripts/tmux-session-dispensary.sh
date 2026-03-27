@@ -23,7 +23,7 @@ SINGLE_DIRS=(
   "$HOME/Drive/job/resume"
   "$HOME/Drive/job/questions"
   "$HOME/Drive/job/coverLetters"
-  "$HOME/email"
+  "$HOME/Games"
   # TEMP
 )
 

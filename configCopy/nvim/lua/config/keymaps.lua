@@ -92,10 +92,10 @@ map("n", "<leader>gs", vim.lsp.buf.signature_help, {
   silent = true,
   desc = "Signature help",
 })
-vim.keymap.set("n", "<leader>gq", util.add_git_changes_to_quicklist, { desc = "Add changed files to quicklist" })
-
-
+map("n", "<leader>gq", util.add_git_changes_to_quicklist, { desc = "Add changed files to quicklist" })
 map("n", "<leader>p", "<Cmd>TypstPreview<CR>", { silent = true })
+map("n", "<leader>r", util.run_cpp, { desc = "Compile and run current C++ file" })
+map("n", "<leader>R", util.run_cpp_input, { desc = "Run current C++ file with saved input" })
 
 -- compile current file -> same dir PDF (positional output, no -o)
 map(
