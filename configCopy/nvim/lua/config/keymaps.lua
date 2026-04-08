@@ -178,6 +178,10 @@ end, { desc = "Insert digraph" })
 -- z (fold plugin, one option)
 
 map("v", "p", '"_dP', { silent = true })
+
+-- Move lines in visual mode
+map("v", "J", ":m '>+1<CR>gv=gv")
+map("v", "K", ":m '<-2<CR>gv=gv")
 map("v", "*", 'y/\\V<C-R>"<CR>', { silent = true })
 map("v", "#", 'y?\\V<C-R>"<CR>', { silent = true })
 

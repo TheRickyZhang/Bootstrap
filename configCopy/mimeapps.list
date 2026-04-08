@@ -1,7 +1,6 @@
-
 [Default Applications]
 image/png=imv.desktop
-image/jpeg=imv.desktop
+image/jpeg=com.github.PintaProject.Pinta.desktop
 image/gif=imv.desktop
 image/webp=imv.desktop
 image/bmp=imv.desktop
@@ -28,8 +27,6 @@ video/x-ogm+ogg=mpv.desktop
 video/x-theora+ogg=mpv.desktop
 application/ogg=mpv.desktop
 x-scheme-handler/mailto=google-chrome.desktop
-[Default Applications]
-[Default Applications]
 x-scheme-handler/zoommtg=zoom-scheme.desktop
 x-scheme-handler/zoomus=zoom-scheme.desktop
 x-scheme-handler/jetbrains=jetbrainsd.desktop
@@ -51,3 +48,7 @@ text/x-c++=nvim.desktop
 application/xml=nvim.desktop
 text/xml=nvim.desktop
 inode/directory=org.gnome.Nautilus.desktop
+x-scheme-handler/claude-cli=claude-code-url-handler.desktop
+
+[Added Associations]
+image/jpeg=com.github.PintaProject.Pinta.desktop;

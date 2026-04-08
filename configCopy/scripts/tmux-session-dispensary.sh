@@ -13,6 +13,7 @@ SINGLE_DIRS=(
   "$HOME/.config/nvim/lua"
   "$HOME/.config/scripts"
   "$HOME/.config/tmux"
+  "$HOME/.local/share/applications"
   "$HOME/bin"
   "$HOME/Applications"
   "$HOME/Bootstrap"
@@ -24,6 +25,7 @@ SINGLE_DIRS=(
   "$HOME/Drive/job/questions"
   "$HOME/Drive/job/coverLetters"
   "$HOME/Games"
+  "$HOME/Whitebox"
   # TEMP
 )
 
