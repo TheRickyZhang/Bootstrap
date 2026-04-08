@@ -99,7 +99,8 @@ local function run_term(cmd)
   kill_terms()
   vim.cmd("silent! only")
   vim.cmd("botright vsplit")
-  vim.cmd("execute 'terminal ' .. " .. vim.fn.string("bash -lc " .. sh(cmd)))
+  vim.cmd("enew")
+  vim.fn.termopen({"bash", "-lc", cmd})
   vim.cmd("startinsert")
 end
 
@@ -118,21 +119,36 @@ local function build_run_cmd(src, opts)
   )
 
   if opts.mode == "replay" then
-    return string.format(
-      "mkdir -p %s && touch %s && cat %s && %s && timeout %s %s < %s; res=$?; rm -f %s; exit $res",
+    return string.format([[
+mkdir -p %s &&
+touch %s &&
+%s &&
+cat %s &&
+cat %s | stdbuf -o0 -e0 timeout %s %s | awk 'NR==1{print "\n-----------------------"}{print;fflush()}'
+res=${PIPESTATUS[1]}
+rm -f %s
+exit $res
+]],
       sh(vim.fn.fnamemodify(input, ":h")),
       sh(input),
-      sh(input),
       compile,
+      sh(input),
+      sh(input),
       sh(timeout),
       sh(exe),
-      sh(input),
       sh(exe)
     )
   end
 
-  return string.format(
-    "mkdir -p %s && touch %s && %s && tee %s | timeout %s %s; res=$?; rm -f %s; exit $res",
+  return string.format([[
+mkdir -p %s &&
+: > %s &&
+%s &&
+tee %s | stdbuf -o0 -e0 timeout %s %s | awk 'NR==1{print "\n-----------------------"}{print;fflush()}'
+res=${PIPESTATUS[1]}
+rm -f %s
+exit $res
+]],
     sh(vim.fn.fnamemodify(input, ":h")),
     sh(input),
     compile,
