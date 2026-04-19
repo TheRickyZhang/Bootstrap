@@ -29,7 +29,11 @@ autocmd("FileType", {
 -- force LF on read/write (restrict to texty files to avoid surprises)
 autocmd({ "BufReadPost", "BufWritePre" }, {
   pattern = { "*.lua", "*.typ", "*.md", "*.txt", "*.vim", "*.sh", "*.py" },
-  command = "setlocal fileformat=unix",
+  callback = function()
+    if vim.bo.modifiable then
+      vim.bo.fileformat = "unix"
+    end
+  end,
 })
 
 -- stylua on save (guard if stylua missing)

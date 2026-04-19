@@ -2,13 +2,6 @@
 local map = vim.keymap.set
 local util = require("config.utils_keymaps")
 
--- Temporary Vimficiency
-map("n", "<leader>tr", "<cmd>Vimfy reload<cr>", { desc = "reload vimficiency" })
-map("n", "<leader>ts", ":Vimfy start ",    { desc = "start vimficiency",    silent = false })
-map("n", "<leader>te", ":Vimfy end ",     { desc = "end vimficiency",      silent = false })
-map("n", "<leader>ti", ":Vimfy simulate ", { desc = "simulate vimficiency", silent = false })
-map("n", "<leader>tk", "<cmd>Vimfy key toggle<cr>", { desc = "toggle key vimficiency"})
-
 -- Centering scroll & search
 map("n", "<C-d>", "<C-d>zz", { silent = true })
 map("n", "<C-u>", "<C-u>zz", { silent = true })
@@ -114,8 +107,7 @@ map(
 vim.keymap.set("n", "<leader>tt", util.run_gtest_here, { desc = "Run gtest under cursor" })
 
 
-
-map("n", "<leader>v", "V$%", { silent = true })
+map("n", "<leader>V", "V$%", { silent = true })
 
 -- For easier file yanking
 map("n", "<leader>yp", function()

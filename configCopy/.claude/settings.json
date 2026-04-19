@@ -1,0 +1,25 @@
+{
+  "permissions": {
+    "allow": [
+      "*"
+    ],
+    "deny": [
+      "Bash(rm -rf *)",
+      "Bash(sudo *)",
+      "Bash(git reset --hard*)",
+      "Bash(git push --force*)",
+      "Bash(git push -f*)",
+      "Bash(git clean -f*)",
+      "Bash(git clean -d*)",
+      "Bash(git branch -D *)",
+      "Bash(git checkout -- *)",
+      "Bash(git restore --source*)"
+    ]
+  },
+  "model": "opus",
+  "enabledPlugins": {
+    "clangd-lsp@claude-plugins-official": true
+  },
+  "effortLevel": "high",
+  "skipDangerousModePermissionPrompt": true
+}

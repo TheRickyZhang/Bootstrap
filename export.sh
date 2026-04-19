@@ -73,6 +73,8 @@ copy_one() {
 }
 
 while IFS=: read -r src dst; do
+  src="$(echo "$src" | xargs)"
+  dst="$(echo "$dst" | xargs)"
   [[ -z $src || $src == \#* ]] && continue
   copy_one "$src" "$dst"
 done <"$MAP"

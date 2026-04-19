@@ -3,26 +3,134 @@ return {
   name = "vimficiency",
   lazy = false,
   config = function()
-    require("vimficiency").setup({ })
 
-    -- require("vimficiency").setup({
-    --   default_keyboard = 2,
-    -- })
+    require("vimficiency").setup({
+      ----------------------------------------------------------------
+      -- Lua-side knobs
+      ----------------------------------------------------------------
 
-    -- local ffi = require("vimficiency.ffi")
-    -- require("vimficiency").setup({
-    --     default_keyboard = 2,  -- QWERTY
-    --     weights = {
-    --         w_key = 1.5,
-    --         w_same_finger = 0.3,
-    --     },
-    --     keys = {
-    --         [ffi.Key.Space] = {
-    --             hand = ffi.Hand.Left,
-    --             finger = ffi.Finger.Lt,
-    --             cost = 0.2,
-    --         },
-    --     },
-    -- })
-  end
+      -- Optimizer/search
+      RESULTS_CALCULATED = 20,
+      RESULTS_SAVED = 5,
+      SLICE_PADDING = 5,
+      SLICE_EXPAND_TO_PARAGRAPH = false,
+      MAX_SEARCH_LINES = 500,
+
+      -- Recall/session safety
+      KEY_SESSION_CAPACITY = 200,
+      MAX_RETENTION_SECONDS = 120,
+      MANUAL_IDLE_TIMEOUT_SECONDS = 300,
+      SNAP_LOOKBACK_KEYS = 20,
+
+      -- Watch: omit entirely to disable
+      watch = {
+        idle = { ms = 3000 },
+        cooldown_ms = 5000,
+      },
+
+      -- Auto-suggest: omit triggers you do not want.
+      -- If a trigger is present, specify the whole trigger.
+      -- auto_suggest = {
+      --   cooldown_ms = 5000,
+      --
+      --   idle = {
+      --     ms = 3000,
+      --     window = "3s",
+      --   },
+      --
+      --   -- keys = {
+      --   --   every = 50,
+      --   -- },
+      --
+      --   -- cost = {
+      --   --   m = 1.5,
+      --   --   b = 2.0,
+      --   --   ms = 300,
+      --   --   window = "100",
+      --   -- },
+      -- },
+
+      ----------------------------------------------------------------
+      -- C++ / effort-model knobs
+      ----------------------------------------------------------------
+
+      -- Current enum in C++:
+      --   0 = NONE
+      --   1 = UNIFORM
+      --   2 = QWERTY
+      --   3 = COLEMAK_DH
+      default_keyboard = 1,
+
+      -- Optional runtime override; setup() auto-fills from vim.o.shiftwidth
+      -- if you omit it.
+      -- shiftwidth = 2,
+
+      -- Advanced slice knob passed to C++.
+      -- slice_buffer_amount = 5,
+
+      -- weights = {
+      --   keyWeight = 1.0,
+      --   sameFingerWeight = 0.0,
+      --   sameKeyWeight = 0.0,
+      --   altHandWeight = 0.0,
+      --   goodRollWeight = 0.0,
+      --   badRollWeight = 0.0,
+      -- },
+
+      -- Override specific keys by ffi.Key index.
+      -- hand/finger values come from ffi.Hand / ffi.Finger.
+      -- local ffi = require("vimficiency.ffi")
+      -- keys = {
+      --   [ffi.Key.Space] = {
+      --     hand = ffi.Hand.Left,
+      --     finger = ffi.Finger.Lt,
+      --     cost = 0.2,
+      --   },
+      -- },
+
+      -- If count_penalty_overrides is present and
+      -- use_count_penalty_overrides is omitted, Lua enables it for you.
+      -- use_count_penalty_overrides = true,
+      -- count_penalty_overrides = {
+      --   MotionWord = {
+      --     base = 2.0,
+      --     count_slope = 0.8,
+      --   },
+      --
+      --   EditLine = {
+      --     base = 1.5,
+      --     span_slope = 0.2,
+      --   },
+      --
+      --   Join = {
+      --     base = 3.0,
+      --   },
+      -- },
+    })
+
+    -- create bindings
+    local vimfy = require("vimficiency")
+    local function prompt_map(lhs, subcmd, desc)
+      vimfy.map("n", lhs, function()
+        vim.ui.input({ prompt = subcmd .. " alias: "}, function(name)
+          if name and name ~= "" then
+            vim.cmd("Vimfy " .. subcmd .. " " .. name)
+          end
+        end)
+      end, { desc = desc })
+    end
+
+    prompt_map("<leader>vb", "start", "Start mark")
+    prompt_map("<leader>ve", "end", "End mark")
+    prompt_map("<leader>vw", "watch", "Start watch")
+    prompt_map("<leader>vr", "recall", "End recall")
+
+    prompt_map("<leader>vs", "save",  "@")
+    prompt_map("<leader>vl", "list",  "Vimfy list")
+    prompt_map("<leader>vp", "sim",  "Vimfy replay") -- maybe change simulate -> replay
+
+    vimfy.map("n", "<leader>vc", "reload")
+    -- vimfy.map("n", "<leader>vt", "recall toggle")
+
+  end,
 }
