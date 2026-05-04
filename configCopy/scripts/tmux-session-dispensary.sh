@@ -40,6 +40,17 @@ MULTI_DIRS=(
 # ensure tmux server
 tmux start-server >/dev/null 2>&1 || true
 
+REPLACE=0
+if [[ ${1:-} == "--replace" ]]; then
+  REPLACE=1
+  shift
+fi
+
+orig_session=""
+if (( REPLACE )) && [[ -n "${TMUX_PANE:-}" ]]; then
+  orig_session=$(tmux display -p -t "$TMUX_PANE" '#S' 2>/dev/null || true)
+fi
+
 if [[ $# -eq 1 ]]; then
   selected="${1/#\~/$HOME}"
   [[ -d "$selected" ]] || {
@@ -114,4 +125,8 @@ if [[ -n "${TMUX:-}" ]]; then
   tmux switch-client -t "$selected_name"
 else
   tmux attach -t "$selected_name"
+fi
+
+if (( REPLACE )) && [[ -n "$orig_session" && "$orig_session" != "$selected_name" ]]; then
+  tmux kill-session -t "$orig_session"
 fi

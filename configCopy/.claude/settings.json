@@ -1,7 +1,13 @@
 {
   "permissions": {
     "allow": [
-      "*"
+      "Bash",
+      "Edit",
+      "Write",
+      "Read",
+      "WebFetch",
+      "WebSearch",
+      "mcp__*"
     ],
     "deny": [
       "Bash(rm -rf *)",
@@ -21,5 +27,7 @@
     "clangd-lsp@claude-plugins-official": true
   },
   "effortLevel": "high",
-  "skipDangerousModePermissionPrompt": true
+  "tui": "default",
+  "skipDangerousModePermissionPrompt": true,
+  "editorMode": "vim"
 }

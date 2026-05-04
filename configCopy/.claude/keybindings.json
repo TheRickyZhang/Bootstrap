@@ -1,0 +1,15 @@
+{
+  "$schema": "https://www.schemastore.org/claude-code-keybindings.json",
+  "$docs": "https://code.claude.com/docs/en/keybindings",
+  "bindings": [
+    {
+      "context": "Scroll",
+      "bindings": {
+        "ctrl+shift+u": "scroll:halfPageUp",
+        "ctrl+shift+d": "scroll:halfPageDown",
+        "ctrl+b": "scroll:fullPageUp",
+        "ctrl+f": "scroll:fullPageDown"
+      }
+    }
+  ]
+}

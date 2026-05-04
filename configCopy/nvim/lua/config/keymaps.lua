@@ -21,7 +21,7 @@ end, { desc = "Buffer close" })
 
 -- Window management
 map({ "n", "t" }, "<C-s>", [[<C-\><C-n><Cmd>wincmd w<CR>]], { desc = "Next window", silent = true })
-vim.keymap.set('t', '<C-b>', '<C-b>', { noremap = true })
+vim.keymap.set("t", "<C-b>", "<C-b>", { noremap = true })
 
 -- Invoke Blink completion manually
 -- map("n", "<C-n>", function()
@@ -66,11 +66,11 @@ vim.keymap.set('t', '<C-b>', '<C-b>', { noremap = true })
 -- y# - math in typst via $
 -- z# - quick spell fix (z=1)
 
-map("n", "<leader>a", "<cmd>checktime<cr>", {desc = "reload AI code changes"})
+map("n", "<leader>a", "<cmd>checktime<cr>", { desc = "reload AI code changes" })
 
-map("n","<leader>o", function()
+map("n", "<leader>o", function()
   vim.fn.jobstart({ "xdg-open", vim.fn.getcwd() }, { detach = true })
-end,{ desc = "Open system file manager (cwd)" })
+end, { desc = "Open system file manager (cwd)" })
 
 map("n", "<leader>dv", ":DiffviewOpen<cr>", { desc = "Open Diffview" })
 map("n", "<leader>dx", ":DiffviewClose<cr>", { desc = "Close Diffview" })
@@ -105,7 +105,6 @@ map(
 )
 
 vim.keymap.set("n", "<leader>tt", util.run_gtest_here, { desc = "Run gtest under cursor" })
-
 
 map("n", "<leader>V", "V$%", { silent = true })
 
@@ -197,4 +196,3 @@ for lhs, rhs in pairs(motions) do
     map(mode, lhs, rhs, { silent = true, noremap = true })
   end
 end
-

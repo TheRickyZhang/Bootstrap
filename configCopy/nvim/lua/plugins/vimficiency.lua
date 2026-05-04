@@ -50,6 +50,7 @@ return {
       --   -- },
       -- },
 
+
       ----------------------------------------------------------------
       -- C++ / effort-model knobs
       ----------------------------------------------------------------
@@ -106,10 +107,42 @@ return {
       --     base = 3.0,
       --   },
       -- },
+
+      ----------------------------------------------------------------
+      -- Per-feature UI preferences
+      ----------------------------------------------------------------
+      -- Both sections also togglable at runtime (explore via `gs`,
+      -- play via `:Vimfy play_settings`); runtime toggles auto-
+      -- persist to sidecar JSON under stdpath("data")/vimficiency.
+      -- Declare here to set the cold-start baseline (what a fresh
+      -- install / new machine starts with); the sidecar layers on
+      -- top and wins for any key you've toggled.
+
+      -- explore = {
+      --   display_mode = "above",                       -- "off" | "highlight" | "inplace" | "above" | "below"
+      --   staged_mode = false,                          -- false → flat header; true → sectioned-by-stage
+      --   recommendation_count = 5,                     -- how many recs to surface; 1..10
+      --   allow_multiple_motions_per_position = false,  -- false → motion recs dedup by landing cell
+      --   allow_multiple_edits_per_position = false,    -- false → edit recs dedup by command shape
+      --   show_user_typed = true,                       -- include the user's captured typed sequence
+      --   show_result_count = 1,                        -- how many `optimal_results` to display alongside Explored
+      -- },
+
+      -- play = {
+      --   include_user_sequence = true,                 -- show the user's typed sequence alongside the optimal(s)
+      --   default_result_count = 1,                     -- how many optimal_results to show by default; 1..8
+      -- },
     })
 
-    -- create bindings
     local vimfy = require("vimficiency")
+
+    local function cmd_map(lhs, subcmd, desc)
+      vimfy.map("n", lhs, function()
+        vim.cmd("Vimfy " .. subcmd)
+      end, { desc = desc })
+    end
+
+    -- create bindings
     local function prompt_map(lhs, subcmd, desc)
       vimfy.map("n", lhs, function()
         vim.ui.input({ prompt = subcmd .. " alias: "}, function(name)
@@ -120,17 +153,19 @@ return {
       end, { desc = desc })
     end
 
+
+    cmd_map("<leader>vl", "list", "Vimfy list")
+
     prompt_map("<leader>vb", "start", "Start mark")
-    prompt_map("<leader>ve", "end", "End mark")
+    prompt_map("<leader>vf", "finish", "Finish mark")
     prompt_map("<leader>vw", "watch", "Start watch")
-    prompt_map("<leader>vr", "recall", "End recall")
+    prompt_map("<leader>vr", "recall", "Finish recall")
 
     prompt_map("<leader>vs", "save",  "@")
-    prompt_map("<leader>vl", "list",  "Vimfy list")
-    prompt_map("<leader>vp", "sim",  "Vimfy replay") -- maybe change simulate -> replay
+    prompt_map("<leader>vp", "play",  "Vimfy play") -- maybe change simulate -> replay
+    prompt_map("<leader>ve", "explore", "Explore mark")
 
     vimfy.map("n", "<leader>vc", "reload")
-    -- vimfy.map("n", "<leader>vt", "recall toggle")
 
   end,
 }

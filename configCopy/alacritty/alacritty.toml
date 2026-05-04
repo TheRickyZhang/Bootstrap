@@ -19,9 +19,20 @@ decorations = "None"
 bindings = [
 { key = "F11", action = "ToggleFullscreen" },
 { key = "Insert", mods = "Shift", action = "Paste" },
+{ key = "Insert", mods = "Shift", action = "Paste" },
 { key = "Insert", mods = "Control", action = "Copy" },
 { key = "Return", mods = "Shift", chars = "\u001b[13;2u" }
 ]
+
+#   [[keyboard.bindings]]
+# key = "K"
+# mods = "Control|Shift"
+# action = "ScrollHalfPageUp"
+#
+# [[keyboard.bindings]]
+# key = "J"
+# mods = "Control|Shift"
+# action = "ScrollHalfPageDown"
 
 [terminal]
 osc52 = "CopyPaste"
